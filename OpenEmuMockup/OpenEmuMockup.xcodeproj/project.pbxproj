@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B6DB5E2122F64B200515C07 /* SliderMagnifyHint.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5E0122F64B200515C07 /* SliderMagnifyHint.png */; };
+		1B6DB5E3122F64B200515C07 /* SliderMinifyHint.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5E1122F64B200515C07 /* SliderMinifyHint.png */; };
+		1B6DB5F0122F66EE00515C07 /* ToggleSideBarClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EA122F66EE00515C07 /* ToggleSideBarClose.png */; };
+		1B6DB5F1122F66EE00515C07 /* ToggleSideBarCloseInActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EB122F66EE00515C07 /* ToggleSideBarCloseInActive.png */; };
+		1B6DB5F2122F66EE00515C07 /* ToggleSideBarClosePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EC122F66EE00515C07 /* ToggleSideBarClosePressed.png */; };
+		1B6DB5F3122F66EE00515C07 /* ToggleSideBarOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5ED122F66EE00515C07 /* ToggleSideBarOpen.png */; };
+		1B6DB5F4122F66EE00515C07 /* ToggleSideBarOpenInActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EE122F66EE00515C07 /* ToggleSideBarOpenInActive.png */; };
+		1B6DB5F5122F66EE00515C07 /* ToggleSideBarOpenPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EF122F66EE00515C07 /* ToggleSideBarOpenPressed.png */; };
+		1B6DB661122F6C9D00515C07 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */; };
+		1B6DB692122F6CAA00515C07 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */; };
+		1B6DB701122F80FF00515C07 /* ToggleGridView.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB6FD122F80FF00515C07 /* ToggleGridView.png */; };
+		1B6DB702122F80FF00515C07 /* ToggleGridViewActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB6FE122F80FF00515C07 /* ToggleGridViewActive.png */; };
+		1B6DB703122F80FF00515C07 /* ToggleListView.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB6FF122F80FF00515C07 /* ToggleListView.png */; };
+		1B6DB704122F80FF00515C07 /* ToggleListViewActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB700122F80FF00515C07 /* ToggleListViewActive.png */; };
+		1B6DB8341230157300515C07 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6DB8331230157300515C07 /* Quartz.framework */; };
+		1B6DB94E1230159300515C07 /* ImageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6DB94D1230159300515C07 /* ImageKit.framework */; };
+		1B6DB9EE123029C100515C07 /* ToggleFlowView.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB9EC123029C100515C07 /* ToggleFlowView.png */; };
+		1B6DB9EF123029C100515C07 /* ToggleFlowViewActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB9ED123029C100515C07 /* ToggleFlowViewActive.png */; };
+		1B6DBA77123047B000515C07 /* ToggleFullScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DBA75123047B000515C07 /* ToggleFullScreen.png */; };
+		1B6DBA78123047B000515C07 /* ToggleFullScreenActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DBA76123047B000515C07 /* ToggleFullScreenActive.png */; };
+		1B6DBAF51230544000515C07 /* OEBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBAF41230544000515C07 /* OEBackgroundView.m */; };
+		1BF9B356122DC98A0098D6C2 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */; };
+		1BF9B379122DC98F0098D6C2 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */; };
+		1BF9B38A122DD0120098D6C2 /* OERomWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9B389122DD0120098D6C2 /* OERomWrapper.m */; };
+		1BF9B470122DECD70098D6C2 /* OEGameCoreWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9B46F122DECD70098D6C2 /* OEGameCoreWrapper.m */; };
+		1BF9B581122E204A0098D6C2 /* Game Gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B579122E204A0098D6C2 /* Game Gear.png */; };
+		1BF9B582122E204A0098D6C2 /* GameBoy Advance.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57A122E204A0098D6C2 /* GameBoy Advance.png */; };
+		1BF9B583122E204A0098D6C2 /* GameBoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57B122E204A0098D6C2 /* GameBoy.png */; };
+		1BF9B584122E204A0098D6C2 /* Nintendo (NES).png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57C122E204A0098D6C2 /* Nintendo (NES).png */; };
+		1BF9B585122E204A0098D6C2 /* Sega Genesis.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57D122E204A0098D6C2 /* Sega Genesis.png */; };
+		1BF9B586122E204A0098D6C2 /* Sega Master System.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57E122E204A0098D6C2 /* Sega Master System.png */; };
+		1BF9B587122E204A0098D6C2 /* Sega SG-1000.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57F122E204A0098D6C2 /* Sega SG-1000.png */; };
+		1BF9B588122E204A0098D6C2 /* Super Nintendo (SNES).png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B580122E204A0098D6C2 /* Super Nintendo (SNES).png */; };
+		1BF9B5CF122E26C00098D6C2 /* Castlevania.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5C8122E26C00098D6C2 /* Castlevania.png */; };
+		1BF9B5D0122E26C00098D6C2 /* Contra.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5C9122E26C00098D6C2 /* Contra.png */; };
+		1BF9B5D1122E26C00098D6C2 /* DonkeyKong.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5CA122E26C00098D6C2 /* DonkeyKong.png */; };
+		1BF9B5D2122E26C00098D6C2 /* The Legend of Zelda.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5CB122E26C00098D6C2 /* The Legend of Zelda.png */; };
+		1BF9B5D3122E26C00098D6C2 /* Street Fighter 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5CD122E26C00098D6C2 /* Street Fighter 2.png */; };
+		1BF9B5D4122E26C00098D6C2 /* Super Mario Kart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5CE122E26C00098D6C2 /* Super Mario Kart.png */; };
+		1BF9B5F1122E29540098D6C2 /* FileNotFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5EE122E29540098D6C2 /* FileNotFound.png */; };
+		1BF9B5F2122E29540098D6C2 /* Borderline.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5F0122E29540098D6C2 /* Borderline.png */; };
+		1BF9B7CF122EDDD10098D6C2 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7CE122EDDD10098D6C2 /* Icon.icns */; };
+		1BF9B7F2122EE3760098D6C2 /* Contra 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7EF122EE3760098D6C2 /* Contra 3.png */; };
+		1BF9B7F3122EE3760098D6C2 /* Super Mario All Stars.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7F0122EE3760098D6C2 /* Super Mario All Stars.png */; };
+		1BF9B7F4122EE3760098D6C2 /* Starfox.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7F1122EE3760098D6C2 /* Starfox.png */; };
+		1BF9B7FD122EE4710098D6C2 /* Super Metroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7FA122EE4710098D6C2 /* Super Metroid.png */; };
+		1BF9B7FE122EE4710098D6C2 /* Super Mario World.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7FB122EE4710098D6C2 /* Super Mario World.png */; };
+		1BF9B7FF122EE4710098D6C2 /* Yoshis Island.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7FC122EE4710098D6C2 /* Yoshis Island.png */; };
+		1BF9B819122EE5B20098D6C2 /* Super Mario Bros 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B816122EE5B20098D6C2 /* Super Mario Bros 3.png */; };
+		1BF9B81A122EE5B20098D6C2 /* Mario Bros.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B817122EE5B20098D6C2 /* Mario Bros.png */; };
+		1BF9B81B122EE5B20098D6C2 /* Super Mario Bros 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B818122EE5B20098D6C2 /* Super Mario Bros 2.png */; };
+		1BF9B82A122EE8F20098D6C2 /* Metroid 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B826122EE8F20098D6C2 /* Metroid 2.png */; };
+		1BF9B82B122EE8F20098D6C2 /* Super Mario Land 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B827122EE8F20098D6C2 /* Super Mario Land 2.png */; };
+		1BF9B82C122EE8F20098D6C2 /* Super Mario Land.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B828122EE8F20098D6C2 /* Super Mario Land.png */; };
+		1BF9B82D122EE8F20098D6C2 /* Wario Land.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B829122EE8F20098D6C2 /* Wario Land.png */; };
+		1BF9B84A122EF2720098D6C2 /* TestStamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B849122EF2720098D6C2 /* TestStamp.png */; };
+		1BF9B879122EF8360098D6C2 /* Nintendo (NES) Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B877122EF8360098D6C2 /* Nintendo (NES) Stamp.png */; };
+		1BF9B87A122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B878122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png */; };
+		1BF9B883122EF8DD0098D6C2 /* GameBoy Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B882122EF8DD0098D6C2 /* GameBoy Stamp.png */; };
+		1BF9B89E122F0A930098D6C2 /* All.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B89D122F0A930098D6C2 /* All.png */; };
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		256AC3DA0F4B6AC300CF3369 /* OpenEmuMockupAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* OpenEmuMockupAppDelegate.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1BF9B30D122DC2B70098D6C2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1B6DB692122F6CAA00515C07 /* BWToolkitFramework.framework in CopyFiles */,
+				1BF9B379122DC98F0098D6C2 /* BGHUDAppKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1B6DB5E0122F64B200515C07 /* SliderMagnifyHint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SliderMagnifyHint.png; sourceTree = "<group>"; };
+		1B6DB5E1122F64B200515C07 /* SliderMinifyHint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SliderMinifyHint.png; sourceTree = "<group>"; };
+		1B6DB5EA122F66EE00515C07 /* ToggleSideBarClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleSideBarClose.png; sourceTree = "<group>"; };
+		1B6DB5EB122F66EE00515C07 /* ToggleSideBarCloseInActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleSideBarCloseInActive.png; sourceTree = "<group>"; };
+		1B6DB5EC122F66EE00515C07 /* ToggleSideBarClosePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleSideBarClosePressed.png; sourceTree = "<group>"; };
+		1B6DB5ED122F66EE00515C07 /* ToggleSideBarOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleSideBarOpen.png; sourceTree = "<group>"; };
+		1B6DB5EE122F66EE00515C07 /* ToggleSideBarOpenInActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleSideBarOpenInActive.png; sourceTree = "<group>"; };
+		1B6DB5EF122F66EE00515C07 /* ToggleSideBarOpenPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleSideBarOpenPressed.png; sourceTree = "<group>"; };
+		1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
+		1B6DB6FD122F80FF00515C07 /* ToggleGridView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleGridView.png; sourceTree = "<group>"; };
+		1B6DB6FE122F80FF00515C07 /* ToggleGridViewActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleGridViewActive.png; sourceTree = "<group>"; };
+		1B6DB6FF122F80FF00515C07 /* ToggleListView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleListView.png; sourceTree = "<group>"; };
+		1B6DB700122F80FF00515C07 /* ToggleListViewActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleListViewActive.png; sourceTree = "<group>"; };
+		1B6DB8151230152400515C07 /* IKImageFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKImageFlowView.h; sourceTree = "<group>"; };
+		1B6DB8331230157300515C07 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		1B6DB94D1230159300515C07 /* ImageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageKit.framework; path = System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework; sourceTree = SDKROOT; };
+		1B6DB9EC123029C100515C07 /* ToggleFlowView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleFlowView.png; sourceTree = "<group>"; };
+		1B6DB9ED123029C100515C07 /* ToggleFlowViewActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleFlowViewActive.png; sourceTree = "<group>"; };
+		1B6DBA75123047B000515C07 /* ToggleFullScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleFullScreen.png; sourceTree = "<group>"; };
+		1B6DBA76123047B000515C07 /* ToggleFullScreenActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleFullScreenActive.png; sourceTree = "<group>"; };
+		1B6DBAF31230544000515C07 /* OEBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEBackgroundView.h; sourceTree = "<group>"; };
+		1B6DBAF41230544000515C07 /* OEBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEBackgroundView.m; sourceTree = "<group>"; };
+		1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
+		1BF9B388122DD0120098D6C2 /* OERomWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OERomWrapper.h; sourceTree = "<group>"; };
+		1BF9B389122DD0120098D6C2 /* OERomWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OERomWrapper.m; sourceTree = "<group>"; };
+		1BF9B46E122DECD70098D6C2 /* OEGameCoreWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEGameCoreWrapper.h; sourceTree = "<group>"; };
+		1BF9B46F122DECD70098D6C2 /* OEGameCoreWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEGameCoreWrapper.m; sourceTree = "<group>"; };
+		1BF9B579122E204A0098D6C2 /* Game Gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game Gear.png"; sourceTree = "<group>"; };
+		1BF9B57A122E204A0098D6C2 /* GameBoy Advance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameBoy Advance.png"; sourceTree = "<group>"; };
+		1BF9B57B122E204A0098D6C2 /* GameBoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameBoy.png; sourceTree = "<group>"; };
+		1BF9B57C122E204A0098D6C2 /* Nintendo (NES).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nintendo (NES).png"; sourceTree = "<group>"; };
+		1BF9B57D122E204A0098D6C2 /* Sega Genesis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega Genesis.png"; sourceTree = "<group>"; };
+		1BF9B57E122E204A0098D6C2 /* Sega Master System.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega Master System.png"; sourceTree = "<group>"; };
+		1BF9B57F122E204A0098D6C2 /* Sega SG-1000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega SG-1000.png"; sourceTree = "<group>"; };
+		1BF9B580122E204A0098D6C2 /* Super Nintendo (SNES).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Nintendo (SNES).png"; sourceTree = "<group>"; };
+		1BF9B5C8122E26C00098D6C2 /* Castlevania.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Castlevania.png; sourceTree = "<group>"; };
+		1BF9B5C9122E26C00098D6C2 /* Contra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Contra.png; sourceTree = "<group>"; };
+		1BF9B5CA122E26C00098D6C2 /* DonkeyKong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DonkeyKong.png; sourceTree = "<group>"; };
+		1BF9B5CB122E26C00098D6C2 /* The Legend of Zelda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Legend of Zelda.png"; sourceTree = "<group>"; };
+		1BF9B5CD122E26C00098D6C2 /* Street Fighter 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Street Fighter 2.png"; sourceTree = "<group>"; };
+		1BF9B5CE122E26C00098D6C2 /* Super Mario Kart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Mario Kart.png"; sourceTree = "<group>"; };
+		1BF9B5EE122E29540098D6C2 /* FileNotFound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FileNotFound.png; sourceTree = "<group>"; };
+		1BF9B5F0122E29540098D6C2 /* Borderline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Borderline.png; sourceTree = "<group>"; };
+		1BF9B7CE122EDDD10098D6C2 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		1BF9B7EF122EE3760098D6C2 /* Contra 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Contra 3.png"; sourceTree = "<group>"; };
+		1BF9B7F0122EE3760098D6C2 /* Super Mario All Stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Mario All Stars.png"; sourceTree = "<group>"; };
+		1BF9B7F1122EE3760098D6C2 /* Starfox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Starfox.png; sourceTree = "<group>"; };
+		1BF9B7FA122EE4710098D6C2 /* Super Metroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Metroid.png"; sourceTree = "<group>"; };
+		1BF9B7FB122EE4710098D6C2 /* Super Mario World.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Mario World.png"; sourceTree = "<group>"; };
+		1BF9B7FC122EE4710098D6C2 /* Yoshis Island.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Yoshis Island.png"; sourceTree = "<group>"; };
+		1BF9B816122EE5B20098D6C2 /* Super Mario Bros 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Mario Bros 3.png"; sourceTree = "<group>"; };
+		1BF9B817122EE5B20098D6C2 /* Mario Bros.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mario Bros.png"; sourceTree = "<group>"; };
+		1BF9B818122EE5B20098D6C2 /* Super Mario Bros 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Mario Bros 2.png"; sourceTree = "<group>"; };
+		1BF9B826122EE8F20098D6C2 /* Metroid 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Metroid 2.png"; sourceTree = "<group>"; };
+		1BF9B827122EE8F20098D6C2 /* Super Mario Land 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Mario Land 2.png"; sourceTree = "<group>"; };
+		1BF9B828122EE8F20098D6C2 /* Super Mario Land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Mario Land.png"; sourceTree = "<group>"; };
+		1BF9B829122EE8F20098D6C2 /* Wario Land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wario Land.png"; sourceTree = "<group>"; };
+		1BF9B849122EF2720098D6C2 /* TestStamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestStamp.png; sourceTree = SOURCE_ROOT; };
+		1BF9B877122EF8360098D6C2 /* Nintendo (NES) Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nintendo (NES) Stamp.png"; sourceTree = "<group>"; };
+		1BF9B878122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Nintendo (SNES) Stamp.png"; sourceTree = "<group>"; };
+		1BF9B882122EF8DD0098D6C2 /* GameBoy Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameBoy Stamp.png"; sourceTree = "<group>"; };
+		1BF9B89D122F0A930098D6C2 /* All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = All.png; sourceTree = "<group>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		256AC3D80F4B6AC300CF3369 /* OpenEmuMockupAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEmuMockupAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* OpenEmuMockupAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenEmuMockupAppDelegate.m; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* OpenEmuMockup_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEmuMockup_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* OpenEmuMockup-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OpenEmuMockup-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* OpenEmuMockup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenEmuMockup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				1BF9B356122DC98A0098D6C2 /* BGHUDAppKit.framework in Frameworks */,
+				1B6DB661122F6C9D00515C07 /* BWToolkitFramework.framework in Frameworks */,
+				1B6DB8341230157300515C07 /* Quartz.framework in Frameworks */,
+				1B6DB94E1230159300515C07 /* ImageKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3D80F4B6AC300CF3369 /* OpenEmuMockupAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* OpenEmuMockupAppDelegate.m */,
+				1BF9B388122DD0120098D6C2 /* OERomWrapper.h */,
+				1BF9B389122DD0120098D6C2 /* OERomWrapper.m */,
+				1BF9B46E122DECD70098D6C2 /* OEGameCoreWrapper.h */,
+				1BF9B46F122DECD70098D6C2 /* OEGameCoreWrapper.m */,
+				1B6DBAF31230544000515C07 /* OEBackgroundView.h */,
+				1B6DBAF41230544000515C07 /* OEBackgroundView.m */,
+				1B6DB8151230152400515C07 /* IKImageFlowView.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */,
+				1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B6DB94D1230159300515C07 /* ImageKit.framework */,
+				1B6DB8331230157300515C07 /* Quartz.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* OpenEmuMockup.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B6DB5DF122F64B200515C07 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1B6DB5E0122F64B200515C07 /* SliderMagnifyHint.png */,
+				1B6DB5E1122F64B200515C07 /* SliderMinifyHint.png */,
+				1B6DB5F7122F66FA00515C07 /* Button States */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		1B6DB5F7122F66FA00515C07 /* Button States */ = {
+			isa = PBXGroup;
+			children = (
+				1B6DBA75123047B000515C07 /* ToggleFullScreen.png */,
+				1B6DBA76123047B000515C07 /* ToggleFullScreenActive.png */,
+				1B6DB9EC123029C100515C07 /* ToggleFlowView.png */,
+				1B6DB9ED123029C100515C07 /* ToggleFlowViewActive.png */,
+				1B6DB5EA122F66EE00515C07 /* ToggleSideBarClose.png */,
+				1B6DB5EB122F66EE00515C07 /* ToggleSideBarCloseInActive.png */,
+				1B6DB5EC122F66EE00515C07 /* ToggleSideBarClosePressed.png */,
+				1B6DB5ED122F66EE00515C07 /* ToggleSideBarOpen.png */,
+				1B6DB5EE122F66EE00515C07 /* ToggleSideBarOpenInActive.png */,
+				1B6DB5EF122F66EE00515C07 /* ToggleSideBarOpenPressed.png */,
+				1B6DB6FD122F80FF00515C07 /* ToggleGridView.png */,
+				1B6DB6FE122F80FF00515C07 /* ToggleGridViewActive.png */,
+				1B6DB6FF122F80FF00515C07 /* ToggleListView.png */,
+				1B6DB700122F80FF00515C07 /* ToggleListViewActive.png */,
+			);
+			name = "Button States";
+			sourceTree = "<group>";
+		};
+		1BF9B38B122DD3C90098D6C2 /* RomImages */ = {
+			isa = PBXGroup;
+			children = (
+				1BF9B849122EF2720098D6C2 /* TestStamp.png */,
+				1BF9B5EE122E29540098D6C2 /* FileNotFound.png */,
+				1BF9B5EF122E29540098D6C2 /* Sega SG-1000 */,
+				1BF9B5C7122E26C00098D6C2 /* NES */,
+				1BF9B5CC122E26C00098D6C2 /* SNES */,
+				1BF9B825122EE8F20098D6C2 /* Gameboy */,
+			);
+			path = RomImages;
+			sourceTree = "<group>";
+		};
+		1BF9B538122E1B6E0098D6C2 /* ConsoleImages */ = {
+			isa = PBXGroup;
+			children = (
+				1BF9B89D122F0A930098D6C2 /* All.png */,
+				1BF9B882122EF8DD0098D6C2 /* GameBoy Stamp.png */,
+				1BF9B877122EF8360098D6C2 /* Nintendo (NES) Stamp.png */,
+				1BF9B878122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png */,
+				1BF9B579122E204A0098D6C2 /* Game Gear.png */,
+				1BF9B57A122E204A0098D6C2 /* GameBoy Advance.png */,
+				1BF9B57B122E204A0098D6C2 /* GameBoy.png */,
+				1BF9B57C122E204A0098D6C2 /* Nintendo (NES).png */,
+				1BF9B57D122E204A0098D6C2 /* Sega Genesis.png */,
+				1BF9B57E122E204A0098D6C2 /* Sega Master System.png */,
+				1BF9B57F122E204A0098D6C2 /* Sega SG-1000.png */,
+				1BF9B580122E204A0098D6C2 /* Super Nintendo (SNES).png */,
+			);
+			path = ConsoleImages;
+			sourceTree = "<group>";
+		};
+		1BF9B5C7122E26C00098D6C2 /* NES */ = {
+			isa = PBXGroup;
+			children = (
+				1BF9B816122EE5B20098D6C2 /* Super Mario Bros 3.png */,
+				1BF9B817122EE5B20098D6C2 /* Mario Bros.png */,
+				1BF9B818122EE5B20098D6C2 /* Super Mario Bros 2.png */,
+				1BF9B5C8122E26C00098D6C2 /* Castlevania.png */,
+				1BF9B5C9122E26C00098D6C2 /* Contra.png */,
+				1BF9B5CA122E26C00098D6C2 /* DonkeyKong.png */,
+				1BF9B5CB122E26C00098D6C2 /* The Legend of Zelda.png */,
+			);
+			path = NES;
+			sourceTree = "<group>";
+		};
+		1BF9B5CC122E26C00098D6C2 /* SNES */ = {
+			isa = PBXGroup;
+			children = (
+				1BF9B7FA122EE4710098D6C2 /* Super Metroid.png */,
+				1BF9B7FB122EE4710098D6C2 /* Super Mario World.png */,
+				1BF9B7FC122EE4710098D6C2 /* Yoshis Island.png */,
+				1BF9B7EF122EE3760098D6C2 /* Contra 3.png */,
+				1BF9B7F0122EE3760098D6C2 /* Super Mario All Stars.png */,
+				1BF9B7F1122EE3760098D6C2 /* Starfox.png */,
+				1BF9B5CD122E26C00098D6C2 /* Street Fighter 2.png */,
+				1BF9B5CE122E26C00098D6C2 /* Super Mario Kart.png */,
+			);
+			path = SNES;
+			sourceTree = "<group>";
+		};
+		1BF9B5EF122E29540098D6C2 /* Sega SG-1000 */ = {
+			isa = PBXGroup;
+			children = (
+				1BF9B5F0122E29540098D6C2 /* Borderline.png */,
+			);
+			path = "Sega SG-1000";
+			sourceTree = "<group>";
+		};
+		1BF9B825122EE8F20098D6C2 /* Gameboy */ = {
+			isa = PBXGroup;
+			children = (
+				1BF9B826122EE8F20098D6C2 /* Metroid 2.png */,
+				1BF9B827122EE8F20098D6C2 /* Super Mario Land 2.png */,
+				1BF9B828122EE8F20098D6C2 /* Super Mario Land.png */,
+				1BF9B829122EE8F20098D6C2 /* Wario Land.png */,
+			);
+			path = Gameboy;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* OpenEmuMockup */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = OpenEmuMockup;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3F00F4B6AF500CF3369 /* OpenEmuMockup_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1B6DB5DF122F64B200515C07 /* Images */,
+				1BF9B7CE122EDDD10098D6C2 /* Icon.icns */,
+				1BF9B538122E1B6E0098D6C2 /* ConsoleImages */,
+				1BF9B38B122DD3C90098D6C2 /* RomImages */,
+				8D1107310486CEB800E47090 /* OpenEmuMockup-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* OpenEmuMockup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "OpenEmuMockup" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				1BF9B30D122DC2B70098D6C2 /* CopyFiles */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenEmuMockup;
+			productInstallPath = "$(HOME)/Applications";
+			productName = OpenEmuMockup;
+			productReference = 8D1107320486CEB800E47090 /* OpenEmuMockup.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "OpenEmuMockup" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* OpenEmuMockup */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* OpenEmuMockup */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				1BF9B581122E204A0098D6C2 /* Game Gear.png in Resources */,
+				1BF9B582122E204A0098D6C2 /* GameBoy Advance.png in Resources */,
+				1BF9B583122E204A0098D6C2 /* GameBoy.png in Resources */,
+				1BF9B584122E204A0098D6C2 /* Nintendo (NES).png in Resources */,
+				1BF9B585122E204A0098D6C2 /* Sega Genesis.png in Resources */,
+				1BF9B586122E204A0098D6C2 /* Sega Master System.png in Resources */,
+				1BF9B587122E204A0098D6C2 /* Sega SG-1000.png in Resources */,
+				1BF9B588122E204A0098D6C2 /* Super Nintendo (SNES).png in Resources */,
+				1BF9B5CF122E26C00098D6C2 /* Castlevania.png in Resources */,
+				1BF9B5D0122E26C00098D6C2 /* Contra.png in Resources */,
+				1BF9B5D1122E26C00098D6C2 /* DonkeyKong.png in Resources */,
+				1BF9B5D2122E26C00098D6C2 /* The Legend of Zelda.png in Resources */,
+				1BF9B5D3122E26C00098D6C2 /* Street Fighter 2.png in Resources */,
+				1BF9B5D4122E26C00098D6C2 /* Super Mario Kart.png in Resources */,
+				1BF9B5F1122E29540098D6C2 /* FileNotFound.png in Resources */,
+				1BF9B5F2122E29540098D6C2 /* Borderline.png in Resources */,
+				1BF9B7CF122EDDD10098D6C2 /* Icon.icns in Resources */,
+				1BF9B7F2122EE3760098D6C2 /* Contra 3.png in Resources */,
+				1BF9B7F3122EE3760098D6C2 /* Super Mario All Stars.png in Resources */,
+				1BF9B7F4122EE3760098D6C2 /* Starfox.png in Resources */,
+				1BF9B7FD122EE4710098D6C2 /* Super Metroid.png in Resources */,
+				1BF9B7FE122EE4710098D6C2 /* Super Mario World.png in Resources */,
+				1BF9B7FF122EE4710098D6C2 /* Yoshis Island.png in Resources */,
+				1BF9B819122EE5B20098D6C2 /* Super Mario Bros 3.png in Resources */,
+				1BF9B81A122EE5B20098D6C2 /* Mario Bros.png in Resources */,
+				1BF9B81B122EE5B20098D6C2 /* Super Mario Bros 2.png in Resources */,
+				1BF9B82A122EE8F20098D6C2 /* Metroid 2.png in Resources */,
+				1BF9B82B122EE8F20098D6C2 /* Super Mario Land 2.png in Resources */,
+				1BF9B82C122EE8F20098D6C2 /* Super Mario Land.png in Resources */,
+				1BF9B82D122EE8F20098D6C2 /* Wario Land.png in Resources */,
+				1BF9B84A122EF2720098D6C2 /* TestStamp.png in Resources */,
+				1BF9B879122EF8360098D6C2 /* Nintendo (NES) Stamp.png in Resources */,
+				1BF9B87A122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png in Resources */,
+				1BF9B883122EF8DD0098D6C2 /* GameBoy Stamp.png in Resources */,
+				1BF9B89E122F0A930098D6C2 /* All.png in Resources */,
+				1B6DB5E2122F64B200515C07 /* SliderMagnifyHint.png in Resources */,
+				1B6DB5E3122F64B200515C07 /* SliderMinifyHint.png in Resources */,
+				1B6DB5F0122F66EE00515C07 /* ToggleSideBarClose.png in Resources */,
+				1B6DB5F1122F66EE00515C07 /* ToggleSideBarCloseInActive.png in Resources */,
+				1B6DB5F2122F66EE00515C07 /* ToggleSideBarClosePressed.png in Resources */,
+				1B6DB5F3122F66EE00515C07 /* ToggleSideBarOpen.png in Resources */,
+				1B6DB5F4122F66EE00515C07 /* ToggleSideBarOpenInActive.png in Resources */,
+				1B6DB5F5122F66EE00515C07 /* ToggleSideBarOpenPressed.png in Resources */,
+				1B6DB701122F80FF00515C07 /* ToggleGridView.png in Resources */,
+				1B6DB702122F80FF00515C07 /* ToggleGridViewActive.png in Resources */,
+				1B6DB703122F80FF00515C07 /* ToggleListView.png in Resources */,
+				1B6DB704122F80FF00515C07 /* ToggleListViewActive.png in Resources */,
+				1B6DB9EE123029C100515C07 /* ToggleFlowView.png in Resources */,
+				1B6DB9EF123029C100515C07 /* ToggleFlowViewActive.png in Resources */,
+				1B6DBA77123047B000515C07 /* ToggleFullScreen.png in Resources */,
+				1B6DBA78123047B000515C07 /* ToggleFullScreenActive.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* OpenEmuMockupAppDelegate.m in Sources */,
+				1BF9B38A122DD0120098D6C2 /* OERomWrapper.m in Sources */,
+				1BF9B470122DECD70098D6C2 /* OEGameCoreWrapper.m in Sources */,
+				1B6DBAF51230544000515C07 /* OEBackgroundView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"/Users/vade/Downloads/bwtoolkit 2/build/Release\"",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/Quartz.framework/Versions/A/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OpenEmuMockup_Prefix.pch;
+				INFOPLIST_FILE = "OpenEmuMockup-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = OpenEmuMockup;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"/Users/vade/Downloads/bwtoolkit 2/build/Release\"",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/Quartz.framework/Versions/A/Frameworks\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OpenEmuMockup_Prefix.pch;
+				INFOPLIST_FILE = "OpenEmuMockup-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = OpenEmuMockup;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "OpenEmuMockup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "OpenEmuMockup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
