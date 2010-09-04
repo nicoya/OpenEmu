@@ -21,6 +21,7 @@ typedef NSUInteger IKImageFlowAnimationsMask;
  */
 @interface IKImageFlowView : NSOpenGLView
 {
+    @private
     id _dataSource;
     id _dragDestinationDelegate;
     id _delegate;

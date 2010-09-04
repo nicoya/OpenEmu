@@ -40,11 +40,11 @@
     NSImageView* consoleStamp;
 
     NSView* romLibrarySuperView;
-    NSScrollView* romcollectionScroller;
-    NSCollectionView* romCollectionView;
+    NSScrollView* romLibraryScrollView;
     NSTableView* romLibraryTableView;
     NSView* romLibraryFlowViewMaster; // contains splitview for detail and flow view of Cover Flow to be in.
     IKImageFlowView* romLibraryFlowView;
+    IKImageBrowserView* romLibraryIconView;
     
     // UI
     NSSlider* scale;
@@ -70,11 +70,11 @@
 // Views
 @property (retain) IBOutlet NSView* mainView;
 @property (retain) IBOutlet NSView* romLibrarySuperView;
-@property (retain) IBOutlet NSScrollView* romcollectionScroller;
-@property (retain) IBOutlet NSCollectionView* romCollectionView;
+@property (retain) IBOutlet NSScrollView* romLibraryScrollView;
 @property (retain) IBOutlet NSTableView* romLibraryTableView;
 @property (retain) IBOutlet NSView* romLibraryFlowViewMaster;
 @property (retain) IBOutlet IKImageFlowView* romLibraryFlowView;
+@property (retain) IBOutlet IKImageBrowserView* romLibraryIconView;
 
 @property (retain) IBOutlet NSTableView* consoleTableView;
 @property (retain) IBOutlet NSImageView* consoleStamp;
@@ -96,6 +96,7 @@
 - (IBAction) toggleFullscreen:(id)sender;
 
 - (void) filter;
+- (void) reloadData;
 - (void) setupNSThemeFrameMethodRedirect;
 - (NSImage*) treatRomTitleImage:(NSImage*)inputImage;
 

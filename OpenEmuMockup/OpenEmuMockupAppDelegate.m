@@ -7,18 +7,8 @@
 //
 
 #import "OpenEmuMockupAppDelegate.h"
-
+#import <stdlib.h>
 #import <objc/runtime.h>
-
-// Our Data sources...
-#define OEConsoleNames [NSArray arrayWithObjects:@"Nintendo (NES)", @"Super Nintendo (SNES)", @"GameBoy", @"GameBoy Advance", @"Game Gear", @"Sega Genesis", @"Sega Master System", @"Sega SG-1000", nil]
-#define OERomNESLibraryImages [NSArray arrayWithObjects:@"Castlevania", @"Contra", @"DonkeyKong", @"The Legend of Zelda", @"Super Mario Bros 2", @"Mario Bros", @"Super Mario Bros 3", nil]
-#define OERomSNESLibraryImages [NSArray arrayWithObjects:@"Street Fighter 2", @"Super Mario Kart", @"Contra 3", @"Starfox", @"Super Mario All Stars", @"Super Mario World", @"Super Metroid", @"Yoshis Island", nil]
-#define OERomGameBoyLibraryImages [NSArray arrayWithObjects:@"Metroid 2", @"Super Mario Land", @"Super Mario Land 2", @"Wario Land", nil]
-
-#define OERomSegaSG1000LibraryImages [NSArray arrayWithObjects:@"Borderline", nil]
-
-#define OERomDictionary [NSDictionary dictionaryWithObjects:
 
 // See Overriding NSThemeFrame
 @interface OpenEmuMockupAppDelegate (Shh)
@@ -34,13 +24,13 @@
 
 @synthesize romLibraryRoms;
 @synthesize romLibraryArrayController;
-@synthesize romcollectionScroller;
-@synthesize romCollectionView;
+@synthesize romLibraryScrollView;
 @synthesize romLibraryTableView;
 @synthesize romLibraryViewController;
 @synthesize romLibraryFlowView;
 @synthesize romLibrarySuperView;
 @synthesize romLibraryFlowViewMaster;
+@synthesize romLibraryIconView;
 
 @synthesize consoles;
 @synthesize consoleArrayController;
@@ -69,114 +59,72 @@
     [romLibraryFlowView setDataSource:self];
     
     [self adjustRomLibrarySize:scale];
-    [romcollectionScroller setDocumentView:romCollectionView];
+    [romLibraryScrollView setDocumentView:romLibraryIconView];
     [iconViewButton setState:NSOnState];   
+    [romLibraryIconView setIntercellSpacing:NSMakeSize(5.0, 5.0)];
     
     // set up our arrays
-    self.consoles = [NSMutableArray arrayWithCapacity:[OEConsoleNames count]];
-    self.romLibraryRoms = [NSMutableArray arrayWithCapacity:[OERomNESLibraryImages count]]; 
+    self.consoles = [NSMutableArray arrayWithCapacity:10];
+    self.romLibraryRoms = [NSMutableArray arrayWithCapacity:10]; 
     
     [romLibraryArrayController setContent:romLibraryRoms];
     [consoleArrayController setContent:consoles];
+    
+    // set up Icon View theme
+    
+    NSFont* font = [NSFont systemFontOfSize:11];
+    NSColor* textColor = [NSColor colorWithCalibratedWhite:0.8 alpha:1.0];
+    NSColor* textColorBG = [NSColor clearColor];
+    
+    NSMutableDictionary* attr = [NSMutableDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, textColor, NSForegroundColorAttributeName, textColorBG, NSBackgroundColorAttributeName, nil];
+    [romLibraryIconView setValue:attr forKey:IKImageBrowserCellsTitleAttributesKey];
+    [romLibraryIconView setValue:attr forKey:IKImageBrowserCellsHighlightedTitleAttributesKey];
+    [romLibraryIconView setValue:[NSColor clearColor] forKey:IKImageBrowserSelectionColorKey];
+    [romLibraryIconView setValue:[NSColor clearColor] forKey:IKImageBrowserBackgroundColorKey];
+
+}
+
+- (OERomWrapper*) romWrapperWithName:(NSString*)name console:(NSString*)consoleName;
+{
+    OERomWrapper* rom = [[OERomWrapper alloc] init];
+    rom.romImagePath = [[NSBundle mainBundle] pathForResource:name ofType:@"png" inDirectory:[@"ROMS" stringByAppendingPathComponent:consoleName]];
+    rom.romImage = [self treatRomTitleImage:[[[NSImage alloc] initWithContentsOfFile:rom.romImagePath] autorelease]];
+    rom.romImage = (rom.romImage) ? rom.romImage : [NSImage imageNamed:@"FileNotFound"];
+    rom.romName = name;
+    rom.romRating = random() % 5 + 1;
+    rom.consoleName = consoleName;
+    
+    return [rom autorelease];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // yes this is horrible, we will use Core Data later, I mean really I dont have a backing store...
     
-    // Add dummy consoles/cores
-    for(NSString* consoleName in OEConsoleNames)
+    // yes this is horrible, we will use Core Data later, I mean really I dont have a backing store...
+    NSString* romPath = [[NSBundle mainBundle] pathForResource:@"ROMS" ofType:@""];
+    NSArray* consoleArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:romPath error:nil];
+    
+    for(NSString* consoleName in consoleArray)
     {
         OEGameCoreWrapper* core = [[OEGameCoreWrapper alloc] init];
         core.consoleName = consoleName;
         core.consoleIcon = [NSImage imageNamed:consoleName];
         core.consoleStamp = [NSImage imageNamed:[consoleName stringByAppendingString:@" Stamp"]];
-
+        
         // add to library
         [consoleArrayController addObject:core];
         
-        // retained by library
-        [core release];
-    }
-        
-    // Add some dummy roms into our libary.
-    for(NSString* romImageName in OERomNESLibraryImages)
-    {
-        OERomWrapper* rom = [[OERomWrapper alloc] init];
-        
-        rom.romImagePath = [[NSBundle mainBundle] pathForResource:romImageName ofType:@"png"];
-        rom.romImage = [self treatRomTitleImage:[NSImage imageNamed:romImageName]];
-        rom.romImage = (rom.romImage) ? rom.romImage : [NSImage imageNamed:@"FileNotFound"];
-        rom.romName = romImageName;
-        rom.romRating = 3;
-        rom.consoleName = @"Nintendo (NES)";
-        
-        // "add to library"
-        [romLibraryArrayController addObject:rom];
-        
-        // retained by library
-        [rom release];
+        // add roms for that core
+        NSArray* romArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[romPath stringByAppendingPathComponent:consoleName] error:nil];
+        for(NSString* romName in romArray)
+        {
+            OERomWrapper* rom = [self romWrapperWithName:[romName stringByDeletingPathExtension] console:consoleName];
+            [romLibraryArrayController addObject:rom];   
+        }
     }
     
-    // Add some dummy roms into our libary.
-    for(NSString* romImageName in OERomSNESLibraryImages)
-    {
-        OERomWrapper* rom = [[OERomWrapper alloc] init];
-        rom.romImagePath = [[NSBundle mainBundle] pathForResource:romImageName ofType:@"png"];
-        rom.romImage = [self treatRomTitleImage:[NSImage imageNamed:romImageName]];
-        rom.romImage = (rom.romImage) ? rom.romImage : [NSImage imageNamed:@"FileNotFound"];
-        rom.romName = romImageName;
-        rom.romRating = 3;
-        rom.consoleName = @"Super Nintendo (SNES)";
-        
-        // "add to library"
-        [romLibraryArrayController addObject:rom];
-        
-        // retained by library
-        [rom release];
-    }
-    
-    // Add some dummy roms into our libary.
-    for(NSString* romImageName in OERomGameBoyLibraryImages)
-    {
-        OERomWrapper* rom = [[OERomWrapper alloc] init];
-        
-        rom.romImagePath = [[NSBundle mainBundle] pathForResource:romImageName ofType:@"png"];
-        rom.romImage = [self treatRomTitleImage:[NSImage imageNamed:romImageName]];
-        rom.romImage = (rom.romImage) ? rom.romImage : [NSImage imageNamed:@"FileNotFound"];
-        rom.romName = romImageName;
-        rom.romRating = 3;
-        rom.consoleName = @"GameBoy";
-        
-        // "add to library"
-        [romLibraryArrayController addObject:rom];
-        
-        // retained by library
-        [rom release];
-    }
-    
-    
-    // Add some dummy roms into our libary.
-    for(NSString* romImageName in OERomSegaSG1000LibraryImages)
-    {
-        OERomWrapper* rom = [[OERomWrapper alloc] init];
-        
-        rom.romImagePath = [[NSBundle mainBundle] pathForResource:romImageName ofType:@"png"];
-        rom.romImage = [self treatRomTitleImage:[NSImage imageNamed:romImageName]];
-        rom.romImage = (rom.romImage) ? rom.romImage : [NSImage imageNamed:@"FileNotFound"];
-        rom.romName = romImageName;
-        rom.romRating = 3;
-        rom.consoleName = @"Sega SG-1000";
-        
-        // "add to library"
-        [romLibraryArrayController addObject:rom];
-        
-        // retained by library
-        [rom release];
-    }
-    
-    // ping Converflow
-    [romLibraryFlowView reloadData];
+    // ping data handlers
+    [self reloadData];
 }
 
 #pragma mark -
@@ -184,19 +132,52 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {    
-    return [[consoleArrayController arrangedObjects]count];
+    if(aTableView == consoleTableView)
+        return [[consoleArrayController arrangedObjects]count];
+    else if(aTableView == romLibraryTableView)
+        return [[romLibraryArrayController arrangedObjects] count];
+   
+    return 0;
 }
 
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
-    OEGameCoreWrapper* wrapper = (OEGameCoreWrapper*)[[consoleArrayController arrangedObjects] objectAtIndex:rowIndex];
-    if([[aTableColumn identifier] isEqualToString:@"icon"])
-        return [wrapper consoleIconName];
-    
-    if([[aTableColumn identifier] isEqualToString:@"name"])
-        return [wrapper consoleName];
+    if(aTableView == consoleTableView)
+    {
+        OEGameCoreWrapper* wrapper = (OEGameCoreWrapper*)[[consoleArrayController arrangedObjects] objectAtIndex:rowIndex];
         
+        if([[aTableColumn identifier] isEqualToString:@"icon"])
+            return [wrapper consoleIconName];
+        
+        if([[aTableColumn identifier] isEqualToString:@"name"])
+            return [wrapper consoleName];
+    }
+    
+    else if(aTableView == romLibraryTableView)
+    {
+        OERomWrapper* wrapper = (OERomWrapper*)[[romLibraryArrayController arrangedObjects] objectAtIndex:rowIndex];
+        
+        if([[aTableColumn identifier] isEqualToString:@"romName"])
+            return [wrapper romName];
+        
+        if([[aTableColumn identifier] isEqualToString:@"romRating"])
+            return [wrapper imageSubtitle];
+        
+        if([[aTableColumn identifier] isEqualToString:@"romConsole"])
+            return [wrapper consoleName];
+
+        if([[aTableColumn identifier] isEqualToString:@"romLastPlayed"])
+        {
+            NSDateFormatter* form = [[[NSDateFormatter alloc] init] autorelease];
+            [form setDateStyle:NSDateFormatterMediumStyle];
+            [form setTimeStyle:NSDateFormatterNoStyle];
+            [form setDoesRelativeDateFormatting:YES];
+
+            NSString* dateString = [form stringFromDate:[wrapper romLastPlayed]];
+            return dateString;
+        }
+    }
     return nil;
 }
 
@@ -210,11 +191,30 @@
 
 
 #pragma mark -
-#pragma mark IKImageFlowView Datasource & Delegate Methods
+#pragma mark IKImageFlowView/Browser Datasource & Delegate Methods
+
+- (void) reloadData
+{
+    [romLibraryTableView reloadData];
+    [romLibraryFlowView reloadData];
+    [romLibraryIconView reloadData];
+}
 
 - (NSUInteger)numberOfItemsInImageFlow:(id)aFlowLayer
 {
     return [[romLibraryArrayController arrangedObjects] count];
+}
+
+- (NSUInteger) numberOfItemsInImageBrowser:(IKImageBrowserView *) aBrowser
+{
+    return [[romLibraryArrayController arrangedObjects] count];
+}
+
+- (id) imageBrowser:(IKImageBrowserView *) aBrowser itemAtIndex:(NSUInteger)index
+{
+    OERomWrapper* wrapper = [[romLibraryArrayController arrangedObjects] objectAtIndex:index];
+    
+    return wrapper;    
 }
 
 - (id)imageFlow:(id)aFlowLayer itemAtIndex:(int)index
@@ -229,14 +229,13 @@
 
 - (IBAction) adjustRomLibrarySize:(id)sender
 {
-    NSSize normalSize = NSMakeSize(182, 222);
+    NSSize normalSize = NSMakeSize(230, 290);
     
     float scaleValue = [sender floatValue];
     
     NSSize newSize = NSMakeSize(scaleValue * normalSize.width, scaleValue * normalSize.height);
     
-    [romCollectionView setMaxItemSize:newSize];
-    [romCollectionView setMinItemSize:newSize];
+    [romLibraryIconView setCellSize:newSize];
 }
 
 - (IBAction) fireSearch:(id)sender
@@ -252,18 +251,19 @@
     
     //[self animateRemoveSubviews];
     
-    [romcollectionScroller setDocumentView:romCollectionView];
-    [romCollectionView setFrame:[romcollectionScroller frame]];
+    [romLibraryScrollView setDocumentView:romLibraryIconView];
+    [romLibraryIconView setFrame:[romLibraryScrollView frame]];
 }
 
 - (IBAction) switchRomLibraryToListMode:(id)sender
 {
     [iconViewButton setState:0];
     [flowViewButton setState:0];
-    [scale setEnabled:NO];
+    [scale setEnabled:YES];
 
     //[self animateRemoveSubviews];
-    //[romcollectionScroller setDocumentView:];
+    [romLibraryScrollView setDocumentView:romLibraryTableView];
+    [romLibraryTableView setFrame:[romLibraryScrollView frame]];
 }
 
 - (IBAction) switchRomLibraryToFlowMode:(id)sender
@@ -273,8 +273,11 @@
     [scale setEnabled:NO];
     
     //[self animateRemoveSubviews];
-    [romcollectionScroller setDocumentView:romLibraryFlowViewMaster];
-    [romLibraryFlowViewMaster setFrame:[romcollectionScroller frame]];
+    [romLibraryScrollView setDocumentView:romLibraryFlowViewMaster];
+    [romLibraryFlowViewMaster setFrame:[romLibraryScrollView frame]];
+    
+    // TODO:
+    // add tableView as well to the second NSSlider view.
 }
 
 - (IBAction) toggleFullscreen:(id)sender
@@ -298,7 +301,6 @@
     }
 
 }
-
 
 #pragma mark -
 #pragma mark Filtering
@@ -334,8 +336,8 @@
     else
         [[consoleStamp animator] setImage:[NSImage imageNamed:@"All"]];
     
-    // force the coverflow view to update
-    [romLibraryFlowView reloadData];
+    // force IK views to update
+    [self reloadData];
 }   
 
 #pragma mark -
@@ -391,8 +393,6 @@
 	Method m2 = class_getInstanceMethod(class, @selector(drawRectOriginal:));
 	
 	method_exchangeImplementations(m1, m2);
-    
-    //[window setContentBorderThickness:145.0 forEdge:NSMinYEdge];
 }
 
 // See above for why.
@@ -401,9 +401,7 @@
 	// Call original drawing method
 	[self drawRectOriginal:rect];
         
-	//
 	// Build clipping path : intersection of frame clip (bezier path with rounded corners) and rect argument
-	//
 	NSRect windowRect = [[self window] frame];
 	windowRect.origin = NSMakePoint(0, 0);
     
@@ -427,6 +425,7 @@
     
     [[NSGraphicsContext currentContext] setShouldAntialias:NO];
     
+    // draw nice highlight lines
     NSColor* topLineColor = [NSColor colorWithCalibratedRed:0.21 green:0.2 blue:0.21 alpha:1.0];
 
     NSBezierPath* darkLinePath = [NSBezierPath bezierPath];

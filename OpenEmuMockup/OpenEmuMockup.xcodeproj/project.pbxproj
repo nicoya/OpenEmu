@@ -7,66 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B6DB5E2122F64B200515C07 /* SliderMagnifyHint.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5E0122F64B200515C07 /* SliderMagnifyHint.png */; };
-		1B6DB5E3122F64B200515C07 /* SliderMinifyHint.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5E1122F64B200515C07 /* SliderMinifyHint.png */; };
-		1B6DB5F0122F66EE00515C07 /* ToggleSideBarClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EA122F66EE00515C07 /* ToggleSideBarClose.png */; };
-		1B6DB5F1122F66EE00515C07 /* ToggleSideBarCloseInActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EB122F66EE00515C07 /* ToggleSideBarCloseInActive.png */; };
-		1B6DB5F2122F66EE00515C07 /* ToggleSideBarClosePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EC122F66EE00515C07 /* ToggleSideBarClosePressed.png */; };
-		1B6DB5F3122F66EE00515C07 /* ToggleSideBarOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5ED122F66EE00515C07 /* ToggleSideBarOpen.png */; };
-		1B6DB5F4122F66EE00515C07 /* ToggleSideBarOpenInActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EE122F66EE00515C07 /* ToggleSideBarOpenInActive.png */; };
-		1B6DB5F5122F66EE00515C07 /* ToggleSideBarOpenPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EF122F66EE00515C07 /* ToggleSideBarOpenPressed.png */; };
 		1B6DB661122F6C9D00515C07 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */; };
 		1B6DB692122F6CAA00515C07 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */; };
-		1B6DB701122F80FF00515C07 /* ToggleGridView.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB6FD122F80FF00515C07 /* ToggleGridView.png */; };
-		1B6DB702122F80FF00515C07 /* ToggleGridViewActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB6FE122F80FF00515C07 /* ToggleGridViewActive.png */; };
-		1B6DB703122F80FF00515C07 /* ToggleListView.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB6FF122F80FF00515C07 /* ToggleListView.png */; };
-		1B6DB704122F80FF00515C07 /* ToggleListViewActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB700122F80FF00515C07 /* ToggleListViewActive.png */; };
 		1B6DB8341230157300515C07 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6DB8331230157300515C07 /* Quartz.framework */; };
 		1B6DB94E1230159300515C07 /* ImageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6DB94D1230159300515C07 /* ImageKit.framework */; };
-		1B6DB9EE123029C100515C07 /* ToggleFlowView.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB9EC123029C100515C07 /* ToggleFlowView.png */; };
-		1B6DB9EF123029C100515C07 /* ToggleFlowViewActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB9ED123029C100515C07 /* ToggleFlowViewActive.png */; };
-		1B6DBA77123047B000515C07 /* ToggleFullScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DBA75123047B000515C07 /* ToggleFullScreen.png */; };
-		1B6DBA78123047B000515C07 /* ToggleFullScreenActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DBA76123047B000515C07 /* ToggleFullScreenActive.png */; };
 		1B6DBAF51230544000515C07 /* OEBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBAF41230544000515C07 /* OEBackgroundView.m */; };
+		1B974E881232E79C00070850 /* All.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B89D122F0A930098D6C2 /* All.png */; };
+		1B974E891232E79C00070850 /* GameBoy Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B882122EF8DD0098D6C2 /* GameBoy Stamp.png */; };
+		1B974E8A1232E79C00070850 /* Nintendo (NES) Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B877122EF8360098D6C2 /* Nintendo (NES) Stamp.png */; };
+		1B974E8B1232E79C00070850 /* Super Nintendo (SNES) Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B878122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png */; };
+		1B974E8C1232E79C00070850 /* Game Gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B579122E204A0098D6C2 /* Game Gear.png */; };
+		1B974E8D1232E79C00070850 /* GameBoy Advance.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57A122E204A0098D6C2 /* GameBoy Advance.png */; };
+		1B974E8E1232E79C00070850 /* GameBoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57B122E204A0098D6C2 /* GameBoy.png */; };
+		1B974E8F1232E79C00070850 /* Nintendo (NES).png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57C122E204A0098D6C2 /* Nintendo (NES).png */; };
+		1B974E901232E79C00070850 /* Sega Genesis.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57D122E204A0098D6C2 /* Sega Genesis.png */; };
+		1B974E911232E79C00070850 /* Sega Master System.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57E122E204A0098D6C2 /* Sega Master System.png */; };
+		1B974E921232E79C00070850 /* Sega SG-1000.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57F122E204A0098D6C2 /* Sega SG-1000.png */; };
+		1B974E931232E79C00070850 /* Super Nintendo (SNES).png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B580122E204A0098D6C2 /* Super Nintendo (SNES).png */; };
+		1B974EA81232E7DB00070850 /* Super Metroid.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B7FA122EE4710098D6C2 /* Super Metroid.png */; };
+		1B974EA91232E7DB00070850 /* Super Mario World.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B7FB122EE4710098D6C2 /* Super Mario World.png */; };
+		1B974EAA1232E7DB00070850 /* Yoshis Island.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B7FC122EE4710098D6C2 /* Yoshis Island.png */; };
+		1B974EAB1232E7DB00070850 /* Contra 3.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B7EF122EE3760098D6C2 /* Contra 3.png */; };
+		1B974EAC1232E7DB00070850 /* Super Mario All Stars.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B7F0122EE3760098D6C2 /* Super Mario All Stars.png */; };
+		1B974EAD1232E7DB00070850 /* Starfox.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B7F1122EE3760098D6C2 /* Starfox.png */; };
+		1B974EAE1232E7DB00070850 /* Street Fighter 2.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B5CD122E26C00098D6C2 /* Street Fighter 2.png */; };
+		1B974EAF1232E7DB00070850 /* Super Mario Kart.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B5CE122E26C00098D6C2 /* Super Mario Kart.png */; };
+		1B974EB41232E84600070850 /* Super Mario Bros 3.png in Copy NES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B816122EE5B20098D6C2 /* Super Mario Bros 3.png */; };
+		1B974EB51232E84600070850 /* Mario Bros.png in Copy NES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B817122EE5B20098D6C2 /* Mario Bros.png */; };
+		1B974EB61232E84600070850 /* Super Mario Bros 2.png in Copy NES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B818122EE5B20098D6C2 /* Super Mario Bros 2.png */; };
+		1B974EB71232E84600070850 /* Castlevania.png in Copy NES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B5C8122E26C00098D6C2 /* Castlevania.png */; };
+		1B974EB81232E84600070850 /* Contra.png in Copy NES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B5C9122E26C00098D6C2 /* Contra.png */; };
+		1B974EB91232E84600070850 /* DonkeyKong.png in Copy NES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B5CA122E26C00098D6C2 /* DonkeyKong.png */; };
+		1B974EBA1232E84600070850 /* The Legend of Zelda.png in Copy NES Roms Images */ = {isa = PBXBuildFile; fileRef = 1BF9B5CB122E26C00098D6C2 /* The Legend of Zelda.png */; };
+		1B974EC31232E84E00070850 /* Metroid 2.png in Copy GameBoy Rom Images */ = {isa = PBXBuildFile; fileRef = 1BF9B826122EE8F20098D6C2 /* Metroid 2.png */; };
+		1B974EC41232E84E00070850 /* Super Mario Land 2.png in Copy GameBoy Rom Images */ = {isa = PBXBuildFile; fileRef = 1BF9B827122EE8F20098D6C2 /* Super Mario Land 2.png */; };
+		1B974EC51232E84E00070850 /* Super Mario Land.png in Copy GameBoy Rom Images */ = {isa = PBXBuildFile; fileRef = 1BF9B828122EE8F20098D6C2 /* Super Mario Land.png */; };
+		1B974EC61232E84E00070850 /* Wario Land.png in Copy GameBoy Rom Images */ = {isa = PBXBuildFile; fileRef = 1BF9B829122EE8F20098D6C2 /* Wario Land.png */; };
+		1B974EDB1232E93400070850 /* ToggleFullScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DBA75123047B000515C07 /* ToggleFullScreen.png */; };
+		1B974EDC1232E93400070850 /* ToggleFullScreenActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DBA76123047B000515C07 /* ToggleFullScreenActive.png */; };
+		1B974EDD1232E93400070850 /* ToggleFlowView.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB9EC123029C100515C07 /* ToggleFlowView.png */; };
+		1B974EDE1232E93400070850 /* ToggleFlowViewActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB9ED123029C100515C07 /* ToggleFlowViewActive.png */; };
+		1B974EDF1232E93400070850 /* ToggleSideBarClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EA122F66EE00515C07 /* ToggleSideBarClose.png */; };
+		1B974EE01232E93400070850 /* ToggleSideBarCloseInActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EB122F66EE00515C07 /* ToggleSideBarCloseInActive.png */; };
+		1B974EE11232E93400070850 /* ToggleSideBarClosePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EC122F66EE00515C07 /* ToggleSideBarClosePressed.png */; };
+		1B974EE21232E93400070850 /* ToggleSideBarOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5ED122F66EE00515C07 /* ToggleSideBarOpen.png */; };
+		1B974EE31232E93400070850 /* ToggleSideBarOpenInActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EE122F66EE00515C07 /* ToggleSideBarOpenInActive.png */; };
+		1B974EE41232E93400070850 /* ToggleSideBarOpenPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5EF122F66EE00515C07 /* ToggleSideBarOpenPressed.png */; };
+		1B974EE51232E93400070850 /* ToggleGridView.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB6FD122F80FF00515C07 /* ToggleGridView.png */; };
+		1B974EE61232E93400070850 /* ToggleGridViewActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB6FE122F80FF00515C07 /* ToggleGridViewActive.png */; };
+		1B974EE71232E93400070850 /* ToggleListView.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB6FF122F80FF00515C07 /* ToggleListView.png */; };
+		1B974EE81232E93400070850 /* ToggleListViewActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB700122F80FF00515C07 /* ToggleListViewActive.png */; };
+		1B974EF01232E94A00070850 /* SliderMagnifyHint.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5E0122F64B200515C07 /* SliderMagnifyHint.png */; };
+		1B974EF11232E94A00070850 /* SliderMinifyHint.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6DB5E1122F64B200515C07 /* SliderMinifyHint.png */; };
+		1B974F581232F0D400070850 /* Advance Wars.png in Copy GameBoy Advance Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F511232F0AA00070850 /* Advance Wars.png */; };
+		1B974F591232F0D400070850 /* Castlevania 2.png in Copy GameBoy Advance Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F521232F0AA00070850 /* Castlevania 2.png */; };
+		1B974F5A1232F0D400070850 /* Mario Kart - Super Circuit.png in Copy GameBoy Advance Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F531232F0AA00070850 /* Mario Kart - Super Circuit.png */; };
+		1B974F5B1232F0D400070850 /* Metroid - Zero Mission.png in Copy GameBoy Advance Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F541232F0AA00070850 /* Metroid - Zero Mission.png */; };
+		1B974F5C1232F0D400070850 /* Teenage Mutant Ninja Turtles.png in Copy GameBoy Advance Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F551232F0AA00070850 /* Teenage Mutant Ninja Turtles.png */; };
+		1B974F5D1232F0D400070850 /* The Legend of Zelda - The Minish Cap.png in Copy GameBoy Advance Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F561232F0AA00070850 /* The Legend of Zelda - The Minish Cap.png */; };
+		1B974F6C1232F22600070850 /* Altered Beast.png in Copy Sega Master System Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F661232F20100070850 /* Altered Beast.png */; };
+		1B974F6D1232F22600070850 /* California Games 2.png in Copy Sega Master System Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F671232F20100070850 /* California Games 2.png */; };
+		1B974F6E1232F22600070850 /* Ghoul's N Ghosts.png in Copy Sega Master System Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F681232F20100070850 /* Ghoul's N Ghosts.png */; };
+		1B974F6F1232F22600070850 /* Sonic The Hedgehog 2.png in Copy Sega Master System Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F691232F20100070850 /* Sonic The Hedgehog 2.png */; };
+		1B974F701232F22600070850 /* Sonic The Hedgehog.png in Copy Sega Master System Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F6A1232F20100070850 /* Sonic The Hedgehog.png */; };
+		1B974F791232F26400070850 /* Borderline.png in Copy Sega SG-1000 Rom Images */ = {isa = PBXBuildFile; fileRef = 1BF9B5F0122E29540098D6C2 /* Borderline.png */; };
+		1B974F871232F35C00070850 /* Golden Axe.png in Copy Sega Genesis Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F801232F33E00070850 /* Golden Axe.png */; };
+		1B974F881232F35C00070850 /* Shining Force.png in Copy Sega Genesis Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F811232F33E00070850 /* Shining Force.png */; };
+		1B974F891232F35C00070850 /* Shinobi 3.png in Copy Sega Genesis Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F821232F33E00070850 /* Shinobi 3.png */; };
+		1B974F8A1232F35C00070850 /* Sonic The Hedgehog.png in Copy Sega Genesis Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F831232F33E00070850 /* Sonic The Hedgehog.png */; };
+		1B974F8B1232F35C00070850 /* Streets of Rage 2.png in Copy Sega Genesis Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F841232F33E00070850 /* Streets of Rage 2.png */; };
+		1B974F8C1232F35C00070850 /* Streets of Rage.png in Copy Sega Genesis Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974F851232F33E00070850 /* Streets of Rage.png */; };
+		1B974FC31232FC7D00070850 /* Sonic The Hedgehog 2.png in Copy Sega Genesis Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974FC11232FC5700070850 /* Sonic The Hedgehog 2.png */; };
+		1B974FCA1232FCA100070850 /* Stunt Race.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1B974FC71232FC9100070850 /* Stunt Race.png */; };
+		1B974FCB1232FCA100070850 /* Donkey Kong Country.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1B974FC81232FC9100070850 /* Donkey Kong Country.png */; };
+		1B974FCC1232FCA100070850 /* F-Zero.png in Copy SNES Roms Images */ = {isa = PBXBuildFile; fileRef = 1B974FC91232FC9100070850 /* F-Zero.png */; };
+		1B974FDD1232FE4300070850 /* Congo Bongo.png in Copy Sega SG-1000 Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974FD91232FDE000070850 /* Congo Bongo.png */; };
+		1B974FDE1232FE4300070850 /* N-Sub.png in Copy Sega SG-1000 Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974FDA1232FDE000070850 /* N-Sub.png */; };
+		1B974FDF1232FE4300070850 /* Pacar.png in Copy Sega SG-1000 Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974FDB1232FDE000070850 /* Pacar.png */; };
+		1B974FE01232FE4300070850 /* Pop Flamer.png in Copy Sega SG-1000 Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974FDC1232FDE000070850 /* Pop Flamer.png */; };
+		1B974FEC1232FF8D00070850 /* Mega Man 5.png in Copy GameBoy Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974FEA1232FF8300070850 /* Mega Man 5.png */; };
+		1B974FED1232FF8D00070850 /* Tetris.png in Copy GameBoy Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974FEB1232FF8300070850 /* Tetris.png */; };
+		1B974FF31232FFC600070850 /* The Legend of Zelda - Links Awakening.png in Copy GameBoy Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974FF21232FFC300070850 /* The Legend of Zelda - Links Awakening.png */; };
+		1B9750081233042A00070850 /* GameBoy Advance Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B9750061233042A00070850 /* GameBoy Advance Stamp.png */; };
+		1B9750091233042A00070850 /* Sega Genesis Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B9750071233042A00070850 /* Sega Genesis Stamp.png */; };
+		1B97500E123305B500070850 /* Sega Genesis Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B97500C123305B500070850 /* Sega Genesis Stamp.png */; };
+		1B97500F123305B500070850 /* Sega Master System Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B97500D123305B500070850 /* Sega Master System Stamp.png */; };
+		1B9750131233065500070850 /* Sega SG-1000 Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B9750121233065500070850 /* Sega SG-1000 Stamp.png */; };
 		1BF9B356122DC98A0098D6C2 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */; };
 		1BF9B379122DC98F0098D6C2 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */; };
 		1BF9B38A122DD0120098D6C2 /* OERomWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9B389122DD0120098D6C2 /* OERomWrapper.m */; };
 		1BF9B470122DECD70098D6C2 /* OEGameCoreWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9B46F122DECD70098D6C2 /* OEGameCoreWrapper.m */; };
-		1BF9B581122E204A0098D6C2 /* Game Gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B579122E204A0098D6C2 /* Game Gear.png */; };
-		1BF9B582122E204A0098D6C2 /* GameBoy Advance.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57A122E204A0098D6C2 /* GameBoy Advance.png */; };
-		1BF9B583122E204A0098D6C2 /* GameBoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57B122E204A0098D6C2 /* GameBoy.png */; };
-		1BF9B584122E204A0098D6C2 /* Nintendo (NES).png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57C122E204A0098D6C2 /* Nintendo (NES).png */; };
-		1BF9B585122E204A0098D6C2 /* Sega Genesis.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57D122E204A0098D6C2 /* Sega Genesis.png */; };
-		1BF9B586122E204A0098D6C2 /* Sega Master System.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57E122E204A0098D6C2 /* Sega Master System.png */; };
-		1BF9B587122E204A0098D6C2 /* Sega SG-1000.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B57F122E204A0098D6C2 /* Sega SG-1000.png */; };
-		1BF9B588122E204A0098D6C2 /* Super Nintendo (SNES).png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B580122E204A0098D6C2 /* Super Nintendo (SNES).png */; };
-		1BF9B5CF122E26C00098D6C2 /* Castlevania.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5C8122E26C00098D6C2 /* Castlevania.png */; };
-		1BF9B5D0122E26C00098D6C2 /* Contra.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5C9122E26C00098D6C2 /* Contra.png */; };
-		1BF9B5D1122E26C00098D6C2 /* DonkeyKong.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5CA122E26C00098D6C2 /* DonkeyKong.png */; };
-		1BF9B5D2122E26C00098D6C2 /* The Legend of Zelda.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5CB122E26C00098D6C2 /* The Legend of Zelda.png */; };
-		1BF9B5D3122E26C00098D6C2 /* Street Fighter 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5CD122E26C00098D6C2 /* Street Fighter 2.png */; };
-		1BF9B5D4122E26C00098D6C2 /* Super Mario Kart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5CE122E26C00098D6C2 /* Super Mario Kart.png */; };
 		1BF9B5F1122E29540098D6C2 /* FileNotFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5EE122E29540098D6C2 /* FileNotFound.png */; };
-		1BF9B5F2122E29540098D6C2 /* Borderline.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5F0122E29540098D6C2 /* Borderline.png */; };
 		1BF9B7CF122EDDD10098D6C2 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7CE122EDDD10098D6C2 /* Icon.icns */; };
-		1BF9B7F2122EE3760098D6C2 /* Contra 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7EF122EE3760098D6C2 /* Contra 3.png */; };
-		1BF9B7F3122EE3760098D6C2 /* Super Mario All Stars.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7F0122EE3760098D6C2 /* Super Mario All Stars.png */; };
-		1BF9B7F4122EE3760098D6C2 /* Starfox.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7F1122EE3760098D6C2 /* Starfox.png */; };
-		1BF9B7FD122EE4710098D6C2 /* Super Metroid.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7FA122EE4710098D6C2 /* Super Metroid.png */; };
-		1BF9B7FE122EE4710098D6C2 /* Super Mario World.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7FB122EE4710098D6C2 /* Super Mario World.png */; };
-		1BF9B7FF122EE4710098D6C2 /* Yoshis Island.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B7FC122EE4710098D6C2 /* Yoshis Island.png */; };
-		1BF9B819122EE5B20098D6C2 /* Super Mario Bros 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B816122EE5B20098D6C2 /* Super Mario Bros 3.png */; };
-		1BF9B81A122EE5B20098D6C2 /* Mario Bros.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B817122EE5B20098D6C2 /* Mario Bros.png */; };
-		1BF9B81B122EE5B20098D6C2 /* Super Mario Bros 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B818122EE5B20098D6C2 /* Super Mario Bros 2.png */; };
-		1BF9B82A122EE8F20098D6C2 /* Metroid 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B826122EE8F20098D6C2 /* Metroid 2.png */; };
-		1BF9B82B122EE8F20098D6C2 /* Super Mario Land 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B827122EE8F20098D6C2 /* Super Mario Land 2.png */; };
-		1BF9B82C122EE8F20098D6C2 /* Super Mario Land.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B828122EE8F20098D6C2 /* Super Mario Land.png */; };
-		1BF9B82D122EE8F20098D6C2 /* Wario Land.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B829122EE8F20098D6C2 /* Wario Land.png */; };
-		1BF9B84A122EF2720098D6C2 /* TestStamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B849122EF2720098D6C2 /* TestStamp.png */; };
-		1BF9B879122EF8360098D6C2 /* Nintendo (NES) Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B877122EF8360098D6C2 /* Nintendo (NES) Stamp.png */; };
-		1BF9B87A122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B878122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png */; };
-		1BF9B883122EF8DD0098D6C2 /* GameBoy Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B882122EF8DD0098D6C2 /* GameBoy Stamp.png */; };
-		1BF9B89E122F0A930098D6C2 /* All.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B89D122F0A930098D6C2 /* All.png */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* OpenEmuMockupAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* OpenEmuMockupAppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -75,6 +107,124 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1B974EA71232E7C800070850 /* Copy SNES Roms Images */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "ROMS/Super Nintendo (SNES)";
+			dstSubfolderSpec = 7;
+			files = (
+				1B974FCA1232FCA100070850 /* Stunt Race.png in Copy SNES Roms Images */,
+				1B974FCB1232FCA100070850 /* Donkey Kong Country.png in Copy SNES Roms Images */,
+				1B974FCC1232FCA100070850 /* F-Zero.png in Copy SNES Roms Images */,
+				1B974EA81232E7DB00070850 /* Super Metroid.png in Copy SNES Roms Images */,
+				1B974EA91232E7DB00070850 /* Super Mario World.png in Copy SNES Roms Images */,
+				1B974EAA1232E7DB00070850 /* Yoshis Island.png in Copy SNES Roms Images */,
+				1B974EAB1232E7DB00070850 /* Contra 3.png in Copy SNES Roms Images */,
+				1B974EAC1232E7DB00070850 /* Super Mario All Stars.png in Copy SNES Roms Images */,
+				1B974EAD1232E7DB00070850 /* Starfox.png in Copy SNES Roms Images */,
+				1B974EAE1232E7DB00070850 /* Street Fighter 2.png in Copy SNES Roms Images */,
+				1B974EAF1232E7DB00070850 /* Super Mario Kart.png in Copy SNES Roms Images */,
+			);
+			name = "Copy SNES Roms Images";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B974EB21232E83500070850 /* Copy NES Roms Images */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "ROMS/Nintendo (NES)";
+			dstSubfolderSpec = 7;
+			files = (
+				1B974EB41232E84600070850 /* Super Mario Bros 3.png in Copy NES Roms Images */,
+				1B974EB51232E84600070850 /* Mario Bros.png in Copy NES Roms Images */,
+				1B974EB61232E84600070850 /* Super Mario Bros 2.png in Copy NES Roms Images */,
+				1B974EB71232E84600070850 /* Castlevania.png in Copy NES Roms Images */,
+				1B974EB81232E84600070850 /* Contra.png in Copy NES Roms Images */,
+				1B974EB91232E84600070850 /* DonkeyKong.png in Copy NES Roms Images */,
+				1B974EBA1232E84600070850 /* The Legend of Zelda.png in Copy NES Roms Images */,
+			);
+			name = "Copy NES Roms Images";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B974EB31232E83500070850 /* Copy GameBoy Rom Images */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ROMS/GameBoy;
+			dstSubfolderSpec = 7;
+			files = (
+				1B974FF31232FFC600070850 /* The Legend of Zelda - Links Awakening.png in Copy GameBoy Rom Images */,
+				1B974EC31232E84E00070850 /* Metroid 2.png in Copy GameBoy Rom Images */,
+				1B974EC41232E84E00070850 /* Super Mario Land 2.png in Copy GameBoy Rom Images */,
+				1B974EC51232E84E00070850 /* Super Mario Land.png in Copy GameBoy Rom Images */,
+				1B974EC61232E84E00070850 /* Wario Land.png in Copy GameBoy Rom Images */,
+				1B974FEC1232FF8D00070850 /* Mega Man 5.png in Copy GameBoy Rom Images */,
+				1B974FED1232FF8D00070850 /* Tetris.png in Copy GameBoy Rom Images */,
+			);
+			name = "Copy GameBoy Rom Images";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B974F641232F0D700070850 /* Copy GameBoy Advance Rom Images */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "ROMS/GameBoy Advance";
+			dstSubfolderSpec = 7;
+			files = (
+				1B974F581232F0D400070850 /* Advance Wars.png in Copy GameBoy Advance Rom Images */,
+				1B974F591232F0D400070850 /* Castlevania 2.png in Copy GameBoy Advance Rom Images */,
+				1B974F5A1232F0D400070850 /* Mario Kart - Super Circuit.png in Copy GameBoy Advance Rom Images */,
+				1B974F5B1232F0D400070850 /* Metroid - Zero Mission.png in Copy GameBoy Advance Rom Images */,
+				1B974F5C1232F0D400070850 /* Teenage Mutant Ninja Turtles.png in Copy GameBoy Advance Rom Images */,
+				1B974F5D1232F0D400070850 /* The Legend of Zelda - The Minish Cap.png in Copy GameBoy Advance Rom Images */,
+			);
+			name = "Copy GameBoy Advance Rom Images";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B974F771232F22800070850 /* Copy Sega Master System Rom Images */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "ROMS/Sega Master System";
+			dstSubfolderSpec = 7;
+			files = (
+				1B974F6C1232F22600070850 /* Altered Beast.png in Copy Sega Master System Rom Images */,
+				1B974F6D1232F22600070850 /* California Games 2.png in Copy Sega Master System Rom Images */,
+				1B974F6E1232F22600070850 /* Ghoul's N Ghosts.png in Copy Sega Master System Rom Images */,
+				1B974F6F1232F22600070850 /* Sonic The Hedgehog 2.png in Copy Sega Master System Rom Images */,
+				1B974F701232F22600070850 /* Sonic The Hedgehog.png in Copy Sega Master System Rom Images */,
+			);
+			name = "Copy Sega Master System Rom Images";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B974F7E1232F26700070850 /* Copy Sega SG-1000 Rom Images */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "ROMS/Sega SG-1000";
+			dstSubfolderSpec = 7;
+			files = (
+				1B974FDD1232FE4300070850 /* Congo Bongo.png in Copy Sega SG-1000 Rom Images */,
+				1B974FDE1232FE4300070850 /* N-Sub.png in Copy Sega SG-1000 Rom Images */,
+				1B974FDF1232FE4300070850 /* Pacar.png in Copy Sega SG-1000 Rom Images */,
+				1B974FE01232FE4300070850 /* Pop Flamer.png in Copy Sega SG-1000 Rom Images */,
+				1B974F791232F26400070850 /* Borderline.png in Copy Sega SG-1000 Rom Images */,
+			);
+			name = "Copy Sega SG-1000 Rom Images";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B974F931232F35E00070850 /* Copy Sega Genesis Rom Images */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "ROMS/Sega Genesis";
+			dstSubfolderSpec = 7;
+			files = (
+				1B974FC31232FC7D00070850 /* Sonic The Hedgehog 2.png in Copy Sega Genesis Rom Images */,
+				1B974F871232F35C00070850 /* Golden Axe.png in Copy Sega Genesis Rom Images */,
+				1B974F881232F35C00070850 /* Shining Force.png in Copy Sega Genesis Rom Images */,
+				1B974F891232F35C00070850 /* Shinobi 3.png in Copy Sega Genesis Rom Images */,
+				1B974F8A1232F35C00070850 /* Sonic The Hedgehog.png in Copy Sega Genesis Rom Images */,
+				1B974F8B1232F35C00070850 /* Streets of Rage 2.png in Copy Sega Genesis Rom Images */,
+				1B974F8C1232F35C00070850 /* Streets of Rage.png in Copy Sega Genesis Rom Images */,
+			);
+			name = "Copy Sega Genesis Rom Images";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BF9B30D122DC2B70098D6C2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +264,39 @@
 		1B6DBA76123047B000515C07 /* ToggleFullScreenActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleFullScreenActive.png; sourceTree = "<group>"; };
 		1B6DBAF31230544000515C07 /* OEBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEBackgroundView.h; sourceTree = "<group>"; };
 		1B6DBAF41230544000515C07 /* OEBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEBackgroundView.m; sourceTree = "<group>"; };
+		1B974F511232F0AA00070850 /* Advance Wars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Advance Wars.png"; sourceTree = "<group>"; };
+		1B974F521232F0AA00070850 /* Castlevania 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Castlevania 2.png"; sourceTree = "<group>"; };
+		1B974F531232F0AA00070850 /* Mario Kart - Super Circuit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mario Kart - Super Circuit.png"; sourceTree = "<group>"; };
+		1B974F541232F0AA00070850 /* Metroid - Zero Mission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Metroid - Zero Mission.png"; sourceTree = "<group>"; };
+		1B974F551232F0AA00070850 /* Teenage Mutant Ninja Turtles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Teenage Mutant Ninja Turtles.png"; sourceTree = "<group>"; };
+		1B974F561232F0AA00070850 /* The Legend of Zelda - The Minish Cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Legend of Zelda - The Minish Cap.png"; sourceTree = "<group>"; };
+		1B974F661232F20100070850 /* Altered Beast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Altered Beast.png"; sourceTree = "<group>"; };
+		1B974F671232F20100070850 /* California Games 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "California Games 2.png"; sourceTree = "<group>"; };
+		1B974F681232F20100070850 /* Ghoul's N Ghosts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ghoul's N Ghosts.png"; sourceTree = "<group>"; };
+		1B974F691232F20100070850 /* Sonic The Hedgehog 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sonic The Hedgehog 2.png"; sourceTree = "<group>"; };
+		1B974F6A1232F20100070850 /* Sonic The Hedgehog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sonic The Hedgehog.png"; sourceTree = "<group>"; };
+		1B974F801232F33E00070850 /* Golden Axe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Golden Axe.png"; sourceTree = "<group>"; };
+		1B974F811232F33E00070850 /* Shining Force.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shining Force.png"; sourceTree = "<group>"; };
+		1B974F821232F33E00070850 /* Shinobi 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shinobi 3.png"; sourceTree = "<group>"; };
+		1B974F831232F33E00070850 /* Sonic The Hedgehog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sonic The Hedgehog.png"; sourceTree = "<group>"; };
+		1B974F841232F33E00070850 /* Streets of Rage 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Streets of Rage 2.png"; sourceTree = "<group>"; };
+		1B974F851232F33E00070850 /* Streets of Rage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Streets of Rage.png"; sourceTree = "<group>"; };
+		1B974FC11232FC5700070850 /* Sonic The Hedgehog 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sonic The Hedgehog 2.png"; sourceTree = "<group>"; };
+		1B974FC71232FC9100070850 /* Stunt Race.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stunt Race.png"; sourceTree = "<group>"; };
+		1B974FC81232FC9100070850 /* Donkey Kong Country.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Donkey Kong Country.png"; sourceTree = "<group>"; };
+		1B974FC91232FC9100070850 /* F-Zero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "F-Zero.png"; sourceTree = "<group>"; };
+		1B974FD91232FDE000070850 /* Congo Bongo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Congo Bongo.png"; sourceTree = "<group>"; };
+		1B974FDA1232FDE000070850 /* N-Sub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "N-Sub.png"; sourceTree = "<group>"; };
+		1B974FDB1232FDE000070850 /* Pacar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pacar.png; sourceTree = "<group>"; };
+		1B974FDC1232FDE000070850 /* Pop Flamer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pop Flamer.png"; sourceTree = "<group>"; };
+		1B974FEA1232FF8300070850 /* Mega Man 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mega Man 5.png"; sourceTree = "<group>"; };
+		1B974FEB1232FF8300070850 /* Tetris.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tetris.png; sourceTree = "<group>"; };
+		1B974FF21232FFC300070850 /* The Legend of Zelda - Links Awakening.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Legend of Zelda - Links Awakening.png"; sourceTree = "<group>"; };
+		1B9750061233042A00070850 /* GameBoy Advance Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameBoy Advance Stamp.png"; sourceTree = "<group>"; };
+		1B9750071233042A00070850 /* Sega Genesis Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega Genesis Stamp.png"; sourceTree = "<group>"; };
+		1B97500C123305B500070850 /* Sega Genesis Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega Genesis Stamp.png"; sourceTree = "<group>"; };
+		1B97500D123305B500070850 /* Sega Master System Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega Master System Stamp.png"; sourceTree = "<group>"; };
+		1B9750121233065500070850 /* Sega SG-1000 Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega SG-1000 Stamp.png"; sourceTree = "<group>"; };
 		1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
 		1BF9B388122DD0120098D6C2 /* OERomWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OERomWrapper.h; sourceTree = "<group>"; };
 		1BF9B389122DD0120098D6C2 /* OERomWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OERomWrapper.m; sourceTree = "<group>"; };
@@ -258,15 +441,57 @@
 			name = "Button States";
 			sourceTree = "<group>";
 		};
+		1B974F501232F0AA00070850 /* Gameboy Advance */ = {
+			isa = PBXGroup;
+			children = (
+				1B974F511232F0AA00070850 /* Advance Wars.png */,
+				1B974F521232F0AA00070850 /* Castlevania 2.png */,
+				1B974F531232F0AA00070850 /* Mario Kart - Super Circuit.png */,
+				1B974F541232F0AA00070850 /* Metroid - Zero Mission.png */,
+				1B974F551232F0AA00070850 /* Teenage Mutant Ninja Turtles.png */,
+				1B974F561232F0AA00070850 /* The Legend of Zelda - The Minish Cap.png */,
+			);
+			path = "Gameboy Advance";
+			sourceTree = "<group>";
+		};
+		1B974F651232F20100070850 /* Sega Master System */ = {
+			isa = PBXGroup;
+			children = (
+				1B974F661232F20100070850 /* Altered Beast.png */,
+				1B974F671232F20100070850 /* California Games 2.png */,
+				1B974F681232F20100070850 /* Ghoul's N Ghosts.png */,
+				1B974F691232F20100070850 /* Sonic The Hedgehog 2.png */,
+				1B974F6A1232F20100070850 /* Sonic The Hedgehog.png */,
+			);
+			path = "Sega Master System";
+			sourceTree = "<group>";
+		};
+		1B974F7F1232F33E00070850 /* Sega Megadrive */ = {
+			isa = PBXGroup;
+			children = (
+				1B974FC11232FC5700070850 /* Sonic The Hedgehog 2.png */,
+				1B974F801232F33E00070850 /* Golden Axe.png */,
+				1B974F811232F33E00070850 /* Shining Force.png */,
+				1B974F821232F33E00070850 /* Shinobi 3.png */,
+				1B974F831232F33E00070850 /* Sonic The Hedgehog.png */,
+				1B974F841232F33E00070850 /* Streets of Rage 2.png */,
+				1B974F851232F33E00070850 /* Streets of Rage.png */,
+			);
+			path = "Sega Megadrive";
+			sourceTree = "<group>";
+		};
 		1BF9B38B122DD3C90098D6C2 /* RomImages */ = {
 			isa = PBXGroup;
 			children = (
 				1BF9B849122EF2720098D6C2 /* TestStamp.png */,
 				1BF9B5EE122E29540098D6C2 /* FileNotFound.png */,
+				1B974F651232F20100070850 /* Sega Master System */,
 				1BF9B5EF122E29540098D6C2 /* Sega SG-1000 */,
 				1BF9B5C7122E26C00098D6C2 /* NES */,
 				1BF9B5CC122E26C00098D6C2 /* SNES */,
+				1B974F501232F0AA00070850 /* Gameboy Advance */,
 				1BF9B825122EE8F20098D6C2 /* Gameboy */,
+				1B974F7F1232F33E00070850 /* Sega Megadrive */,
 			);
 			path = RomImages;
 			sourceTree = "<group>";
@@ -274,6 +499,11 @@
 		1BF9B538122E1B6E0098D6C2 /* ConsoleImages */ = {
 			isa = PBXGroup;
 			children = (
+				1B9750121233065500070850 /* Sega SG-1000 Stamp.png */,
+				1B97500C123305B500070850 /* Sega Genesis Stamp.png */,
+				1B97500D123305B500070850 /* Sega Master System Stamp.png */,
+				1B9750061233042A00070850 /* GameBoy Advance Stamp.png */,
+				1B9750071233042A00070850 /* Sega Genesis Stamp.png */,
 				1BF9B89D122F0A930098D6C2 /* All.png */,
 				1BF9B882122EF8DD0098D6C2 /* GameBoy Stamp.png */,
 				1BF9B877122EF8360098D6C2 /* Nintendo (NES) Stamp.png */,
@@ -307,6 +537,9 @@
 		1BF9B5CC122E26C00098D6C2 /* SNES */ = {
 			isa = PBXGroup;
 			children = (
+				1B974FC71232FC9100070850 /* Stunt Race.png */,
+				1B974FC81232FC9100070850 /* Donkey Kong Country.png */,
+				1B974FC91232FC9100070850 /* F-Zero.png */,
 				1BF9B7FA122EE4710098D6C2 /* Super Metroid.png */,
 				1BF9B7FB122EE4710098D6C2 /* Super Mario World.png */,
 				1BF9B7FC122EE4710098D6C2 /* Yoshis Island.png */,
@@ -322,6 +555,10 @@
 		1BF9B5EF122E29540098D6C2 /* Sega SG-1000 */ = {
 			isa = PBXGroup;
 			children = (
+				1B974FD91232FDE000070850 /* Congo Bongo.png */,
+				1B974FDA1232FDE000070850 /* N-Sub.png */,
+				1B974FDB1232FDE000070850 /* Pacar.png */,
+				1B974FDC1232FDE000070850 /* Pop Flamer.png */,
 				1BF9B5F0122E29540098D6C2 /* Borderline.png */,
 			);
 			path = "Sega SG-1000";
@@ -330,6 +567,9 @@
 		1BF9B825122EE8F20098D6C2 /* Gameboy */ = {
 			isa = PBXGroup;
 			children = (
+				1B974FF21232FFC300070850 /* The Legend of Zelda - Links Awakening.png */,
+				1B974FEA1232FF8300070850 /* Mega Man 5.png */,
+				1B974FEB1232FF8300070850 /* Tetris.png */,
 				1BF9B826122EE8F20098D6C2 /* Metroid 2.png */,
 				1BF9B827122EE8F20098D6C2 /* Super Mario Land 2.png */,
 				1BF9B828122EE8F20098D6C2 /* Super Mario Land.png */,
@@ -393,6 +633,13 @@
 				1BF9B30D122DC2B70098D6C2 /* CopyFiles */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				1B974EA71232E7C800070850 /* Copy SNES Roms Images */,
+				1B974EB21232E83500070850 /* Copy NES Roms Images */,
+				1B974EB31232E83500070850 /* Copy GameBoy Rom Images */,
+				1B974F641232F0D700070850 /* Copy GameBoy Advance Rom Images */,
+				1B974F771232F22800070850 /* Copy Sega Master System Rom Images */,
+				1B974F7E1232F26700070850 /* Copy Sega SG-1000 Rom Images */,
+				1B974F931232F35E00070850 /* Copy Sega Genesis Rom Images */,
 			);
 			buildRules = (
 			);
@@ -426,59 +673,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B974EF01232E94A00070850 /* SliderMagnifyHint.png in Resources */,
+				1B974EF11232E94A00070850 /* SliderMinifyHint.png in Resources */,
+				1B974EDB1232E93400070850 /* ToggleFullScreen.png in Resources */,
+				1B974EDC1232E93400070850 /* ToggleFullScreenActive.png in Resources */,
+				1B974EDD1232E93400070850 /* ToggleFlowView.png in Resources */,
+				1B974EDE1232E93400070850 /* ToggleFlowViewActive.png in Resources */,
+				1B974EDF1232E93400070850 /* ToggleSideBarClose.png in Resources */,
+				1B974EE01232E93400070850 /* ToggleSideBarCloseInActive.png in Resources */,
+				1B974EE11232E93400070850 /* ToggleSideBarClosePressed.png in Resources */,
+				1B974EE21232E93400070850 /* ToggleSideBarOpen.png in Resources */,
+				1B974EE31232E93400070850 /* ToggleSideBarOpenInActive.png in Resources */,
+				1B974EE41232E93400070850 /* ToggleSideBarOpenPressed.png in Resources */,
+				1B974EE51232E93400070850 /* ToggleGridView.png in Resources */,
+				1B974EE61232E93400070850 /* ToggleGridViewActive.png in Resources */,
+				1B974EE71232E93400070850 /* ToggleListView.png in Resources */,
+				1B974EE81232E93400070850 /* ToggleListViewActive.png in Resources */,
+				1B974E881232E79C00070850 /* All.png in Resources */,
+				1B974E891232E79C00070850 /* GameBoy Stamp.png in Resources */,
+				1B974E8A1232E79C00070850 /* Nintendo (NES) Stamp.png in Resources */,
+				1B974E8B1232E79C00070850 /* Super Nintendo (SNES) Stamp.png in Resources */,
+				1B974E8C1232E79C00070850 /* Game Gear.png in Resources */,
+				1B974E8D1232E79C00070850 /* GameBoy Advance.png in Resources */,
+				1B974E8E1232E79C00070850 /* GameBoy.png in Resources */,
+				1B974E8F1232E79C00070850 /* Nintendo (NES).png in Resources */,
+				1B974E901232E79C00070850 /* Sega Genesis.png in Resources */,
+				1B974E911232E79C00070850 /* Sega Master System.png in Resources */,
+				1B974E921232E79C00070850 /* Sega SG-1000.png in Resources */,
+				1B974E931232E79C00070850 /* Super Nintendo (SNES).png in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
-				1BF9B581122E204A0098D6C2 /* Game Gear.png in Resources */,
-				1BF9B582122E204A0098D6C2 /* GameBoy Advance.png in Resources */,
-				1BF9B583122E204A0098D6C2 /* GameBoy.png in Resources */,
-				1BF9B584122E204A0098D6C2 /* Nintendo (NES).png in Resources */,
-				1BF9B585122E204A0098D6C2 /* Sega Genesis.png in Resources */,
-				1BF9B586122E204A0098D6C2 /* Sega Master System.png in Resources */,
-				1BF9B587122E204A0098D6C2 /* Sega SG-1000.png in Resources */,
-				1BF9B588122E204A0098D6C2 /* Super Nintendo (SNES).png in Resources */,
-				1BF9B5CF122E26C00098D6C2 /* Castlevania.png in Resources */,
-				1BF9B5D0122E26C00098D6C2 /* Contra.png in Resources */,
-				1BF9B5D1122E26C00098D6C2 /* DonkeyKong.png in Resources */,
-				1BF9B5D2122E26C00098D6C2 /* The Legend of Zelda.png in Resources */,
-				1BF9B5D3122E26C00098D6C2 /* Street Fighter 2.png in Resources */,
-				1BF9B5D4122E26C00098D6C2 /* Super Mario Kart.png in Resources */,
 				1BF9B5F1122E29540098D6C2 /* FileNotFound.png in Resources */,
-				1BF9B5F2122E29540098D6C2 /* Borderline.png in Resources */,
 				1BF9B7CF122EDDD10098D6C2 /* Icon.icns in Resources */,
-				1BF9B7F2122EE3760098D6C2 /* Contra 3.png in Resources */,
-				1BF9B7F3122EE3760098D6C2 /* Super Mario All Stars.png in Resources */,
-				1BF9B7F4122EE3760098D6C2 /* Starfox.png in Resources */,
-				1BF9B7FD122EE4710098D6C2 /* Super Metroid.png in Resources */,
-				1BF9B7FE122EE4710098D6C2 /* Super Mario World.png in Resources */,
-				1BF9B7FF122EE4710098D6C2 /* Yoshis Island.png in Resources */,
-				1BF9B819122EE5B20098D6C2 /* Super Mario Bros 3.png in Resources */,
-				1BF9B81A122EE5B20098D6C2 /* Mario Bros.png in Resources */,
-				1BF9B81B122EE5B20098D6C2 /* Super Mario Bros 2.png in Resources */,
-				1BF9B82A122EE8F20098D6C2 /* Metroid 2.png in Resources */,
-				1BF9B82B122EE8F20098D6C2 /* Super Mario Land 2.png in Resources */,
-				1BF9B82C122EE8F20098D6C2 /* Super Mario Land.png in Resources */,
-				1BF9B82D122EE8F20098D6C2 /* Wario Land.png in Resources */,
-				1BF9B84A122EF2720098D6C2 /* TestStamp.png in Resources */,
-				1BF9B879122EF8360098D6C2 /* Nintendo (NES) Stamp.png in Resources */,
-				1BF9B87A122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png in Resources */,
-				1BF9B883122EF8DD0098D6C2 /* GameBoy Stamp.png in Resources */,
-				1BF9B89E122F0A930098D6C2 /* All.png in Resources */,
-				1B6DB5E2122F64B200515C07 /* SliderMagnifyHint.png in Resources */,
-				1B6DB5E3122F64B200515C07 /* SliderMinifyHint.png in Resources */,
-				1B6DB5F0122F66EE00515C07 /* ToggleSideBarClose.png in Resources */,
-				1B6DB5F1122F66EE00515C07 /* ToggleSideBarCloseInActive.png in Resources */,
-				1B6DB5F2122F66EE00515C07 /* ToggleSideBarClosePressed.png in Resources */,
-				1B6DB5F3122F66EE00515C07 /* ToggleSideBarOpen.png in Resources */,
-				1B6DB5F4122F66EE00515C07 /* ToggleSideBarOpenInActive.png in Resources */,
-				1B6DB5F5122F66EE00515C07 /* ToggleSideBarOpenPressed.png in Resources */,
-				1B6DB701122F80FF00515C07 /* ToggleGridView.png in Resources */,
-				1B6DB702122F80FF00515C07 /* ToggleGridViewActive.png in Resources */,
-				1B6DB703122F80FF00515C07 /* ToggleListView.png in Resources */,
-				1B6DB704122F80FF00515C07 /* ToggleListViewActive.png in Resources */,
-				1B6DB9EE123029C100515C07 /* ToggleFlowView.png in Resources */,
-				1B6DB9EF123029C100515C07 /* ToggleFlowViewActive.png in Resources */,
-				1B6DBA77123047B000515C07 /* ToggleFullScreen.png in Resources */,
-				1B6DBA78123047B000515C07 /* ToggleFullScreenActive.png in Resources */,
+				1B9750081233042A00070850 /* GameBoy Advance Stamp.png in Resources */,
+				1B9750091233042A00070850 /* Sega Genesis Stamp.png in Resources */,
+				1B97500E123305B500070850 /* Sega Genesis Stamp.png in Resources */,
+				1B97500F123305B500070850 /* Sega Master System Stamp.png in Resources */,
+				1B9750131233065500070850 /* Sega SG-1000 Stamp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

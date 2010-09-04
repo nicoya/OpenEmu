@@ -18,8 +18,10 @@
 
     NSString* romImagePath; // Path for the cached image
     NSImage* romImage;      // Image for the Rom / Cover art, etc.
+    NSDate* romLastPlayed;  // Last play date
     
-    // for IKImageFlow / Datasource
+    
+    // for IKImageBrowser/Flow view / Datasource
     NSString* imageUID;
 }
 
@@ -29,6 +31,7 @@
 @property (readwrite, retain) NSString* consoleName;
 @property (readwrite, retain) NSString* romImagePath;
 @property (readwrite, retain) NSImage* romImage;
+@property (readwrite, retain) NSDate* romLastPlayed;
 
 // IKImageBrowserItem Protocol
 @property (readwrite, retain) NSString* imageUID;

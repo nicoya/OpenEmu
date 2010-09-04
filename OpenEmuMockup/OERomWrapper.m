@@ -17,6 +17,7 @@
 @synthesize romRating;
 @synthesize consoleName;
 @synthesize imageUID;
+@synthesize romLastPlayed;
 
 - (id) init
 {
@@ -31,6 +32,10 @@
         
         self.imageUID = uuidString;
         [uuidString release]; 
+        
+        int daysAgo = (random() % 30 * 86400 * 2);
+        
+        self.romLastPlayed = [NSDate dateWithTimeIntervalSinceNow:-daysAgo]; // dummy date. 
     }
     return self;
 }
@@ -58,7 +63,24 @@
 
 - (NSString *) imageSubtitle
 {
-    return [NSString stringWithFormat:@"%i Stars", self.romRating, nil];
+    switch (self.romRating)
+    {
+        case 0:
+            return [NSString stringWithUTF8String:"\u2606\u2606\u2606\u2606\u2606"];
+        case 1:
+            return [NSString stringWithUTF8String:"\u2605\u2606\u2606\u2606\u2606"];
+        case 2:
+            return [NSString stringWithUTF8String:"\u2605\u2605\u2606\u2606\u2606"];
+        case 3:
+            return [NSString stringWithUTF8String:"\u2605\u2605\u2605\u2606\u2606"];
+        case 4:
+            return [NSString stringWithUTF8String:"\u2605\u2605\u2605\u2605\u2606"];
+        case 5:
+            return [NSString stringWithUTF8String:"\u2605\u2605\u2605\u2605\u2605"];
+        default:
+            break;
+    }
+
 }
 
 @end
