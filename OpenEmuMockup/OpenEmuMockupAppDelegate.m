@@ -10,6 +10,8 @@
 #import <stdlib.h>
 #import <objc/runtime.h>
 
+#import "OETheme.h"
+
 // See Overriding NSThemeFrame
 @interface OpenEmuMockupAppDelegate (Shh)
 - (float)roundedCornerRadius;
@@ -46,6 +48,9 @@
 
 - (void) awakeFromNib
 {
+    // Init BGHud Theme
+    [[BGThemeManager keyedManager] setTheme: [[[OETheme alloc] init] autorelease] forKey: @"OETheme"];
+    
     inFullScreen = NO;
     
     // might as well take the time to set up our space for the bottom bar.
@@ -400,10 +405,16 @@
 {
 	// Call original drawing method
 	[self drawRectOriginal:rect];
-        
+    
+    
 	// Build clipping path : intersection of frame clip (bezier path with rounded corners) and rect argument
 	NSRect windowRect = [[self window] frame];
 	windowRect.origin = NSMakePoint(0, 0);
+    
+    // fill the background excluding our window title bar
+    [[NSColor blackColor] set];
+    [[NSBezierPath bezierPathWithRect:NSInsetRect(windowRect, 0.0, 21)] fill];
+    
     
     // make a new Rect that is the width of our window, and is 45 pixels high (the size of our toolbar)
 	float cornerRadius = [self roundedCornerRadius];    

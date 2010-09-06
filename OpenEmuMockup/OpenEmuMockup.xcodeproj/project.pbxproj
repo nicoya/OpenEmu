@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B6DB661122F6C9D00515C07 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */; };
-		1B6DB692122F6CAA00515C07 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */; };
 		1B6DB8341230157300515C07 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6DB8331230157300515C07 /* Quartz.framework */; };
 		1B6DB94E1230159300515C07 /* ImageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6DB94D1230159300515C07 /* ImageKit.framework */; };
 		1B6DBAF51230544000515C07 /* OEBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6DBAF41230544000515C07 /* OEBackgroundView.m */; };
@@ -90,9 +88,10 @@
 		1B974FF31232FFC600070850 /* The Legend of Zelda - Links Awakening.png in Copy GameBoy Rom Images */ = {isa = PBXBuildFile; fileRef = 1B974FF21232FFC300070850 /* The Legend of Zelda - Links Awakening.png */; };
 		1B9750081233042A00070850 /* GameBoy Advance Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B9750061233042A00070850 /* GameBoy Advance Stamp.png */; };
 		1B9750091233042A00070850 /* Sega Genesis Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B9750071233042A00070850 /* Sega Genesis Stamp.png */; };
-		1B97500E123305B500070850 /* Sega Genesis Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B97500C123305B500070850 /* Sega Genesis Stamp.png */; };
 		1B97500F123305B500070850 /* Sega Master System Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B97500D123305B500070850 /* Sega Master System Stamp.png */; };
 		1B9750131233065500070850 /* Sega SG-1000 Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B9750121233065500070850 /* Sega SG-1000 Stamp.png */; };
+		1B97504A12349CBD00070850 /* OESplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B97504912349CBD00070850 /* OESplitView.m */; };
+		1B9751331234A1B300070850 /* OETheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9751321234A1B300070850 /* OETheme.m */; };
 		1BF9B356122DC98A0098D6C2 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */; };
 		1BF9B379122DC98F0098D6C2 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */; };
 		1BF9B38A122DD0120098D6C2 /* OERomWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9B389122DD0120098D6C2 /* OERomWrapper.m */; };
@@ -231,7 +230,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1B6DB692122F6CAA00515C07 /* BWToolkitFramework.framework in CopyFiles */,
 				1BF9B379122DC98F0098D6C2 /* BGHUDAppKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +248,6 @@
 		1B6DB5ED122F66EE00515C07 /* ToggleSideBarOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleSideBarOpen.png; sourceTree = "<group>"; };
 		1B6DB5EE122F66EE00515C07 /* ToggleSideBarOpenInActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleSideBarOpenInActive.png; sourceTree = "<group>"; };
 		1B6DB5EF122F66EE00515C07 /* ToggleSideBarOpenPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleSideBarOpenPressed.png; sourceTree = "<group>"; };
-		1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
 		1B6DB6FD122F80FF00515C07 /* ToggleGridView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleGridView.png; sourceTree = "<group>"; };
 		1B6DB6FE122F80FF00515C07 /* ToggleGridViewActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleGridViewActive.png; sourceTree = "<group>"; };
 		1B6DB6FF122F80FF00515C07 /* ToggleListView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToggleListView.png; sourceTree = "<group>"; };
@@ -297,6 +294,10 @@
 		1B97500C123305B500070850 /* Sega Genesis Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega Genesis Stamp.png"; sourceTree = "<group>"; };
 		1B97500D123305B500070850 /* Sega Master System Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega Master System Stamp.png"; sourceTree = "<group>"; };
 		1B9750121233065500070850 /* Sega SG-1000 Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sega SG-1000 Stamp.png"; sourceTree = "<group>"; };
+		1B97504812349CBD00070850 /* OESplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OESplitView.h; sourceTree = "<group>"; };
+		1B97504912349CBD00070850 /* OESplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OESplitView.m; sourceTree = "<group>"; };
+		1B9751311234A1B300070850 /* OETheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OETheme.h; sourceTree = "<group>"; };
+		1B9751321234A1B300070850 /* OETheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OETheme.m; sourceTree = "<group>"; };
 		1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
 		1BF9B388122DD0120098D6C2 /* OERomWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OERomWrapper.h; sourceTree = "<group>"; };
 		1BF9B389122DD0120098D6C2 /* OERomWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OERomWrapper.m; sourceTree = "<group>"; };
@@ -332,7 +333,6 @@
 		1BF9B827122EE8F20098D6C2 /* Super Mario Land 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Mario Land 2.png"; sourceTree = "<group>"; };
 		1BF9B828122EE8F20098D6C2 /* Super Mario Land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Mario Land.png"; sourceTree = "<group>"; };
 		1BF9B829122EE8F20098D6C2 /* Wario Land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wario Land.png"; sourceTree = "<group>"; };
-		1BF9B849122EF2720098D6C2 /* TestStamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestStamp.png; sourceTree = SOURCE_ROOT; };
 		1BF9B877122EF8360098D6C2 /* Nintendo (NES) Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nintendo (NES) Stamp.png"; sourceTree = "<group>"; };
 		1BF9B878122EF8360098D6C2 /* Super Nintendo (SNES) Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Nintendo (SNES) Stamp.png"; sourceTree = "<group>"; };
 		1BF9B882122EF8DD0098D6C2 /* GameBoy Stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GameBoy Stamp.png"; sourceTree = "<group>"; };
@@ -355,7 +355,6 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				1BF9B356122DC98A0098D6C2 /* BGHUDAppKit.framework in Frameworks */,
-				1B6DB661122F6C9D00515C07 /* BWToolkitFramework.framework in Frameworks */,
 				1B6DB8341230157300515C07 /* Quartz.framework in Frameworks */,
 				1B6DB94E1230159300515C07 /* ImageKit.framework in Frameworks */,
 			);
@@ -373,8 +372,7 @@
 				1BF9B389122DD0120098D6C2 /* OERomWrapper.m */,
 				1BF9B46E122DECD70098D6C2 /* OEGameCoreWrapper.h */,
 				1BF9B46F122DECD70098D6C2 /* OEGameCoreWrapper.m */,
-				1B6DBAF31230544000515C07 /* OEBackgroundView.h */,
-				1B6DBAF41230544000515C07 /* OEBackgroundView.m */,
+				1B9751301234A1A100070850 /* Custom UI and Theme Elements */,
 				1B6DB8151230152400515C07 /* IKImageFlowView.h */,
 			);
 			name = Classes;
@@ -383,7 +381,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1B6DB660122F6C9D00515C07 /* BWToolkitFramework.framework */,
 				1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -480,10 +477,22 @@
 			path = "Sega Megadrive";
 			sourceTree = "<group>";
 		};
+		1B9751301234A1A100070850 /* Custom UI and Theme Elements */ = {
+			isa = PBXGroup;
+			children = (
+				1B6DBAF31230544000515C07 /* OEBackgroundView.h */,
+				1B6DBAF41230544000515C07 /* OEBackgroundView.m */,
+				1B97504812349CBD00070850 /* OESplitView.h */,
+				1B97504912349CBD00070850 /* OESplitView.m */,
+				1B9751311234A1B300070850 /* OETheme.h */,
+				1B9751321234A1B300070850 /* OETheme.m */,
+			);
+			name = "Custom UI and Theme Elements";
+			sourceTree = "<group>";
+		};
 		1BF9B38B122DD3C90098D6C2 /* RomImages */ = {
 			isa = PBXGroup;
 			children = (
-				1BF9B849122EF2720098D6C2 /* TestStamp.png */,
 				1BF9B5EE122E29540098D6C2 /* FileNotFound.png */,
 				1B974F651232F20100070850 /* Sega Master System */,
 				1BF9B5EF122E29540098D6C2 /* Sega SG-1000 */,
@@ -707,7 +716,6 @@
 				1BF9B7CF122EDDD10098D6C2 /* Icon.icns in Resources */,
 				1B9750081233042A00070850 /* GameBoy Advance Stamp.png in Resources */,
 				1B9750091233042A00070850 /* Sega Genesis Stamp.png in Resources */,
-				1B97500E123305B500070850 /* Sega Genesis Stamp.png in Resources */,
 				1B97500F123305B500070850 /* Sega Master System Stamp.png in Resources */,
 				1B9750131233065500070850 /* Sega SG-1000 Stamp.png in Resources */,
 			);
@@ -725,6 +733,8 @@
 				1BF9B38A122DD0120098D6C2 /* OERomWrapper.m in Sources */,
 				1BF9B470122DECD70098D6C2 /* OEGameCoreWrapper.m in Sources */,
 				1B6DBAF51230544000515C07 /* OEBackgroundView.m in Sources */,
+				1B97504A12349CBD00070850 /* OESplitView.m in Sources */,
+				1B9751331234A1B300070850 /* OETheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
