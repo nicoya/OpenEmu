@@ -118,6 +118,7 @@
         
         // add to library
         [consoleArrayController addObject:core];
+        [core release];
         
         // add roms for that core
         NSArray* romArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[romPath stringByAppendingPathComponent:consoleName] error:nil];

@@ -92,8 +92,8 @@
 		1B9750131233065500070850 /* Sega SG-1000 Stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B9750121233065500070850 /* Sega SG-1000 Stamp.png */; };
 		1B97504A12349CBD00070850 /* OESplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B97504912349CBD00070850 /* OESplitView.m */; };
 		1B9751331234A1B300070850 /* OETheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9751321234A1B300070850 /* OETheme.m */; };
-		1BF9B356122DC98A0098D6C2 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */; };
-		1BF9B379122DC98F0098D6C2 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */; };
+		1B9752A51234BAF900070850 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9752A01234BADA00070850 /* BGHUDAppKit.framework */; };
+		1B9752A61234BAFE00070850 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B9752A01234BADA00070850 /* BGHUDAppKit.framework */; };
 		1BF9B38A122DD0120098D6C2 /* OERomWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9B389122DD0120098D6C2 /* OERomWrapper.m */; };
 		1BF9B470122DECD70098D6C2 /* OEGameCoreWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF9B46F122DECD70098D6C2 /* OEGameCoreWrapper.m */; };
 		1BF9B5F1122E29540098D6C2 /* FileNotFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BF9B5EE122E29540098D6C2 /* FileNotFound.png */; };
@@ -104,6 +104,30 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B97529D1234BADA00070850 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B9752961234BADA00070850 /* BGHUDAppKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D1AC9740486D14A00FE50C9 /* BGHUDAppKitPlugin.ibplugin */;
+			remoteInfo = BGHUDAppKitPlugin;
+		};
+		1B97529F1234BADA00070850 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B9752961234BADA00070850 /* BGHUDAppKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53DF68FD067E5B5A0090B5B0 /* BGHUDAppKit.framework */;
+			remoteInfo = BGHUDAppKit;
+		};
+		1B9752E21234BDCD00070850 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B9752961234BADA00070850 /* BGHUDAppKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 53DF6901067E5B8E0090B5B0 /* All */;
+			remoteInfo = All;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1B974EA71232E7C800070850 /* Copy SNES Roms Images */ = {
@@ -230,7 +254,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1BF9B379122DC98F0098D6C2 /* BGHUDAppKit.framework in CopyFiles */,
+				1B9752A61234BAFE00070850 /* BGHUDAppKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +322,7 @@
 		1B97504912349CBD00070850 /* OESplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OESplitView.m; sourceTree = "<group>"; };
 		1B9751311234A1B300070850 /* OETheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OETheme.h; sourceTree = "<group>"; };
 		1B9751321234A1B300070850 /* OETheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OETheme.m; sourceTree = "<group>"; };
-		1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
+		1B9752961234BADA00070850 /* BGHUDAppKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BGHUDAppKit.xcodeproj; path = BGHUDAppKit/BGHUDAppKit.xcodeproj; sourceTree = "<group>"; };
 		1BF9B388122DD0120098D6C2 /* OERomWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OERomWrapper.h; sourceTree = "<group>"; };
 		1BF9B389122DD0120098D6C2 /* OERomWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OERomWrapper.m; sourceTree = "<group>"; };
 		1BF9B46E122DECD70098D6C2 /* OEGameCoreWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEGameCoreWrapper.h; sourceTree = "<group>"; };
@@ -353,8 +377,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9752A51234BAF900070850 /* BGHUDAppKit.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				1BF9B356122DC98A0098D6C2 /* BGHUDAppKit.framework in Frameworks */,
 				1B6DB8341230157300515C07 /* Quartz.framework in Frameworks */,
 				1B6DB94E1230159300515C07 /* ImageKit.framework in Frameworks */,
 			);
@@ -381,7 +405,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1BF9B355122DC98A0098D6C2 /* BGHUDAppKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -490,6 +513,15 @@
 			name = "Custom UI and Theme Elements";
 			sourceTree = "<group>";
 		};
+		1B9752971234BADA00070850 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B97529E1234BADA00070850 /* BGHUDAppKitPlugin.ibplugin */,
+				1B9752A01234BADA00070850 /* BGHUDAppKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1BF9B38B122DD3C90098D6C2 /* RomImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +622,7 @@
 		29B97314FDCFA39411CA2CEA /* OpenEmuMockup */ = {
 			isa = PBXGroup;
 			children = (
+				1B9752961234BADA00070850 /* BGHUDAppKit.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -653,6 +686,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1B9752E31234BDCD00070850 /* PBXTargetDependency */,
 			);
 			name = OpenEmuMockup;
 			productInstallPath = "$(HOME)/Applications";
@@ -670,12 +704,35 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* OpenEmuMockup */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1B9752971234BADA00070850 /* Products */;
+					ProjectRef = 1B9752961234BADA00070850 /* BGHUDAppKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* OpenEmuMockup */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1B97529E1234BADA00070850 /* BGHUDAppKitPlugin.ibplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BGHUDAppKitPlugin.ibplugin;
+			remoteRef = 1B97529D1234BADA00070850 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B9752A01234BADA00070850 /* BGHUDAppKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BGHUDAppKit.framework;
+			remoteRef = 1B97529F1234BADA00070850 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -739,6 +796,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B9752E31234BDCD00070850 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = All;
+			targetProxy = 1B9752E21234BDCD00070850 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -807,10 +872,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/BGHUDAppKit/build/Debug\"/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/BGHUDAppKit/build/Debug/**";
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
@@ -821,6 +888,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/BGHUDAppKit/build/Release/\"/**";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
