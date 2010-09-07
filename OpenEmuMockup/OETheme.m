@@ -79,10 +79,12 @@
 {
     return [[[NSGradient alloc] initWithStartingColor:[NSColor colorWithDeviceWhite:0.9 alpha:1.0] endingColor:[NSColor colorWithDeviceWhite:0.6 alpha:1.0]] autorelease];
 }
+
 -(NSGradient *)highlightKnobColor				//Gradient used to draw highlighted knob
 {
     return [[[NSGradient alloc] initWithStartingColor:[NSColor colorWithDeviceWhite:1.0 alpha:1.0] endingColor:[NSColor colorWithDeviceWhite:0.7 alpha:1.0]] autorelease];
 }
+
 -(NSGradient *)disabledKnobColor				//Gradient used to draw the knob
 {
     return [[[NSGradient alloc] initWithStartingColor:[NSColor colorWithDeviceWhite:0.5 alpha:1.0] endingColor:[NSColor colorWithDeviceWhite:0.3 alpha:1.0]] autorelease];
