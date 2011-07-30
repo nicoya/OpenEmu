@@ -159,11 +159,8 @@
 			dependencies = (
 				1E4B6D0310DEDF3000B2CD45 /* PBXTargetDependency */,
 				1E4B6D0110DEDF3000B2CD45 /* PBXTargetDependency */,
-				1E4B6CFF10DEDF3000B2CD45 /* PBXTargetDependency */,
 				1E4B6CFD10DEDF3000B2CD45 /* PBXTargetDependency */,
-				1E4B6CFB10DEDF3000B2CD45 /* PBXTargetDependency */,
 				1E4B6CF910DEDF3000B2CD45 /* PBXTargetDependency */,
-				1E4B6CF710DEDF3000B2CD45 /* PBXTargetDependency */,
 			);
 			name = "Build All Emulators";
 			productName = "Build Emulators";
@@ -171,13 +168,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXContainerItemProxy section */
-		1E4B6CF610DEDF3000B2CD45 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1E07AE3C10373EBC00B9EE89 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1E4F578610DEA15400381953;
-			remoteInfo = Gambatte;
-		};
 		1E4B6CF810DEDF3000B2CD45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E07AE3C10373EBC00B9EE89 /* Project object */;
@@ -185,26 +175,12 @@
 			remoteGlobalIDString = 1E4F577D10DEA13F00381953;
 			remoteInfo = CrabEmu;
 		};
-		1E4B6CFA10DEDF3000B2CD45 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1E07AE3C10373EBC00B9EE89 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1E4F577610DEA13100381953;
-			remoteInfo = BSNES;
-		};
 		1E4B6CFC10DEDF3000B2CD45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E07AE3C10373EBC00B9EE89 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1E4F570110DE9FFA00381953;
 			remoteInfo = VisualBoyAdvance;
-		};
-		1E4B6CFE10DEDF3000B2CD45 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1E07AE3C10373EBC00B9EE89 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1E4F56FE10DE9FF200381953;
-			remoteInfo = Nestopia;
 		};
 		1E4B6D0010DEDF3000B2CD45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -493,6 +469,55 @@
 			remoteGlobalIDString = 1BEF2CFD116854650090F72B;
 			remoteInfo = OpenEmuDebugHelperAppApp;
 		};
+		8267FB2613E2685100A7FCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB956DC10373FE9003C6109 /* OpenEmu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6711807136367240034379A;
+			remoteInfo = OpenEmuSystem;
+		};
+		8267FB2813E2685100A7FCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB956DC10373FE9003C6109 /* OpenEmu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C671180F136368330034379A;
+			remoteInfo = SegaMasterSystem;
+		};
+		8267FB2A13E2685100A7FCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB956DC10373FE9003C6109 /* OpenEmu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64BB08D136478E600C1AB23;
+			remoteInfo = NES;
+		};
+		8267FB2C13E2685100A7FCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB956DC10373FE9003C6109 /* OpenEmu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6480FC113648F670094FA33;
+			remoteInfo = SuperNES;
+		};
+		8267FB2E13E2685100A7FCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB956DC10373FE9003C6109 /* OpenEmu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6B947AF1364ECA600A425F0;
+			remoteInfo = GameBoy;
+		};
+		8267FB3013E2685100A7FCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB956DC10373FE9003C6109 /* OpenEmu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6B947E61365080B00A425F0;
+			remoteInfo = Genesis;
+		};
+		8267FB3213E2685100A7FCB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EB956DC10373FE9003C6109 /* OpenEmu.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C646574813771F12002A4F70;
+			remoteInfo = "GameBoy Advance";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -593,6 +618,13 @@
 				1EB956F110373FEA003C6109 /* OpenEmuQC.plugin */,
 				1EB956F310373FEA003C6109 /* OpenEmuBase.framework */,
 				1EB956F510373FEA003C6109 /* OESaveStateQLPlugin.qlgenerator */,
+				8267FB2713E2685100A7FCB4 /* OpenEmuSystem.framework */,
+				8267FB2913E2685100A7FCB4 /* SegaMasterSystem.oesystemplugin */,
+				8267FB2B13E2685100A7FCB4 /* NES.oesystemplugin */,
+				8267FB2D13E2685100A7FCB4 /* SuperNES.oesystemplugin */,
+				8267FB2F13E2685100A7FCB4 /* GameBoy.oesystemplugin */,
+				8267FB3113E2685100A7FCB4 /* Genesis.oesystemplugin */,
+				8267FB3313E2685100A7FCB4 /* GameBoy Advance.oesystemplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -636,6 +668,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0410;
 			};
 			buildConfigurationList = 1E07AE3F10373EBC00B9EE89 /* Build configuration list for PBXProject "OpenEmuBuilder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -821,6 +854,55 @@
 			remoteRef = 3D9FF150116FD12B00EE343E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		8267FB2713E2685100A7FCB4 /* OpenEmuSystem.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OpenEmuSystem.framework;
+			remoteRef = 8267FB2613E2685100A7FCB4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8267FB2913E2685100A7FCB4 /* SegaMasterSystem.oesystemplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SegaMasterSystem.oesystemplugin;
+			remoteRef = 8267FB2813E2685100A7FCB4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8267FB2B13E2685100A7FCB4 /* NES.oesystemplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NES.oesystemplugin;
+			remoteRef = 8267FB2A13E2685100A7FCB4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8267FB2D13E2685100A7FCB4 /* SuperNES.oesystemplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SuperNES.oesystemplugin;
+			remoteRef = 8267FB2C13E2685100A7FCB4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8267FB2F13E2685100A7FCB4 /* GameBoy.oesystemplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GameBoy.oesystemplugin;
+			remoteRef = 8267FB2E13E2685100A7FCB4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8267FB3113E2685100A7FCB4 /* Genesis.oesystemplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Genesis.oesystemplugin;
+			remoteRef = 8267FB3013E2685100A7FCB4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8267FB3313E2685100A7FCB4 /* GameBoy Advance.oesystemplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "GameBoy Advance.oesystemplugin";
+			remoteRef = 8267FB3213E2685100A7FCB4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -840,30 +922,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1E4B6CF710DEDF3000B2CD45 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1E4F578610DEA15400381953 /* Gambatte */;
-			targetProxy = 1E4B6CF610DEDF3000B2CD45 /* PBXContainerItemProxy */;
-		};
 		1E4B6CF910DEDF3000B2CD45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1E4F577D10DEA13F00381953 /* CrabEmu */;
 			targetProxy = 1E4B6CF810DEDF3000B2CD45 /* PBXContainerItemProxy */;
 		};
-		1E4B6CFB10DEDF3000B2CD45 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1E4F577610DEA13100381953 /* BSNES */;
-			targetProxy = 1E4B6CFA10DEDF3000B2CD45 /* PBXContainerItemProxy */;
-		};
 		1E4B6CFD10DEDF3000B2CD45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1E4F570110DE9FFA00381953 /* VisualBoyAdvance */;
 			targetProxy = 1E4B6CFC10DEDF3000B2CD45 /* PBXContainerItemProxy */;
-		};
-		1E4B6CFF10DEDF3000B2CD45 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1E4F56FE10DE9FF200381953 /* Nestopia */;
-			targetProxy = 1E4B6CFE10DEDF3000B2CD45 /* PBXContainerItemProxy */;
 		};
 		1E4B6D0110DEDF3000B2CD45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1005,7 +1072,6 @@
 		1E07AE4710373ECF00B9EE89 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = All;
 			};
 			name = Release;
@@ -1013,7 +1079,6 @@
 		1E4F56E610DE9F8100381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build Framework";
 			};
 			name = Release;
@@ -1021,7 +1086,6 @@
 		1E4F56F710DE9FC200381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build SNES9x";
 			};
 			name = Release;
@@ -1029,7 +1093,6 @@
 		1E4F56FD10DE9FEB00381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build GenesisPlus";
 			};
 			name = Release;
@@ -1037,7 +1100,6 @@
 		1E4F570010DE9FF200381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build Nestopia";
 			};
 			name = Release;
@@ -1045,7 +1107,6 @@
 		1E4F570310DE9FFA00381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build VisualBoyAdvance";
 			};
 			name = Release;
@@ -1053,7 +1114,6 @@
 		1E4F570610DEA00C00381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build OpenEmu App";
 			};
 			name = Release;
@@ -1061,7 +1121,6 @@
 		1E4F577810DEA13200381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build BSNES";
 			};
 			name = Release;
@@ -1069,7 +1128,6 @@
 		1E4F577F10DEA13F00381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build CrabEmu";
 			};
 			name = Release;
@@ -1077,7 +1135,6 @@
 		1E4F578810DEA15400381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build Gambatte";
 			};
 			name = Release;
@@ -1085,7 +1142,6 @@
 		1E4F578F10DEA15E00381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build Mednafen";
 			};
 			name = Release;
@@ -1093,7 +1149,6 @@
 		1E4F579610DEA16C00381953 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "Build NeoPop";
 			};
 			name = Release;
