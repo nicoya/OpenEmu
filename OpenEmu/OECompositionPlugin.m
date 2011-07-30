@@ -58,7 +58,7 @@ static NSMutableDictionary *plugins = nil;
 
 + (void)OE_addPluginWithPath:(NSString *)aPath
 {
-    OECompositionPlugin *plugin = [[[self alloc] initWithCompositionAtPath:aPath] autorelease];
+    OECompositionPlugin *plugin = [[self alloc] initWithCompositionAtPath:aPath];
     if(plugin != nil) [plugins setObject:plugin forKey:[plugin name]];
 }
 
@@ -109,32 +109,24 @@ static NSMutableDictionary *plugins = nil;
     {
         if(![[aPath pathExtension] isEqualToString:@"qtz"])
         {
-            [self release];
             return nil;
         }
         path = [aPath copy];
-        composition = [[QCComposition compositionWithFile:path] retain];
-        name = [[[composition attributes] objectForKey:QCCompositionAttributeNameKey] retain];
+        composition = [QCComposition compositionWithFile:path];
+        name = [[composition attributes] objectForKey:QCCompositionAttributeNameKey];
         if(name == nil)
-            name = [[[composition attributes] objectForKey:@"name"] retain];
+            name = [[composition attributes] objectForKey:@"name"];
         if(name == nil)
-            name = [[[path lastPathComponent] stringByDeletingPathExtension] retain];
+            name = [[path lastPathComponent] stringByDeletingPathExtension];
     }
     return self;
 }
 
-- (void) dealloc
-{
-    [path release];
-    [name release];
-    [composition release];
-    [super dealloc];
-}
 
 - (BOOL)isEqual:(id)object
 {
     if([object isKindOfClass:[OECompositionPlugin class]])
-        return [[self name] isEqualToString:[object name]];
+        return [[self name] isEqualToString:[(OECompositionPlugin *)object name]];
     else if([object isKindOfClass:[NSString class]])
         return [[self name] isEqualToString:object];
     return [super isEqual:object];

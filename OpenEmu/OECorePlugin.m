@@ -59,25 +59,15 @@
             for(NSString *ext in exts) [reExts addObject:[ext lowercaseString]];
             [tempTypes setObject:reExts forKey:[type objectForKey:@"CFBundleTypeName"]];
             [tempExts addObjectsFromArray:reExts];
-            [reExts release];
         }
                 
         supportedTypes = [tempTypes copy];
         supportedTypeExtensions = [tempExts copy];
         
-        [tempExts release];
-        [tempTypes release];
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [icon release];
-    [supportedTypes release];
-    [supportedTypeExtensions release];
-    [super dealloc];
-}
 
 - (id<OEPluginController>)newPluginControllerWithClass:(Class)bundleClass
 {
@@ -106,7 +96,7 @@
     for(OECorePlugin *plugin in [self allPlugins])
         [ret addObjectsFromArray:[plugin supportedTypeExtensions]];
     
-    return [[ret copy] autorelease];
+    return [ret copy];
 }
 
 + (NSArray *)pluginsForFileExtension:(NSString *)anExtension

@@ -35,7 +35,7 @@
 {
     [self disableBonjour];
     //kill socket
-    [asyncSocket release], asyncSocket = nil;
+    asyncSocket = nil;
     return YES;
 }
 
@@ -107,7 +107,7 @@
     {
         [netService stop];
         [netService removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-        [netService release], netService = nil;
+        netService = nil;
     }
 }
 

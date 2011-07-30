@@ -47,8 +47,8 @@ enum _OEGameDocumentErrorCodes
 @interface OEGameCoreManager : NSObject
 {
     NSString             *romPath;
-    OECorePlugin         *plugin;
-    OEGameCoreController *owner;
+    OECorePlugin         *__unsafe_unretained plugin;
+    OEGameCoreController *__unsafe_unretained owner;
     
     id<OEGameCoreHelper>  rootProxy;
 }

@@ -34,7 +34,7 @@
 
 @interface _OEMigrator : NSObject
 {
-    id target;
+    id __unsafe_unretained target;
     SEL action;
     
     BOOL hasRun;
@@ -96,10 +96,9 @@ static OEVersionMigrationController *sDefaultMigrationController = nil;
 
 -(void)dealloc
 {
-    [migrators release], migrators = nil;
-    [lastVersion release], lastVersion = nil;
+    migrators = nil;
+    lastVersion = nil;
     
-    [super dealloc];
 }
 
 - (void)runMigrationIfNeeded
@@ -190,7 +189,7 @@ static OEVersionMigrationController *sDefaultMigrationController = nil;
 
 - (void)addMigratorTarget:(id)target selector:(SEL)selector forVersion:(NSString *)version
 {
-    if(migrators == nil) migrators = [[NSMutableDictionary dictionary] retain];
+    if(migrators == nil) migrators = [NSMutableDictionary dictionary];
     
     NSArray *allVersions = [self allMigrationVersions];
     
@@ -224,7 +223,6 @@ static OEVersionMigrationController *sDefaultMigrationController = nil;
     migratorContainer.action = selector;
     
     [migratorsForVersion addObject:migratorContainer];
-    [migratorContainer release];
     
     if(isRunning) [self runMigrationIfNeeded];
 }

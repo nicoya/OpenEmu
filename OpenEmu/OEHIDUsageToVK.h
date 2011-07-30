@@ -130,8 +130,8 @@ OE_HIDVKCode hidvk_codes[] = {
 
 typedef struct
 {
-	NSUInteger  hidCode;
-	NSString   *string;
+    NSUInteger  hidCode;
+    __unsafe_unretained NSString *string;
 } OE_HIDString;
 
 OE_HIDString hidlabels[] = {

@@ -58,7 +58,6 @@
     [NSGraphicsContext restoreGraphicsState];
     
     /* done with the shadow */
-    [theShadow release];
 }
 
 @end
@@ -72,19 +71,13 @@
     if (self)
     {
         [self setControlZone:frame];
-        lines = [[NSBezierPath bezierPath] retain];
+        lines = [NSBezierPath bezierPath];
         [lines setLineWidth:3.0];
         [lines setLineCapStyle:NSRoundLineCapStyle];
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [lines release];
-    [gameController release];
-    [super dealloc];
-}
 
 - (void)drawRect:(NSRect)rect
 {
@@ -121,13 +114,12 @@
 
 - (NSImage *)gameController
 {
-    return [[gameController retain] autorelease];
+    return gameController;
 }
 
 - (void)setGameController:(NSImage *)_value
 {
-    [gameController autorelease];
-    gameController = [_value retain];
+    gameController = _value;
 }
 
 #define BUTTON_SIZE NSMakeSize(90.0, 32.0)
@@ -176,7 +168,7 @@
         middle.y = NSMaxY(drawRect) - button.size.height / 2.0;
     }
     
-    NSButton *added = [[[NSButton alloc] initWithFrame:button] autorelease];
+    NSButton *added = [[NSButton alloc] initWithFrame:button];
     [added setTarget:aTarget];
     [added setAction:@selector(selectInputControl:)];
     [added bind:@"title" toObject:aTarget withKeyPath:aName options:nil];

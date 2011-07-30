@@ -69,12 +69,8 @@
 
 - (void)dealloc
 {
-    [playPauseToolbarItem release];
-    [view release];
-    [gameWindow release];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationWillTerminateNotification object:NSApp];
-    [super dealloc];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
@@ -132,8 +128,8 @@
         
         if(plugin == nil) return NO;
         
-        gameController = [[plugin controller]  retain];
-        emulatorName   = [[plugin displayName] retain];
+        gameController = [plugin controller];
+        emulatorName   = [plugin displayName];
         
         [gameSystemController registerGameSystemResponder:gameSystemResponder];
         
@@ -146,13 +142,13 @@
         
         if(gameCoreManager != nil)
         {
-            rootProxy = [[gameCoreManager rootProxy] retain];
+            rootProxy = [gameCoreManager rootProxy];
             
             [rootProxy setupEmulation];
             
             OEGameCore *gameCore = [rootProxy gameCore];
             
-            gameSystemController = [[[OESystemPlugin gameSystemPluginForName:[gameCore gameSystemName]] controller] retain];
+            gameSystemController = [[OESystemPlugin gameSystemPluginForName:[gameCore gameSystemName]] controller];
             gameSystemResponder  = [gameSystemController newGameSystemResponder];
             
             [gameSystemResponder setClient:gameCore];
@@ -188,7 +184,7 @@
     if([validPlugins count] <= 1) ret = [validPlugins lastObject];
     else
     {
-        OECorePickerController *c = [[[OECorePickerController alloc] initWithCoreList:validPlugins] autorelease];
+        OECorePickerController *c = [[OECorePickerController alloc] initWithCoreList:validPlugins];
         
         if([[NSApplication sharedApplication] runModalForWindow:[c window]] == 1)
             ret = [c selectedCore];
@@ -221,23 +217,17 @@
     [gameController removeSettingObserver:[rootProxy gameCore]];
     [gameWindow makeFirstResponder:nil];
     
-    [gameSystemController release];
     gameSystemController = nil;
-    [gameSystemResponder release];
     gameSystemResponder  = nil;
     
     // kill our background friend
     [gameCoreManager stop];
-    [gameCoreManager release];
     gameCoreManager = nil;
     
-    [rootProxy release];
     rootProxy = nil;
     
-    [gameController release];
     gameController = nil;
     
-    [emulatorName release];
     emulatorName = nil;
 }
 

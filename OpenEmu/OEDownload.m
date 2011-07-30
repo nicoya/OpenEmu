@@ -30,6 +30,9 @@
 #import <Sparkle/Sparkle.h>
 #import <XADMaster/XADArchive.h>
 
+@interface OEDownload () <NSURLDownloadDelegate>
+@end
+
 @implementation OEDownload
 
 @synthesize downloadTitle, downloadDescription, downloadIcon;
@@ -69,29 +72,10 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [downloadTitle release];
-    [downloadDescription release];
-    [downloadIcon release];
-    
-    [appcast release];
-    [appcastItem release];
-    
-    [progressBar release];
-    [startDownloadButton release];
-    [downloadPath release];
-    [fullPluginPath release];
-    
-    [iconData release];
-    [iconConnection release];
-    
-    [super dealloc];
-}
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    return [self retain];
+    return self;
 }
 
 #pragma mark Core Download
@@ -99,7 +83,7 @@
 - (void)startDownload:(id)sender
 {
     NSURLRequest  *request      = [NSURLRequest requestWithURL:[appcastItem fileURL]];
-    NSURLDownload *fileDownload = [[[NSURLDownload alloc] initWithRequest:request delegate:self] autorelease];
+    NSURLDownload *fileDownload = [[NSURLDownload alloc] initWithRequest:request delegate:self];
     downloading = YES;
     
     [[self delegate] OEDownloadDidStart:self];
@@ -111,8 +95,7 @@
 - (void)download:(NSURLDownload *)download decideDestinationWithSuggestedFilename:(NSString *)filename
 {
     // TODO: use mkstemp() instead of tmpnam()
-    downloadPath = [[NSString stringWithCString:tmpnam(nil) 
-                                       encoding:[NSString defaultCStringEncoding]] retain];
+    downloadPath = [NSString stringWithCString:tmpnam(nil) encoding:[NSString defaultCStringEncoding]];
     
     [download setDestination:downloadPath allowOverwrite:NO];
 }
@@ -155,7 +138,7 @@
     NSString *appsupportFolder = [[OEGameDocumentController sharedDocumentController] applicationSupportFolder];
     appsupportFolder = [appsupportFolder stringByAppendingPathComponent:@"Cores"];
     
-    fullPluginPath = [[appsupportFolder stringByAppendingPathComponent:[archive nameOfEntry:0]] retain];
+    fullPluginPath = [appsupportFolder stringByAppendingPathComponent:[archive nameOfEntry:0]];
     DLog(@"%@", fullPluginPath);
     [archive extractTo:appsupportFolder];
     
@@ -172,8 +155,7 @@
 {
     self.downloadIcon = nil;
     
-    if (iconData) [iconData release];
-    iconData = [[NSMutableData data] retain];
+    iconData = [NSMutableData data];
     NSURLRequest *request = [NSURLRequest requestWithURL:iconURL
                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
                                          timeoutInterval:10];
@@ -192,8 +174,6 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    [connection release];
-    [iconData release];
     iconConnection = nil;
     iconData = nil;
     
@@ -205,11 +185,9 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    self.downloadIcon = [[[NSImage alloc] initWithData:iconData] autorelease];
+    self.downloadIcon = [[NSImage alloc] initWithData:iconData];
     [[self delegate] OEIconDownloadDidFinish:self];
     
-    [connection release];
-    [iconData release];
     iconConnection = nil;
     iconData       = nil;
 }

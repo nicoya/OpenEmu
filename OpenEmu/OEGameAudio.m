@@ -38,7 +38,7 @@ OSStatus RenderCallback(void                       *in,
                         UInt32                      inNumberFrames,
                         AudioBufferList            *ioData)
 {
-    [((OEGameCore *)in) getAudioBuffer:ioData->mBuffers[0].mData frameCount:inNumberFrames bufferIndex:0];
+    [((__bridge OEGameCore *)in) getAudioBuffer:ioData->mBuffers[0].mData frameCount:inNumberFrames bufferIndex:0];
     //ExtAudioFileWriteAsync( recordingFile, inNumberFrames, ioData );
     
     return 0;
@@ -50,7 +50,6 @@ OSStatus RenderCallback(void                       *in,
 // No default version for this class
 - (id)init
 {
-    [self release];
     return nil;
 }
 
@@ -72,7 +71,6 @@ OSStatus RenderCallback(void                       *in,
     AUGraphUninitialize(mGraph);
     //FIXME: added this line tonight.  do we need it?  Fuckety fuck fucking shitty Core Audio documentation... :X
     DisposeAUGraph(mGraph);
-    [super dealloc];
 }
 
 - (void)pauseAudio
@@ -151,7 +149,7 @@ OSStatus RenderCallback(void                       *in,
     
     AURenderCallbackStruct renderStruct;
     renderStruct.inputProc = RenderCallback;
-    renderStruct.inputProcRefCon = gameCore;
+    renderStruct.inputProcRefCon = (__bridge void *)gameCore;
     
     err = AudioUnitSetProperty(mConverterUnit, kAudioUnitProperty_SetRenderCallback,
                                kAudioUnitScope_Input, 0, &renderStruct, sizeof(AURenderCallbackStruct));

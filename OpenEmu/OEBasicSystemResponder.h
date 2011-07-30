@@ -32,7 +32,7 @@
 @interface OEBasicSystemResponder : OESystemResponder
 {
 @private
-    OEMapRef keyMap;
+    OEMap *keyMap;
 }
 
 - (OEEmulatorKey)emulatorKeyForKey:(NSString *)aKey index:(NSUInteger)index player:(NSUInteger)thePlayer;

@@ -38,10 +38,10 @@
 @interface OEGameLayer : CAOpenGLLayer <OEGameCoreHelperDelegate>
 {
     // from our gameDocument - where we get our IOSurface refs from:
-    id<OEGameCoreHelper> rootProxy;
+    id<OEGameCoreHelper> __unsafe_unretained rootProxy;
     
     NSString             *filterName;
-    NSView               *ownerView;
+    NSView               *__unsafe_unretained ownerView;
     
     // for rendering
     CGLContextObj         layerContext;

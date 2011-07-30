@@ -32,15 +32,6 @@
 @implementation OEControlsViewController
 @synthesize selectedControl, bindingType, playerSelector, playerStepper, playerField, delegate;
 
-- (void)dealloc
-{
-    [bindingType    release];
-    [playerSelector release];
-    [playerStepper  release];
-    [playerField    release];
-    
-    [super dealloc];
-}
 
 - (void)awakeFromNib
 {

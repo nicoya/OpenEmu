@@ -61,7 +61,7 @@
 @interface OETaskWrapper (PrivateMethods)
 // This method is called asynchronously when data is available from the task's file handle.
 // We just pass the data along to the controller as an NSString.
-- (void) getData: (NSNotification *)aNotification;
+- (void)getData:(NSNotification *)aNotification;
 @end
 
 @implementation OETaskWrapper
@@ -69,12 +69,13 @@
 @synthesize task;
 
 // Do basic initialization
-- (id)initWithController: (id <OETaskWrapperController>)cont arguments: (NSArray *)args userInfo: (id)someInfo
+- (id)initWithController:(id<OETaskWrapperController>)cont arguments:(NSArray *)args userInfo:(id)someInfo
 {
-    if ([super init]) {
+    if((self = [super init]))
+    {
         controller = cont;
-        arguments  = [args retain];
-        userInfo   = [someInfo retain];
+        arguments  = args;
+        userInfo   = someInfo;
     }
     return self;
 }
@@ -83,18 +84,12 @@
 - (void)dealloc
 {
     [self stopProcess];
-    
-    [userInfo release];
-    [arguments release];
-    [task release];
-    
-    [super dealloc];
 }
 
 #define USE_EXTERNAL_FILE 0
 
 // Here's where we actually kick off the process via an NSTask.
-- (void) startProcess
+- (void)startProcess
 {
     // We first let the controller know that we are starting
     [controller processStarted: self];
@@ -135,7 +130,7 @@
 - (void) stopProcess
 {
     // If we stopped already, ignore
-    if (!controller)
+    if(!controller)
         return;
     
 #if !USE_EXTERNAL_FILE
@@ -152,7 +147,7 @@
 #if !USE_EXTERNAL_FILE
     NSData *data;
     
-    while ((data = [[[task standardOutput] fileHandleForReading] availableData]) && [data length])
+    while((data = [[[task standardOutput] fileHandleForReading] availableData]) && [data length] > 0)
     {
         [controller appendOutput: [[[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding] autorelease]
                      fromProcess: self];
@@ -174,7 +169,7 @@
 	controller = nil;
 }
 
-- (void)sendToProcess: (NSString *)aString
+- (void)sendToProcess:(NSString *)aString
 {
     NSFileHandle *outFile = [[task standardInput] fileHandleForWriting];
     
@@ -195,7 +190,7 @@
 
 @implementation OETaskWrapper (PrivateMethods)
 
-- (void) getData: (NSNotification *)aNotification
+- (void)getData:(NSNotification *)aNotification
 {
     NSData *data = [[aNotification userInfo] objectForKey: NSFileHandleNotificationDataItem];
     
@@ -205,7 +200,7 @@
         // Send the data on to the controller; we can't just use +stringWithUTF8String: here
         // because -[data bytes] is not necessarily a properly terminated string.
         // -initWithData:encoding: on the other hand checks -[data length]
-        [controller appendOutput: [[[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding] autorelease]
+        [controller appendOutput: [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding]
                      fromProcess: self];
     } else {
         // We're finished here

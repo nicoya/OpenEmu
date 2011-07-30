@@ -50,14 +50,12 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
         
         if(![self startHelperProcessError:outError])
         {
-            [self release];
             return nil;
         }
         
         if(![self loadROMError:outError])
         {
             [self endHelperProcess];
-            [self release];
             return nil;
         }
     }
@@ -72,8 +70,6 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
 - (void)dealloc
 {
     [self stop];
-    [romPath release];
-    [super dealloc];
 }
 
 - (BOOL)startHelperProcessError:(NSError **)outError
@@ -128,7 +124,7 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
     NSString *cliPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"OpenEmuHelperApp" ofType: @""];
     
     // generate a UUID string so we can have multiple screen capture background tasks running.
-    taskUUIDForDOServer = [[NSString stringWithUUID] retain];
+    taskUUIDForDOServer = [NSString stringWithUUID];
     // NSLog(@"helper tool UUID should be %@", taskUUIDForDOServer);
     
     NSArray *args = [NSArray arrayWithObjects:cliPath, taskUUIDForDOServer, nil];
@@ -138,7 +134,6 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
     
     if(![helper isRunning])
     {
-        [helper release];
         if(outError != NULL)
             *outError = [NSError errorWithDomain:OEGameDocumentErrorDomain
                                             code:OEHelperAppNotRunningError
@@ -170,7 +165,6 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
         }
     }
     
-    [taskConnection retain];
     
     if(![taskConnection isValid])
     {
@@ -185,7 +179,7 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
     }
     
     // now that we have a valid connection...
-    rootProxy = [[taskConnection rootProxy] retain];
+    rootProxy = [taskConnection rootProxy];
     if(rootProxy == nil)
     {
         NSLog(@"nil root proxy object?");
@@ -210,10 +204,8 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
     [helper stopProcess];
     helper = nil;
     
-    [rootProxy release];
     rootProxy = nil;
     
-    [taskConnection release];
     taskConnection = nil;
 }
 
@@ -241,20 +233,21 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
 
 - (void)executionThread:(id)object
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
-    taskUUIDForDOServer = [[NSString stringWithUUID] retain];
-    
-    [[NSThread currentThread] setName:[OEHelperServerNamePrefix stringByAppendingString:taskUUIDForDOServer]];
-    
-    helperObject = [[[OpenEmuHelperApp alloc] init] autorelease];
-    
-    if([helperObject launchConnectionWithIdentifierSuffix:taskUUIDForDOServer error:&error])
-        CFRunLoopRun();
-    else
-        [error retain];
-    
-    [pool drain];
+    @autoreleasepool
+    {
+        taskUUIDForDOServer = [NSString stringWithUUID];
+        
+        [[NSThread currentThread] setName:[OEHelperServerNamePrefix stringByAppendingString:taskUUIDForDOServer]];
+        
+        helperObject = [[OpenEmuHelperApp alloc] init];
+        
+        NSError *localError = nil;
+        
+        if([helperObject launchConnectionWithIdentifierSuffix:taskUUIDForDOServer error:&localError])
+            CFRunLoopRun();
+        
+        error = localError;
+    }
 }
 
 - (void)dumpUpperLoop
@@ -282,14 +275,13 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
     
     if(![helper isExecuting])
     {
-        [helper release];
         if(outError != NULL)
             *outError = [NSError errorWithDomain:OEGameDocumentErrorDomain
                                             code:OEHelperAppNotRunningError
                                         userInfo:
                          [NSDictionary dictionaryWithObjectsAndKeys:
                           NSLocalizedString(@"The background process couldn't be launched", @"Not running background process error"), NSLocalizedFailureReasonErrorKey,
-                          [error autorelease], NSUnderlyingErrorKey,
+                          error, NSUnderlyingErrorKey,
                           nil]];
         return NO;
     }
@@ -307,7 +299,7 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
         
         if(error != nil && ![helper isExecuting])
         {
-            if (outError) *outError = [error autorelease];
+            if (outError) *outError = error;
             return NO;
         }
         
@@ -324,7 +316,6 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
         }
     }
     
-    [taskConnection retain];
     
     if(![taskConnection isValid])
     {
@@ -339,7 +330,7 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
     }
     
     // now that we have a valid connection...
-    rootProxy = [[taskConnection rootProxy] retain];
+    rootProxy = [taskConnection rootProxy];
     if(rootProxy == nil)
     {
         NSLog(@"nil root proxy object?");
@@ -366,13 +357,10 @@ NSString *const OEGameDocumentErrorDomain = @"OEGameDocumentErrorDomain";
     // Runs the runloop until the helper is actually done to prevent deadlocks if the game core wants the main thread to do stuff...
     while([helperObject isRunning]) CFRunLoopRunInMode(kCFRunLoopDefaultMode, 0.1, YES);
     
-    [helper release];
     helper = nil;
     
-    [rootProxy release];
     rootProxy = nil;
     
-    [taskConnection release];
     taskConnection = nil;
 }
 

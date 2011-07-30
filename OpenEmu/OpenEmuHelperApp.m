@@ -50,7 +50,7 @@ NSString *const OEHelperProcessErrorDomain = @"OEHelperProcessErrorDomain";
 #pragma mark Display Link Callback
 CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,const CVTimeStamp *inNow,const CVTimeStamp *inOutputTime,CVOptionFlags flagsIn,CVOptionFlags *flagsOut,void *displayLinkContext)
 {
-    CVReturn error = [(OpenEmuHelperApp*) displayLinkContext displayLinkRenderCallback:inOutputTime];
+    CVReturn error = [(__bridge OpenEmuHelperApp *)displayLinkContext displayLinkRenderCallback:inOutputTime];
     return error;
 }
 
@@ -74,7 +74,7 @@ CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,const CVTimeStamp *i
     gameFBO = 0;
     gameTexture = 0;
     
-    parentApplication = [[NSRunningApplication runningApplicationWithProcessIdentifier:getppid()] retain];
+    parentApplication = [NSRunningApplication runningApplicationWithProcessIdentifier:getppid()];
     NSLog(@"parent application is: %@", [parentApplication localizedName]);
         
     if([self launchConnectionWithIdentifierSuffix:doUUID error:NULL])
@@ -102,14 +102,6 @@ CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,const CVTimeStamp *i
     return ret;
 }
 
-- (void)dealloc
-{
-    [theConnection release];
-    [gameCore  release];
-    [gameAudio release];
-    [delegate release];
-    [super dealloc];
-}
 
 - (void)setupGameCore
 {
@@ -190,9 +182,8 @@ CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,const CVTimeStamp *i
     [surfaceAttributes setObject:[NSNumber numberWithUnsignedInteger:(NSUInteger)4] forKey:(NSString*)kIOSurfaceBytesPerElement];
     
     // TODO: do we need to ensure openGL Compatibility and CALayer compatibility?
-    surfaceRef = IOSurfaceCreate((CFDictionaryRef) surfaceAttributes);
-    [surfaceAttributes release];
-        
+    surfaceRef = IOSurfaceCreate((__bridge CFDictionaryRef) surfaceAttributes);
+    
     // make a new texture.
     CGLContextObj cgl_ctx = glContext;
     CGLLockContext(cgl_ctx);
@@ -355,7 +346,7 @@ static int PixelFormatToBPP(GLenum pixelFormat)
         [[NSApplication sharedApplication] terminate:nil];
     }
     
-    error = CVDisplayLinkSetOutputCallback(displayLink,MyDisplayLinkCallback, self);
+    error = CVDisplayLinkSetOutputCallback(displayLink, MyDisplayLinkCallback, (__bridge void *)self);
     if(error != kCVReturnSuccess)
     {
         NSLog(@"DisplayLink could not link to callback, error:%d - Terminating helper", error);
@@ -379,12 +370,11 @@ static int PixelFormatToBPP(GLenum pixelFormat)
 - (CVReturn)displayLinkRenderCallback:(const CVTimeStamp *)timeStamp
 {
     CVReturn rv = kCVReturnError;
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    @autoreleasepool
     {
         [self render];
         rv = kCVReturnSuccess;
     }
-    [pool drain];
     return rv;
 }
 
@@ -614,7 +604,6 @@ static int PixelFormatToBPP(GLenum pixelFormat)
         else
         {
             NSLog(@"ROM did not load.");
-            [gameCore release];
             gameCore = nil;
         }
     }
@@ -649,8 +638,8 @@ static int PixelFormatToBPP(GLenum pixelFormat)
     
     [gameCore stopEmulation];
     [gameAudio stopAudio];
-    [gameCore release],  gameCore = nil;
-    [gameAudio release], gameAudio = nil;
+    gameCore = nil;
+    gameAudio = nil;
     
     [self setRunning:NO];
 }
@@ -707,13 +696,13 @@ static int PixelFormatToBPP(GLenum pixelFormat)
 - (void)player:(NSUInteger)playerNumber didPressButton:(OEButton)button
 {
 //    DLog(@"did Press Button");
-    [gameCore player:playerNumber didPressButton:button];
+    //[gameCore player:playerNumber didPressButton:button];
 }
 
 - (void)player:(NSUInteger)playerNumber didReleaseButton:(OEButton)button
 {
 //    DLog(@"did Release Button");
-    [gameCore player:playerNumber didReleaseButton:button];
+    //[gameCore player:playerNumber didReleaseButton:button];
 }
 
 @end

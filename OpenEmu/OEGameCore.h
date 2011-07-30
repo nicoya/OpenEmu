@@ -100,8 +100,8 @@ static inline OEIntRect OERectMake(int x, int y, int width, int height)
 {
     NSThread              *emulationThread;
     NSTimeInterval         frameInterval;
-    OEGameCoreController  *owner;
-    OERingBuffer         **ringBuffers;
+    OEGameCoreController  *__unsafe_unretained owner;
+    __strong OERingBuffer ** ringBuffers;
     //OEMapRef               keyMap;
     NSUInteger             frameSkip;
     NSUInteger             frameCounter;

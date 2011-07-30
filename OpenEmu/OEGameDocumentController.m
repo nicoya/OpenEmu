@@ -72,7 +72,7 @@
 {
     // This can get called many times, don't need to be blowing away the defaults
     NSUserDefaultsController *defaults = [NSUserDefaultsController sharedUserDefaultsController];
-    NSDictionary *initialValues = [[[defaults initialValues] mutableCopy] autorelease];
+    NSDictionary *initialValues = [[defaults initialValues] mutableCopy];
     if(initialValues == nil)
         initialValues = [NSMutableDictionary dictionary];
     
@@ -217,7 +217,6 @@
         
         [self willChangeValueForKey:@"aboutCreditsPath"];
         aboutCreditsPath = [[NSBundle mainBundle] pathForResource:@"Credits" ofType:@"rtf"];
-        [aboutCreditsPath retain];
         [self didChangeValueForKey:@"aboutCreditsPath"];
     }
     return self;
@@ -225,25 +224,18 @@
 
 - (void)dealloc
 {
-    [hidManager release]; hidManager = nil;
+     hidManager = nil;
 	
 	[[OEPlugin class] removeObserver:self forKeyPath:@"allPlugins"];
     
-    [filterNames      release];
-    [validExtensions  release];
-    [plugins          release];
-    [aboutCreditsPath release];
-    [coreInstaller    release];
-    [coreUpdater      release];
     
-    [managedObjectContext       release], managedObjectContext = nil;
-    [persistentStoreCoordinator release], persistentStoreCoordinator = nil;
-    [managedObjectModel         release], managedObjectModel = nil;
+    managedObjectContext = nil;
+    persistentStoreCoordinator = nil;
+    managedObjectModel = nil;
     
-    [organizer       release], organizer = nil;
-    [versionMigrator release], versionMigrator = nil;
+    organizer = nil;
+    versionMigrator = nil;
     
-    [super dealloc];
 }
 
 - (IBAction)openPreferenceWindow:(id)sender
@@ -334,7 +326,7 @@
     NSArray *filterPlugins = [[OECompositionPlugin allPluginNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     
     // These filters are loaded and run by GL, and do not rely on QTZs
-    filterNames = [[filterPlugins arrayByAddingObjectsFromArray:
+    filterNames = [filterPlugins arrayByAddingObjectsFromArray:
                     [NSArray arrayWithObjects:
                      @"Linear",
                      @"Nearest Neighbor",
@@ -342,7 +334,7 @@
                      @"Scale2xPlus",
                      @"Scale4x",
                      @"Scale4xHQ",
-                     nil]] retain];
+                     nil]];
     
     [self didChangeValueForKey:@"filterNames"];
 }
@@ -359,9 +351,7 @@
     for(NSDictionary* key in types)
         [mutableExtensions addObjectsFromArray:[key objectForKey:@"CFBundleTypeExtensions"]];
     
-    [validExtensions release];
-    validExtensions = [[mutableExtensions allObjects] retain];
-    [mutableExtensions release];
+    validExtensions = [mutableExtensions allObjects];
     
     [self updateInfoPlist];
 }
@@ -375,7 +365,7 @@
     for(OECorePlugin *plugin in corePlugins)
         for(NSDictionary *type in [plugin typesPropertyList])
         {
-            NSMutableDictionary *reType = [[type mutableCopy] autorelease];
+            NSMutableDictionary *reType = [type mutableCopy];
             
             [reType setObject:@"GameDocument"                   forKey:@"NSDocumentClass"];
             [reType setObject:@"Viewer"                         forKey:@"CFBundleTypeRole"];
@@ -399,7 +389,6 @@
     if(infoPlist == nil)
     {
         NSLog(@"%@", error);
-        [error release];
     }
     
     NSArray *existingTypes = [infoPlist objectForKey:@"CFBundleDocumentTypes"];
@@ -418,7 +407,6 @@
     else
     {
         NSLog(@"Error: %@", error);
-        [error release];
     }
     
     NSLog(@"Info.plist is %@updated", (isUpdated ? @"" : @"NOT "));
@@ -468,7 +456,7 @@
         
         if([archive numberOfEntries] != 1) //more than one rom in the archive
         {
-            OEGamePickerController *c = [[[OEGamePickerController alloc] init] autorelease];
+            OEGamePickerController *c = [[OEGamePickerController alloc] init];
             [c setArchive:archive];
             
             if([[NSApplication sharedApplication] runModalForWindow:[c window]] == 1)
@@ -576,7 +564,7 @@
 {
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
     LSLaunchURLSpec launchSpec;
-    launchSpec.appURL = (CFURLRef)url;
+    launchSpec.appURL = (__bridge CFURLRef)url;
     launchSpec.itemURLs = NULL;
     launchSpec.passThruParams = NULL;
     launchSpec.launchFlags = kLSLaunchDefaults | kLSLaunchNewInstance;
@@ -629,7 +617,7 @@
  */
 - (NSManagedObjectModel *)managedObjectModel
 {
-    if (managedObjectModel != nil) return managedObjectModel;
+    if(managedObjectModel != nil) return managedObjectModel;
     
     managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"ROMFile" ofType:@"mom"]]];
     return managedObjectModel;
@@ -643,7 +631,7 @@
  */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    if (persistentStoreCoordinator != nil) return persistentStoreCoordinator;
+    if(persistentStoreCoordinator != nil) return persistentStoreCoordinator;
     
     NSString      *applicationSupportFolder = [self applicationSupportFolder];
     NSError       *error                    = nil;
@@ -734,7 +722,7 @@
                 
                 BOOL errorResult = [[NSApplication sharedApplication] presentError:error];
                 
-                if (errorResult) reply = NSTerminateCancel;
+                if(errorResult) reply = NSTerminateCancel;
                 else
                 {
                     NSInteger alertReturn = NSRunAlertPanel(nil, @"Could not save changes while quitting. Quit anyway?", @"Quit anyway", @"Cancel", nil);
@@ -751,41 +739,42 @@
 
 - (BOOL)migrateOESaveStateAtPath:(NSString *)saveStatePath
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    BOOL win = YES;
-    
-    NSManagedObjectModel         *model       = [[[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:saveStatePath]] autorelease];
-    NSPersistentStoreCoordinator *coordinator = [[[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model] autorelease];
-    NSManagedObjectContext       *context     = [[[NSManagedObjectContext alloc] init] autorelease];
-    [context setPersistentStoreCoordinator:coordinator];
-    
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"SaveState" inManagedObjectContext:context];
-    
-    NSFetchRequest *fetch = [[[NSFetchRequest alloc] init] autorelease];
-    [fetch setEntity:entityDescription];
-    
-    NSArray *saves = [context executeFetchRequest:fetch error:nil];
-    
-    for(SaveState *save in saves)
+    @autoreleasepool
     {
-        OESaveState *saveState = [[[OESaveState alloc] initInsertedIntoManagedObjectContext:self.managedObjectContext] autorelease];
-        [saveState setBundlePath:[[saveStatePath stringByDeletingPathExtension] stringByAppendingPathExtension:@"savestate"]];
+        BOOL win = YES;
         
-        [saveState setRomFile:[OEROMFile fileWithPath:[save rompath]
-                                    createIfNecessary:YES
-                               inManagedObjectContext:self.managedObjectContext]];
+        NSManagedObjectModel         *model       = [[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:saveStatePath]];
+        NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model];
+        NSManagedObjectContext       *context     = [[NSManagedObjectContext alloc] init];
+        [context setPersistentStoreCoordinator:coordinator];
         
-        [saveState setEmulatorID:[save emulatorID]];
-        [saveState setTimeStamp: [save timeStamp]];
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"SaveState" inManagedObjectContext:context];
         
-        [saveState setSaveData:  [[save saveData] valueForKey:@"data"]];
-        [saveState setScreenshot:[[[NSImage alloc] initWithData:[[save screenShot] valueForKey:@"data"]] autorelease]];
+        NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+        [fetch setEntity:entityDescription];
+        
+        NSArray *saves = [context executeFetchRequest:fetch error:nil];
+        
+        for(SaveState *save in saves)
+        {
+            OESaveState *saveState = [[OESaveState alloc] initInsertedIntoManagedObjectContext:self.managedObjectContext];
+            [saveState setBundlePath:[[saveStatePath stringByDeletingPathExtension] stringByAppendingPathExtension:@"savestate"]];
+            
+            [saveState setRomFile:[OEROMFile fileWithPath:[save rompath]
+                                        createIfNecessary:YES
+                                   inManagedObjectContext:self.managedObjectContext]];
+            
+            [saveState setEmulatorID:[save emulatorID]];
+            [saveState setTimeStamp: [save timeStamp]];
+            
+            [saveState setSaveData:  [[save saveData] valueForKey:@"data"]];
+            [saveState setScreenshot:[[NSImage alloc] initWithData:[[save screenShot] valueForKey:@"data"]]];
+        }
+        
+        if(win) [[NSFileManager defaultManager] removeItemAtPath:saveStatePath error:nil];
+        
+        return win;
     }
-    
-    if(win) [[NSFileManager defaultManager] removeItemAtPath:saveStatePath error:nil];
-    
-    [pool drain];
-    return win;
 }
 
 - (IBAction)loadState:(NSArray *)states
@@ -806,7 +795,7 @@
     NSString *romPath = [[[self currentDocument] fileURL] path];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"SaveState"
                                               inManagedObjectContext:self.managedObjectContext];
-    OESaveState *newState = [[[OESaveState alloc] initWithEntity:entity insertIntoManagedObjectContext:nil] autorelease];
+    OESaveState *newState = [[OESaveState alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
     
     NSString *saveFileName = [NSString stringWithFormat:@"%@-%@", [[romPath lastPathComponent] stringByDeletingPathExtension],
                               [[NSDate date] descriptionWithCalendarFormat:@"%m-%d-%Y_%H-%M-%S-%F" timeZone:nil locale:nil]];

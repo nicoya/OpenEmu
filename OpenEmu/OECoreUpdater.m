@@ -74,7 +74,7 @@
     {
         if(updater == [SUUpdater updaterForBundle:plugin.bundle])
         {
-            OEDownload *download = [[[OEDownload alloc] init] autorelease];
+            OEDownload *download = [[OEDownload alloc] init];
             download.downloadTitle = plugin.displayName;
             download.downloadIcon  = plugin.icon;
             download.appcastItem   = update;

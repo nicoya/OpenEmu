@@ -41,7 +41,7 @@
 - (OECorePlugin *)selectedCore;
 
 @property(readonly) NSArray                    *coreList;
-@property(retain)   IBOutlet NSArrayController *coreArrayController;
-@property(assign)   IBOutlet NSTableView       *coreTableView;
+@property(strong)   IBOutlet NSArrayController *coreArrayController;
+@property(strong)   IBOutlet NSTableView       *coreTableView;
 
 @end

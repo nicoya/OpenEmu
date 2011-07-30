@@ -36,16 +36,10 @@
 {
     if((self = [super initWithController:controller]))
     {
-        keyMap = OEMapCreate([[controller genericControlNames] count]);
+        keyMap = [[OEMap alloc] initWithCapacity:[[controller genericControlNames] count]];
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    OEMapRelease(keyMap);
-    [super dealloc];
 }
 
 - (OEEmulatorKey)emulatorKeyForKey:(NSString *)aKey index:(NSUInteger)index player:(NSUInteger)thePlayer

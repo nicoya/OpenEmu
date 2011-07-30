@@ -42,18 +42,6 @@
     return [self initWithWindowNibName:@"OEROMOrganizer"];
 }
 
-- (void)dealloc
-{
-    [persistentStoreCoordinator release];
-    [managedObjectModel release];
-    [managedObjectContext release];
-    
-    [allROMSController release];
-    [sourceList release];
-    [searchPredicate release];
-    [searchField release];
-    [super dealloc];
-}
 
 /**
  Creates, retains, and returns the managed object model for the application 
@@ -62,7 +50,7 @@
 - (NSManagedObjectModel *)managedObjectModel
 {
     if(managedObjectModel == nil)
-        managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+        managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
 
     return managedObjectModel;
 }
@@ -136,8 +124,8 @@
      {
          if(result == NSOKButton)
          {
-             for(NSString *file in [panel filenames])
-                 [OEROMFile fileWithPath:file createIfNecessary:YES inManagedObjectContext:[self managedObjectContext]];
+             for(NSURL *file in [panel URLs])
+                 [OEROMFile fileWithPath:[file path] createIfNecessary:YES inManagedObjectContext:[self managedObjectContext]];
              
              [self save];
          }
@@ -166,7 +154,8 @@
     [self save];
 }
 
-- (IBAction)previewROM:(id)sender{
+- (IBAction)previewROM:(id)sender
+{
 	for(OEROMFile *romFile in [allROMSController selectedObjects]){
 //		NSError *error = NULL;
 //		GameDocument *document = [[GameDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[romFile pathURL] display:YES error:&error];
@@ -188,8 +177,7 @@
 - (void)setSearchPredicate:(NSPredicate *)pred
 {
     DLog(@"New search predicate! %@", pred);
-    [searchPredicate autorelease];
-    searchPredicate = [pred retain];
+    searchPredicate = pred;
     
     [self updateFilterPredicate];
 }
@@ -278,7 +266,7 @@
             case 1:
                 return [plugin displayName];
                 break;
-        }        
+        }
     }
     return nil;
 }
@@ -304,7 +292,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"(path contains[c] %@) or "
                               @"(name contains[c] %@) or "
-                              @"(lastPlayedDate.description contains[c] $value)", 
+                              @"(lastPlayedDate.description contains[c] $value)",
                               searchTerm, searchTerm, searchTerm];
     return predicate;
 }
@@ -342,7 +330,7 @@
 - (void)updateFilterPredicate
 {
     NSPredicate *predicate = [self predicateForCurrentState];
-    [allROMSController setFilterPredicate:predicate];    
+    [allROMSController setFilterPredicate:predicate];
 }
 
 @end

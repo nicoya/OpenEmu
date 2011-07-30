@@ -20,7 +20,7 @@
 
 @interface OENetServer : NSObject <NSNetServiceDelegate>
 {
-    id<OENetServerDelegate>  delegate;
+    id<OENetServerDelegate>  __unsafe_unretained delegate;
     AsyncUdpSocket          *asyncSocket;
     NSNetService            *netService;
     uint16_t                 port;

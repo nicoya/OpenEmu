@@ -43,10 +43,9 @@
     return [[[NSURL URLByResolvingBookmarkData:aliasData options:0 relativeToURL:nil bookmarkDataIsStale:NULL error:NULL] path] stringByDeletingLastPathComponent];
 }
 
-- (id) imageRepresentation
+- (id)imageRepresentation
 {
-    NSImage* image = [[NSImage alloc] initWithData:[self.screenShot valueForKey:@"screenShot"]];
-    return [image autorelease];
+    return [[NSImage alloc] initWithData:[self.screenShot valueForKey:@"screenShot"]];
 }
 
 - (NSString *)imageRepresentationType

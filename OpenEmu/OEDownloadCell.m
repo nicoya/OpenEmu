@@ -27,6 +27,7 @@
 
 #import "OEDownloadCell.h"
 #import "OEDownload.h"
+#import <Sparkle/Sparkle.h>
 
 @implementation OEDownloadCell
 
@@ -101,7 +102,6 @@
                  fromRect:NSMakeRect(0, 0, 64, 64)
                 operation:NSCompositeSourceOver
                  fraction:1.0f];
-        [icon release];
     }
 }
 

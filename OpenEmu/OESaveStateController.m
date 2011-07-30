@@ -31,6 +31,7 @@
 #import "IKImageFlowView.h"
 #import "OESaveState.h"
 #import "OEROMFile.h"
+#import "OECorePlugin.h"
 
 @interface OEROMFile (SaveStateManagerExtras)
 
@@ -48,7 +49,7 @@
     NSSet *saves = [self saveStates];
     for(OESaveState *state in saves) [emulatorIDs addObject:[state emulatorID]];
     
-    return [[emulatorIDs copy] autorelease];
+    return [emulatorIDs copy];
 }
 
 @end
@@ -72,8 +73,6 @@
         
         [self setSortDescriptors:[NSArray arrayWithObjects:path, time, nil]];
         
-        [path release];
-        [time release];
 
         romFileIndexes = [[NSMutableDictionary alloc] init];
         sortedSaveStates = [[NSMutableArray alloc] init];
@@ -81,29 +80,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [romFileController         release];
-    [savestateController       release];
-    [pluginController          release];
-    [treeController            release];
-    [selectedRomPredicate      release];
-    [listView                  release];
-    [collectionView            release];
-    [holderView                release];
-    [outlineView               release];
-    [imageBrowser              release];
-    [imageFlow                 release];
-    [searchField               release];
-    [contextMenu               release];
-    [segmentButton             release];
-    [availablePluginsPredicate release];
-    [sortDescriptors           release];
-    [selectedPlugins           release];
-    [romFileIndexes            release];
-    [sortedSaveStates          release];
-    [super                     dealloc];
-}
 
 - (IBAction)openSaveStateWindow:(id)sender
 {
@@ -139,8 +115,7 @@ static void *const OESelectionChangedContext = @"OESelectionChangedContext";
         pluginsPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:pluginsPredicate, searchPredicate, nil]];
     
     [self willChangeValueForKey:@"selectedPluginsPredicate"];
-    [selectedPluginsPredicate autorelease];
-    selectedPluginsPredicate = [pluginsPredicate retain];;
+    selectedPluginsPredicate = pluginsPredicate;;
     [self  didChangeValueForKey:@"selectedPluginsPredicate"];
 }
 
@@ -188,8 +163,7 @@ static void *const OESelectionChangedContext = @"OESelectionChangedContext";
 {
     if(searchPredicate != value)
     {
-        [searchPredicate release];
-        searchPredicate = [value retain];
+        searchPredicate = value;
         
         [self updateSelectedPlugins];
     }
@@ -260,7 +234,6 @@ static void *const OESelectionChangedContext = @"OESelectionChangedContext";
 {
     if(selectedPlugins != indexes)
     {
-        [selectedPlugins release];
         NSUInteger index = [indexes firstIndex];
         
         if(indexes != nil && index < [[pluginController arrangedObjects] count] && index != NSNotFound)
@@ -392,7 +365,7 @@ static void *const OESelectionChangedContext = @"OESelectionChangedContext";
 - (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
 { 
     if([item isKindOfClass:[OEROMFile class]])
-        return [item name];
+        return [(OEROMFile *)item name];
     else if([item isKindOfClass:[OESaveState class]])
         return [item imageSubtitle];
     return nil;
@@ -430,7 +403,7 @@ static void *const OESelectionChangedContext = @"OESelectionChangedContext";
 {
     OESaveState *saveState = [self selectedSaveState];
     
-    NSData *saveData = [[[saveState saveData] copy] autorelease];
+    NSData *saveData = [[saveState saveData] copy];
     
     NSSavePanel *sheet = [NSSavePanel savePanel];
     

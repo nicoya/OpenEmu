@@ -73,7 +73,13 @@ OE_INLINE OEEmulatorKey OEMakeEmulatorKey(NSUInteger player, NSUInteger key)
 typedef NSInteger     OEMapKey;
 typedef OEEmulatorKey OEMapValue;
 
-typedef struct __OEMap *OEMapRef;
+@interface OEMap : NSObject
+
+- (id)initWithCapacity:(size_t)capacity;
+
+@end
+
+typedef OEMap *OEMapRef;
 
 /*!
     @function
@@ -82,9 +88,9 @@ typedef struct __OEMap *OEMapRef;
     @param      capacity The initial capacity of the map.
     @result     A new empty map with capacity key allocated.
 */
-OEMapRef OEMapCreate(size_t capacity);
+OEMapRef OEMapCreate(size_t capacity) DEPRECATED_ATTRIBUTE;
 
-void OEMapRelease(OEMapRef map);
+void OEMapRelease(OEMapRef map) DEPRECATED_ATTRIBUTE;
 void OEMapSetValue(OEMapRef map, OEMapKey key, OEMapValue value);
 BOOL OEMapGetValue(OEMapRef map, OEMapKey key, OEMapValue *value);
 void OEMapRemoveMaskedKeysForValue(OEMapRef map, OEMapKey mask, OEMapValue value);

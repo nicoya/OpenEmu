@@ -31,46 +31,87 @@
 #define BOOL_STR(var) ((var) ? "YES" : "NO")
 #endif
 
+typedef BOOL (*_OECompare)(OEMapValue, OEMapValue);
+
 typedef struct {
     OEMapKey    key;
     OEMapValue  value;
     BOOL        allocated;
 } OEMapEntry;
 
-typedef BOOL (*_OECompare)(OEMapValue, OEMapValue);
-
-typedef struct __OEMap {
-    size_t      capacity;
-    size_t      count;
-    OEMapEntry *entries;
-    NSLock     *lock;
-    _OECompare  valueIsEqual;
-} OEMap;
-
 BOOL defaultIsEqual(OEMapValue v1, OEMapValue v2)
 {
     return v1.key == v2.key && v1.player == v2.player;
 }
 
+@interface OEMap ()
+{
+@package
+    size_t      capacity;
+    size_t      count;
+    OEMapEntry *entries;
+    NSLock     *lock;
+    _OECompare  valueIsEqual;
+}
+
+@end
+
+@implementation OEMap
+
+- (id)init
+{
+    return [self initWithCapacity:1];
+}
+
+- (id)initWithCapacity:(size_t)aCapacity;
+{
+    if((self = [super init]))
+    {
+        count        = 0;
+        capacity     = aCapacity;
+        entries      = malloc(sizeof(OEMapEntry) * capacity);
+        valueIsEqual = defaultIsEqual;
+        lock         = [[NSLock alloc] init];
+    }
+    
+    return self;
+}
+
+- (void)dealloc
+{
+    free(entries);
+}
+
+- (NSString *)description
+{
+    NSMutableString *ret = [NSMutableString stringWithFormat:@"<%@, count: %zu", [super description], count];
+
+    for(size_t i = 0, max = count; i < max; i++)
+    {
+        OEMapEntry *entry = &entries[i];
+        [ret appendFormat:@"entry[%zu] = { .allocated = %s, .key = %ld, .value = { .key = %ld, .player = %ld } }", i, BOOL_STR(entry->allocated), entry->key, entry->value.key, entry->value.player];
+    }
+    
+    return ret;
+}
+
+@end
+
 OEMapRef OEMapCreate(size_t capacity)
 {
-    OEMapRef ret      = malloc(sizeof(OEMap));
-    ret->count        = 0;
-    ret->capacity     = capacity;
-    ret->entries      = malloc(sizeof(OEMapEntry) * capacity);
-    ret->valueIsEqual = defaultIsEqual;
-    ret->lock         = [[NSLock alloc] init];
-    return ret;
+    return [[OEMap alloc] initWithCapacity:capacity];
 }
 
 void OEMapRelease(OEMapRef map)
 {
+    /*
     if(map == NULL) return;
     
     [map->lock release];
     if(map->capacity > 0)
         free(map->entries);
     free(map);
+     */
 }
 
 // The lock must be acquired before using this function

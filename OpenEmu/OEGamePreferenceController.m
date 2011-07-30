@@ -58,14 +58,6 @@
 {
     [OEPlugin removeObserver:self forKeyPath:@"allPlugins"];
     
-    [splitView             release];
-    [pluginTableView       release];
-    [pluginController      release];
-    [toolbar               release];
-    [selectedPlugins       release];
-    [preferencePanels      release];
-    [currentViewController release];
-    [super                 dealloc];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -122,7 +114,6 @@
 
 - (void)setSelectedPlugins:(NSIndexSet *)indexes
 {
-    [selectedPlugins release];
     NSUInteger index = [indexes firstIndex];
     
     if(indexes != nil && index < [[pluginController arrangedObjects] count] && index != NSNotFound)

@@ -25,5 +25,7 @@
 - (id)initWithAddress:(NSString*)address port:(uint32_t)port;
 - (IBAction)sendButtonPress:(id)sender;
 - (IBAction)sendButtonRelease:(id)sender;
+- (void)pressButton:(NSUInteger)button;
+- (void)releaseButton:(NSUInteger)button;
 @end
 

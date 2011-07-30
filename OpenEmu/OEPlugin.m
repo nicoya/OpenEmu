@@ -57,7 +57,7 @@ static NSMutableSet        *allPluginClasses = nil;
 
 + (NSSet *)pluginClasses;
 {
-    return [[allPluginClasses copy] autorelease];
+    return [allPluginClasses copy];
 }
 
 + (void)registerPluginClass:(Class)pluginClass;
@@ -118,7 +118,6 @@ static NSMutableSet        *allPluginClasses = nil;
 
 - (id)init
 {
-    [self release];
     return nil;
 }
 
@@ -127,29 +126,27 @@ static NSMutableSet        *allPluginClasses = nil;
 // No need to make an actual copy, we can consider each OECorePlugin instances like a singleton for their bundle
 - (id)copyWithZone:(NSZone *)zone
 {
-    return [self retain];
+    return self;
 }
 
 - (id)initWithBundle:(NSBundle *)aBundle
 {
     if(aBundle == nil)
     {
-        [self release];
         return nil;
     }
     
     if((self = [super init]))
     {
-        bundle         = [aBundle retain];
-        infoDictionary = [[bundle infoDictionary] retain];
-        version        = [[infoDictionary objectForKey:@"CFBundleVersion"] retain];
-        displayName    = ([[infoDictionary objectForKey:@"CFBundleName"] retain] ? : [[infoDictionary objectForKey:@"CFBundleExecutable"] retain]);
+        bundle         = aBundle;
+        infoDictionary = [bundle infoDictionary];
+        version        = [infoDictionary objectForKey:@"CFBundleVersion"];
+        displayName    = ([infoDictionary objectForKey:@"CFBundleName"] ? : [infoDictionary objectForKey:@"CFBundleExecutable"]);
         
         Class principalClass = [[self bundle] principalClass];
         
         if(principalClass != Nil && ![principalClass conformsToProtocol:@protocol(OEPluginController)])
         {
-            [self release];
             return nil;
         }
         
@@ -157,7 +154,6 @@ static NSMutableSet        *allPluginClasses = nil;
         
         if(controller == nil && principalClass != Nil)
         {
-            [self release];
             return nil;
         }
     }
@@ -167,12 +163,6 @@ static NSMutableSet        *allPluginClasses = nil;
 - (void) dealloc
 {
     [bundle         unload];
-    [bundle         release];
-    [version        release];
-    [controller     release];
-    [displayName    release];
-    [infoDictionary release];
-    [super          dealloc];
 }
 
 - (id<OEPluginController>)newPluginControllerWithClass:(Class)bundleClass
@@ -274,7 +264,7 @@ NSInteger OE_compare(OEPlugin *obj1, OEPlugin *obj2, void *ctx)
         for(Class key in allPlugins)
             [temp addObjectsFromArray:[self pluginsForType:key]];
         
-        ret = [[temp copy] autorelease];
+        ret = [temp copy];
     }
     else ret = [self pluginsForType:self];
     
@@ -310,7 +300,7 @@ NSInteger OE_compare(OEPlugin *obj1, OEPlugin *obj2, void *ctx)
         [aType willChangeValueForKey:@"allPlugins"];
         NSBundle *theBundle = [NSBundle bundleWithPath:bundlePath];
         if(bundlePath != nil && theBundle != nil)
-            ret = [[[aType alloc] initWithBundle:theBundle] autorelease];
+            ret = [[aType alloc] initWithBundle:theBundle];
         
         // If ret is still nil at this point, it means the plugin can't be loaded (old-style version for example)
         if(ret == nil) ret = [NSNull null];

@@ -52,28 +52,13 @@
     return [self initWithWindowTitle:@"" downloadAllButtonTitle:@"Download All Cores"];
 }
 
-- (void)dealloc
-{
-    [downloadAllCoresButton release];
-    [downloadArrayController release];
-    [downloadTableView release];
-    
-    [windowTitle release];
-    [downloadAllButtonTitle release];
-    
-    [super dealloc];
-}
 
 - (void)windowDidLoad
 {
     [[self window] setTitle:windowTitle];
     [downloadAllCoresButton setTitle:downloadAllButtonTitle];
-    NSSortDescriptor *nameSortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"downloadTitle"
-                                                                        ascending:YES
-                                                                         selector:@selector(localizedCaseInsensitiveCompare:)]
-                                            autorelease];
-    NSArray *sortDescriptors = [NSArray arrayWithObject:nameSortDescriptor];
-    [downloadArrayController setSortDescriptors:sortDescriptors];
+    
+    [downloadArrayController setSortDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"downloadTitle" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]]];
 }
 
 - (void)OEDownloadDidStart:(OEDownload *)download

@@ -41,7 +41,7 @@
 
 @interface OEDownload : NSViewController
 {
-    id<OEDownloadDelegate>  delegate;
+    id<OEDownloadDelegate>  __unsafe_unretained delegate;
     
     NSString               *downloadTitle;
     NSString               *downloadDescription;

@@ -35,7 +35,7 @@
 {
     NSString                *lastVersion;
     NSMutableDictionary     *migrators;
-    id<SUVersionComparison>  versionComparator;
+    id<SUVersionComparison>  __unsafe_unretained versionComparator;
     
     BOOL                     isFirstRun;
     BOOL                     isRunning;

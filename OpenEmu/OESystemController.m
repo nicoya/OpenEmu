@@ -56,7 +56,7 @@ static NSUInteger OE_playerNumberInKeyWithGenericKey(NSString *atString, NSStrin
     if((self = [super init]))
     {
         _bundle    = [NSBundle bundleForClass:[self class]];
-        systemName = [[[_bundle infoDictionary] objectForKey:OESystemPluginName] retain];
+        systemName = [[_bundle infoDictionary] objectForKey:OESystemPluginName];
         if(systemName == nil) systemName = [[_bundle infoDictionary] objectForKey:@"CFBundleName"];
         
         _gameSystemResponders      = [[NSMutableArray alloc] init];
@@ -70,15 +70,6 @@ static NSUInteger OE_playerNumberInKeyWithGenericKey(NSString *atString, NSStrin
     return self;
 }
 
-- (void)dealloc
-{
-    [_preferenceViewControllers release];
-    [_gameSystemResponders release];
-    [playerString release];
-    [controlNames release];
-    [_bundle release];
-    [super dealloc];
-}
 
 - (void)OE_setupControlNames;
 {
@@ -249,7 +240,7 @@ static NSUInteger OE_playerNumberInKeyWithGenericKey(NSString *atString, NSStrin
 - (void)registerDefaultControls;
 {
     NSUserDefaultsController *defaults = [NSUserDefaultsController sharedUserDefaultsController];
-    NSMutableDictionary *dict = [[[defaults initialValues] mutableCopy] autorelease];
+    NSMutableDictionary *dict = [[defaults initialValues] mutableCopy];
     
     [[self defaultControls] enumerateKeysAndObjectsUsingBlock:
      ^(id key, id obj, BOOL *stop) 

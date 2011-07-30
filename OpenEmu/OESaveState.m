@@ -26,6 +26,7 @@
  */
 
 #import "OESaveState.h"
+#import "OEROMFile.h"
 
 @interface OESaveState ()
 - (void)_OE_writeDataToPlist;
@@ -114,7 +115,6 @@
 {
     if([emulatorID isEqual:newEmulatorID]) return;
     
-    [emulatorID release];
     emulatorID = [newEmulatorID copy];
 
     [self _OE_writeDataToPlist];
@@ -126,7 +126,6 @@
     
     DLog(@"User description!");
     
-    [userDescription release];
     userDescription = [newDescription copy];
     
     [self _OE_writeDataToPlist];
@@ -185,7 +184,7 @@
 
 - (NSImage *)screenshot
 {
-    return [[[NSImage alloc] initWithContentsOfFile:[self screenshotPath]] autorelease];
+    return [[NSImage alloc] initWithContentsOfFile:[self screenshotPath]];
 }
 
 - (void)setScreenshot:(NSImage *)newScreenshot

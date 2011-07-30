@@ -99,7 +99,7 @@ static NSString *OEPluginsToolbarItemIdentifier    = @"OEPluginsToolbarItemIdent
     static NSArray *standardItems = nil;
     if(standardItems == nil)
     {
-        standardItems = [[NSArray arrayWithObjects:OEVideoSoundToolbarItemIdentifier, OEControlsToolbarItemIdentifier, OEAdvancedToolbarItemIdentifier, OEPluginsToolbarItemIdentifier, nil] retain];
+        standardItems = [NSArray arrayWithObjects:OEVideoSoundToolbarItemIdentifier, OEControlsToolbarItemIdentifier, OEAdvancedToolbarItemIdentifier, OEPluginsToolbarItemIdentifier, nil];
     }
     
     return standardItems;
@@ -119,7 +119,7 @@ static NSString *OEPluginsToolbarItemIdentifier    = @"OEPluginsToolbarItemIdent
 {
     // Required delegate method:  Given an item identifier, this method returns an item 
     // The toolbar will use this method to obtain toolbar items that can be displayed in the customization sheet, or in the toolbar itself 
-    NSToolbarItem *toolbarItem = [[[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier] autorelease];
+    NSToolbarItem *toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
     
     NSDictionary *desc = [preferencePanels objectForKey:itemIdentifier];
     if(desc != nil)
@@ -258,7 +258,6 @@ static NSString *OEPluginsToolbarItemIdentifier    = @"OEPluginsToolbarItemIdent
     
     DLog(@"minimumWidth = %f", minimumWidth);
     
-    [previousController release];
 }
 
 - (void)windowDidResize:(NSNotification *)notification

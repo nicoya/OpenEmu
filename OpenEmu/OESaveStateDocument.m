@@ -52,7 +52,7 @@
     [managedObjectContext setPersistentStoreCoordinator:persistentStoreCoordinator];
 
 
-    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity =
     [NSEntityDescription entityForName:@"SaveState"
                 inManagedObjectContext:managedObjectContext];
@@ -69,8 +69,6 @@
     
     [docController loadState:array];
     
-    [persistentStoreCoordinator release];
-    [managedObjectContext release];
     
      return worked;
 }

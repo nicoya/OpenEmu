@@ -59,16 +59,11 @@ static NSString *elementChildAsString(NSXMLElement *element, NSString *name)
     return self;
 }
 
-- (void)dealloc
-{
-    [availableDownloads release];
-    [super dealloc];
-}
 
 - (void)loadCoreList
 {
     NSURL         *coreListURL = [NSURL URLWithString:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"OECoreListURL"]];
-    NSXMLDocument *coreListDoc = [[[NSXMLDocument alloc] initWithContentsOfURL:coreListURL options:0 error:NULL] autorelease];
+    NSXMLDocument *coreListDoc = [[NSXMLDocument alloc] initWithContentsOfURL:coreListURL options:0 error:NULL];
     NSArray       *coreNodes   = nil;
     
     if(coreListDoc != nil) coreNodes = [coreListDoc nodesForXPath:@"/cores/core" error:NULL];
@@ -94,7 +89,7 @@ static NSString *elementChildAsString(NSXMLElement *element, NSString *name)
             
             if(alreadyInstalled) continue;
             
-            OEDownload *download = [[[OEDownload alloc] init] autorelease];
+            OEDownload *download = [[OEDownload alloc] init];
             download.downloadTitle = [[coreNode attributeForName:@"name"] stringValue];
             download.downloadDescription = elementChildAsString(coreNode, @"description");
             
@@ -102,7 +97,7 @@ static NSString *elementChildAsString(NSXMLElement *element, NSString *name)
             if(iconURLString) [download downloadIconFromURL:[NSURL URLWithString:iconURLString]];
             
             NSURL *appcastURL = [NSURL URLWithString:[[coreNode attributeForName:@"appcastURL"] stringValue]];
-            download.appcast = [[[SUAppcast alloc] init] autorelease];
+            download.appcast = [[SUAppcast alloc] init];
             [download.appcast setDelegate:self];
             [download.appcast fetchAppcastFromURL:appcastURL];
             
