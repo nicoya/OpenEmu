@@ -332,7 +332,7 @@ void NST_CALLBACK doEvent(void* userData, Nes::Api::Machine::Event event,Nes::Re
 
 - (NSTimeInterval) frameInterval
 {
-    Nes::Api::Machine machine(*(Nes::Core::Machine*)emu);
+    Nes::Api::Machine machine((Nes::Core::Machine&)*emu);
     
     if ( machine.GetMode() == Nes::Api::Machine::NTSC )
     {
@@ -348,10 +348,10 @@ void NST_CALLBACK doEvent(void* userData, Nes::Api::Machine::Event event,Nes::Re
 {
     Nes::Result result; 
     
-    Nes::Api::Machine machine(*(Nes::Core::Machine*)emu);
+    Nes::Api::Machine machine((Nes::Core::Machine&)*emu);
     
     
-    Nes::Api::Cartridge::Database database(*(Nes::Core::Machine*)emu);
+    Nes::Api::Cartridge::Database database((Nes::Core::Machine&)*emu);
     
     if(!database.IsLoaded())
     {
@@ -412,7 +412,7 @@ void NST_CALLBACK doEvent(void* userData, Nes::Api::Machine::Event event,Nes::Re
 
 - (void)setupAudio:(Nes::Api::Emulator*)emulator
 {
-    Nes::Api::Sound sound( *(Nes::Core::Machine*)emulator );
+    Nes::Api::Sound sound( (Nes::Core::Machine&)*emulator );
     //Nes::Api::Machine machine( *emulator );
     sound.SetSampleBits( 16 );
     sound.SetSampleRate( SAMPLERATE );
@@ -469,8 +469,8 @@ static int Heights[2] =
     // renderstate structure
     Nes::Api::Video::RenderState* renderState = new Nes::Api::Video::RenderState();
     
-    Nes::Api::Machine machine( *(Nes::Core::Machine*)emulator );
-    Nes::Api::Cartridge::Database database( *(Nes::Core::Machine*)emulator );
+    Nes::Api::Machine machine( (Nes::Core::Machine&)*emulator );
+    Nes::Api::Cartridge::Database database( (Nes::Core::Machine&)*emulator );
     
     
     //machine.SetMode(Nes::Api::Machine::NTSC);
@@ -493,7 +493,7 @@ static int Heights[2] =
     renderState->width = Widths[filter];
     renderState->height = Heights[filter];
     
-    Nes::Api::Video video( *(Nes::Core::Machine*)emulator );
+    Nes::Api::Video video( (Nes::Core::Machine&)*emulator );
     
     [self toggleUnlimitedSprites:nil];
     
@@ -551,7 +551,7 @@ static int Heights[2] =
 
 - (void)settingWasSet:(id)aValue forKey:(NSString *)keyName
 {
-    Nes::Api::Video video( *(Nes::Core::Machine*)emu );
+    Nes::Api::Video video( (Nes::Core::Machine&)*emu );
     NSInteger value = [aValue integerValue];
     if([NESNTSC isEqualToString:keyName])
     {
@@ -585,7 +585,7 @@ static int Heights[2] =
     //soundLock = [[NSLock alloc] init];
     // Lets set up the database!
     
-    Nes::Api::Cartridge::Database database(*(Nes::Core::Machine*)emu);
+    Nes::Api::Cartridge::Database database((Nes::Core::Machine&)*emu);
     
     if(!database.IsLoaded())
     {
@@ -604,14 +604,14 @@ static int Heights[2] =
     if(database.IsLoaded())
     {
         DLog(@"Database loaded");
-        Nes::Api::Input(*(Nes::Core::Machine*)emu).AutoSelectControllers();
+        Nes::Api::Input((Nes::Core::Machine&)*emu).AutoSelectControllers();
     }
     else {
-        Nes::Api::Input(*(Nes::Core::Machine*)emu).ConnectController(0,Nes::Api::Input::PAD1);
+        Nes::Api::Input((Nes::Core::Machine&)*emu).ConnectController(0,Nes::Api::Input::PAD1);
     }
     
     
-    Nes::Api::Machine machine(*(Nes::Core::Machine*)emu);
+    Nes::Api::Machine machine((Nes::Core::Machine&)*emu);
     machine.SetMode(machine.GetDesiredMode());
     
     //nesControls = new Nes::Api::Input::Controllers;
@@ -644,7 +644,7 @@ static int Heights[2] =
 - (void)resetEmulation
 {
     DLog(@"Resetting NES");
-    Nes::Api::Machine machine(*(Nes::Core::Machine*)emu);
+    Nes::Api::Machine machine((Nes::Core::Machine&)*emu);
     machine.Reset(true);
 }
 
@@ -726,7 +726,7 @@ static int Heights[2] =
     
     Nes::Result result; 
     
-    Nes::Api::Machine machine(*(Nes::Core::Machine*)emu);
+    Nes::Api::Machine machine((Nes::Core::Machine&)*emu);
     std::ofstream stateFile( filename, std::ifstream::out|std::ifstream::binary );
     
     if (stateFile.is_open())
@@ -759,7 +759,7 @@ static int Heights[2] =
 {
     Nes::Result result; 
     
-    Nes::Api::Machine machine(*(Nes::Core::Machine*)emu);
+    Nes::Api::Machine machine((Nes::Core::Machine&)*emu);
     std::ifstream stateFile( [fileName UTF8String], std::ifstream::in|std::ifstream::binary );
     
     if (stateFile.is_open())
