@@ -19,6 +19,46 @@
 			name = "Build & Copy OpenEmuBase";
 			productName = "Build & Copy OpenEmuBase";
 		};
+		824188C213E49ED90010EBC5 /* Build and Install System Plugins */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 824188C513E49ED90010EBC5 /* Build configuration list for PBXAggregateTarget "Build and Install System Plugins" */;
+			buildPhases = (
+			);
+			dependencies = (
+				82B8D9AC13E4A74000C8FB16 /* PBXTargetDependency */,
+				82B8D9AE13E4A74000C8FB16 /* PBXTargetDependency */,
+				82B8D99C13E4A6B400C8FB16 /* PBXTargetDependency */,
+				82B8D99313E4A58E00C8FB16 /* PBXTargetDependency */,
+				824188ED13E4A1CE0010EBC5 /* PBXTargetDependency */,
+				824188E413E4A13E0010EBC5 /* PBXTargetDependency */,
+			);
+			name = "Build and Install System Plugins";
+			productName = "Build All";
+		};
+		824188DC13E4A0C60010EBC5 /* Build & Install NES System Plugin */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 824188DD13E4A0C70010EBC5 /* Build configuration list for PBXAggregateTarget "Build & Install NES System Plugin" */;
+			buildPhases = (
+				824188E213E4A0EA0010EBC5 /* ShellScript */,
+			);
+			dependencies = (
+				824188E113E4A0E00010EBC5 /* PBXTargetDependency */,
+			);
+			name = "Build & Install NES System Plugin";
+			productName = "Build & Install NES";
+		};
+		824188E513E4A1990010EBC5 /* Build & Install SuperNES System Plugin */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 824188E613E4A19A0010EBC5 /* Build configuration list for PBXAggregateTarget "Build & Install SuperNES System Plugin" */;
+			buildPhases = (
+				824188EB13E4A1AF0010EBC5 /* ShellScript */,
+			);
+			dependencies = (
+				824188EA13E4A1A60010EBC5 /* PBXTargetDependency */,
+			);
+			name = "Build & Install SuperNES System Plugin";
+			productName = "Build & Install SNES System Plugin";
+		};
 		828E65E30E8467E900B1860B /* Build & Copy OpenEmuQC */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 828E65EC0E8467F600B1860B /* Build configuration list for PBXAggregateTarget "Build & Copy OpenEmuQC" */;
@@ -31,6 +71,54 @@
 			);
 			name = "Build & Copy OpenEmuQC";
 			productName = "Copy & Build QC";
+		};
+		82B8D98813E4A53E00C8FB16 /* Build & Install SegaMasterSystem System Plugin */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 82B8D98C13E4A53E00C8FB16 /* Build configuration list for PBXAggregateTarget "Build & Install SegaMasterSystem System Plugin" */;
+			buildPhases = (
+				82B8D98B13E4A53E00C8FB16 /* ShellScript */,
+			);
+			dependencies = (
+				82B8D99113E4A56000C8FB16 /* PBXTargetDependency */,
+			);
+			name = "Build & Install SegaMasterSystem System Plugin";
+			productName = "Build & Install SNES System Plugin";
+		};
+		82B8D99413E4A67100C8FB16 /* Build & Install GameBoy System Plugin */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 82B8D99513E4A67100C8FB16 /* Build configuration list for PBXAggregateTarget "Build & Install GameBoy System Plugin" */;
+			buildPhases = (
+				82B8D99A13E4A69600C8FB16 /* ShellScript */,
+			);
+			dependencies = (
+				82B8D99913E4A69100C8FB16 /* PBXTargetDependency */,
+			);
+			name = "Build & Install GameBoy System Plugin";
+			productName = "Build & Install Gameboy System Plugin";
+		};
+		82B8D99D13E4A6C200C8FB16 /* Build & Install Genesis System Plugin */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 82B8D99E13E4A6C200C8FB16 /* Build configuration list for PBXAggregateTarget "Build & Install Genesis System Plugin" */;
+			buildPhases = (
+				82B8D9A313E4A6D100C8FB16 /* ShellScript */,
+			);
+			dependencies = (
+				82B8D9A213E4A6CB00C8FB16 /* PBXTargetDependency */,
+			);
+			name = "Build & Install Genesis System Plugin";
+			productName = "Build & Install Genesis System Plugin";
+		};
+		82B8D9A413E4A6F600C8FB16 /* Build & Install GameBoy Advance System Plugin */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 82B8D9A513E4A6F700C8FB16 /* Build configuration list for PBXAggregateTarget "Build & Install GameBoy Advance System Plugin" */;
+			buildPhases = (
+				82B8D9AA13E4A72400C8FB16 /* ShellScript */,
+			);
+			dependencies = (
+				82B8D9A913E4A71E00C8FB16 /* PBXTargetDependency */,
+			);
+			name = "Build & Install GameBoy Advance System Plugin";
+			productName = "Build & Install GameBoy Advance System Plugin";
 		};
 		82BCA6020FEF092600DD3FC4 /* OpenEmuQC Distribution */ = {
 			isa = PBXAggregateTarget;
@@ -406,6 +494,90 @@
 			proxyType = 1;
 			remoteGlobalIDString = 828E65970E8466A100B1860B;
 			remoteInfo = OpenEmuQC;
+		};
+		824188E013E4A0E00010EBC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C64BB08C136478E600C1AB23;
+			remoteInfo = NES;
+		};
+		824188E313E4A13E0010EBC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 824188DC13E4A0C60010EBC5;
+			remoteInfo = "Build & Install NES";
+		};
+		824188E913E4A1A60010EBC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6480FC013648F670094FA33;
+			remoteInfo = SuperNES;
+		};
+		824188EC13E4A1CE0010EBC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 824188E513E4A1990010EBC5;
+			remoteInfo = "Build & Install SuperNES System Plugin";
+		};
+		82B8D99013E4A56000C8FB16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C671180E136368330034379A;
+			remoteInfo = SegaMasterSystem;
+		};
+		82B8D99213E4A58E00C8FB16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82B8D98813E4A53E00C8FB16;
+			remoteInfo = "Build & Install SegaMasterSystem System Plugin";
+		};
+		82B8D99813E4A69100C8FB16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6B947AE1364ECA600A425F0;
+			remoteInfo = GameBoy;
+		};
+		82B8D99B13E4A6B400C8FB16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82B8D99413E4A67100C8FB16;
+			remoteInfo = "Build & Install GameBoy System Plugin";
+		};
+		82B8D9A113E4A6CB00C8FB16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6B947E51365080B00A425F0;
+			remoteInfo = Genesis;
+		};
+		82B8D9A813E4A71E00C8FB16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C646574713771F12002A4F70;
+			remoteInfo = "GameBoy Advance";
+		};
+		82B8D9AB13E4A74000C8FB16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82B8D99D13E4A6C200C8FB16;
+			remoteInfo = "Build & Install Genesis System Plugin";
+		};
+		82B8D9AD13E4A74000C8FB16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82B8D9A413E4A6F600C8FB16;
+			remoteInfo = "Build & Install GameBoy Advance System Plugin";
 		};
 		82BCA60B0FEF094900DD3FC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -2110,11 +2282,18 @@
 				3887A7F51024D1F9000FC4CF /* OESaveStateQLPlugin */,
 				C67117ED136367240034379A /* OpenEmuSystem */,
 				C671180E136368330034379A /* SegaMasterSystem */,
-				C64BB08C136478E600C1AB23 /* NES */,
 				C6480FC013648F670094FA33 /* SuperNES */,
+				C64BB08C136478E600C1AB23 /* NES */,
 				C6B947AE1364ECA600A425F0 /* GameBoy */,
 				C6B947E51365080B00A425F0 /* Genesis */,
 				C646574713771F12002A4F70 /* GameBoy Advance */,
+				824188C213E49ED90010EBC5 /* Build and Install System Plugins */,
+				824188DC13E4A0C60010EBC5 /* Build & Install NES System Plugin */,
+				824188E513E4A1990010EBC5 /* Build & Install SuperNES System Plugin */,
+				82B8D98813E4A53E00C8FB16 /* Build & Install SegaMasterSystem System Plugin */,
+				82B8D99413E4A67100C8FB16 /* Build & Install GameBoy System Plugin */,
+				82B8D99D13E4A6C200C8FB16 /* Build & Install Genesis System Plugin */,
+				82B8D9A413E4A6F600C8FB16 /* Build & Install GameBoy Advance System Plugin */,
 			);
 		};
 /* End PBXProject section */
@@ -2316,6 +2495,32 @@
 			shellPath = /bin/sh;
 			shellScript = "rm -rf \"/Library/Frameworks/OpenEmuBase.framework\"\ncp -R \"$BUILT_PRODUCTS_DIR/OpenEmuBase.framework\" \"/Library/Frameworks/OpenEmuBase.framework\"";
 		};
+		824188E213E4A0EA0010EBC5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems\"\nrm -rf \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/NES.oesystemplugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/NES.oesystemplugin\"{,.dSYM} \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/\"\n";
+		};
+		824188EB13E4A1AF0010EBC5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems\"\nrm -rf \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/SuperNES.oesystemplugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/SuperNES.oesystemplugin\"{,.dSYM} \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/\"\n";
+		};
 		828E65E20E8467E900B1860B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2328,6 +2533,58 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# This shell script simply copies the built plug-in to \"/Library/Graphics/Quartz Composer Plug-Ins\" and overrides any previous version at that location\n\nmkdir -p \"/Library/Graphics/Quartz Composer Plug-Ins\"\nrm -rf \"/Library/Graphics/Quartz Composer Plug-Ins/OpenEmuQC.plugin\"\ncp -R \"$BUILT_PRODUCTS_DIR/OpenEmuQC.plugin\" \"/Library/Graphics/Quartz Composer Plug-Ins/\"";
+		};
+		82B8D98B13E4A53E00C8FB16 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems\"\nrm -rf \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/SegaMasterSystem.oesystemplugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/SegaMasterSystem.oesystemplugin\"{,.dSYM} \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/\"\n";
+		};
+		82B8D99A13E4A69600C8FB16 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems\"\nrm -rf \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/GameBoy.oesystemplugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/GameBoy.oesystemplugin\"{,.dSYM} \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/\"\n";
+		};
+		82B8D9A313E4A6D100C8FB16 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems\"\nrm -rf \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/Genesis.oesystemplugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/Genesis.oesystemplugin\"{,.dSYM} \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/\"\n";
+		};
+		82B8D9AA13E4A72400C8FB16 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems\"\nrm -rf \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/GameBoy Advance.oesystemplugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/GameBoy Advance.oesystemplugin\"{,.dSYM} \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Systems/\"\n";
 		};
 		82BCA6010FEF092600DD3FC4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2615,6 +2872,66 @@
 			target = 828E65970E8466A100B1860B /* OpenEmuQC */;
 			targetProxy = 821FD3E910BF71460036C942 /* PBXContainerItemProxy */;
 		};
+		824188E113E4A0E00010EBC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C64BB08C136478E600C1AB23 /* NES */;
+			targetProxy = 824188E013E4A0E00010EBC5 /* PBXContainerItemProxy */;
+		};
+		824188E413E4A13E0010EBC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 824188DC13E4A0C60010EBC5 /* Build & Install NES System Plugin */;
+			targetProxy = 824188E313E4A13E0010EBC5 /* PBXContainerItemProxy */;
+		};
+		824188EA13E4A1A60010EBC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6480FC013648F670094FA33 /* SuperNES */;
+			targetProxy = 824188E913E4A1A60010EBC5 /* PBXContainerItemProxy */;
+		};
+		824188ED13E4A1CE0010EBC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 824188E513E4A1990010EBC5 /* Build & Install SuperNES System Plugin */;
+			targetProxy = 824188EC13E4A1CE0010EBC5 /* PBXContainerItemProxy */;
+		};
+		82B8D99113E4A56000C8FB16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C671180E136368330034379A /* SegaMasterSystem */;
+			targetProxy = 82B8D99013E4A56000C8FB16 /* PBXContainerItemProxy */;
+		};
+		82B8D99313E4A58E00C8FB16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82B8D98813E4A53E00C8FB16 /* Build & Install SegaMasterSystem System Plugin */;
+			targetProxy = 82B8D99213E4A58E00C8FB16 /* PBXContainerItemProxy */;
+		};
+		82B8D99913E4A69100C8FB16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6B947AE1364ECA600A425F0 /* GameBoy */;
+			targetProxy = 82B8D99813E4A69100C8FB16 /* PBXContainerItemProxy */;
+		};
+		82B8D99C13E4A6B400C8FB16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82B8D99413E4A67100C8FB16 /* Build & Install GameBoy System Plugin */;
+			targetProxy = 82B8D99B13E4A6B400C8FB16 /* PBXContainerItemProxy */;
+		};
+		82B8D9A213E4A6CB00C8FB16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6B947E51365080B00A425F0 /* Genesis */;
+			targetProxy = 82B8D9A113E4A6CB00C8FB16 /* PBXContainerItemProxy */;
+		};
+		82B8D9A913E4A71E00C8FB16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C646574713771F12002A4F70 /* GameBoy Advance */;
+			targetProxy = 82B8D9A813E4A71E00C8FB16 /* PBXContainerItemProxy */;
+		};
+		82B8D9AC13E4A74000C8FB16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82B8D99D13E4A6C200C8FB16 /* Build & Install Genesis System Plugin */;
+			targetProxy = 82B8D9AB13E4A74000C8FB16 /* PBXContainerItemProxy */;
+		};
+		82B8D9AE13E4A74000C8FB16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82B8D9A413E4A6F600C8FB16 /* Build & Install GameBoy Advance System Plugin */;
+			targetProxy = 82B8D9AD13E4A74000C8FB16 /* PBXContainerItemProxy */;
+		};
 		82BCA60C0FEF094900DD3FC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 828E65970E8466A100B1860B /* OpenEmuQC */;
@@ -2854,6 +3171,48 @@
 			};
 			name = Release;
 		};
+		824188C313E49ED90010EBC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		824188C413E49ED90010EBC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		824188DE13E4A0C70010EBC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		824188DF13E4A0C70010EBC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		824188E713E4A19A0010EBC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		824188E813E4A19A0010EBC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		82444BA30F51256D007C171B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2873,6 +3232,7 @@
 		82444BA40F51256D007C171B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				"CLANG_ENABLE_OBJC_EXPERIMENTAL[arch=i386]" = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2935,6 +3295,62 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "Copy & Build QC";
+			};
+			name = Release;
+		};
+		82B8D98D13E4A53E00C8FB16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "Build & Install SuperNES System Plugin copy";
+			};
+			name = Debug;
+		};
+		82B8D98E13E4A53E00C8FB16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "Build & Install SuperNES System Plugin copy";
+			};
+			name = Release;
+		};
+		82B8D99613E4A67100C8FB16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		82B8D99713E4A67100C8FB16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		82B8D99F13E4A6C200C8FB16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		82B8D9A013E4A6C200C8FB16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		82B8D9A613E4A6F700C8FB16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		82B8D9A713E4A6F700C8FB16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -3370,6 +3786,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		824188C513E49ED90010EBC5 /* Build configuration list for PBXAggregateTarget "Build and Install System Plugins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				824188C313E49ED90010EBC5 /* Debug */,
+				824188C413E49ED90010EBC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		824188DD13E4A0C70010EBC5 /* Build configuration list for PBXAggregateTarget "Build & Install NES System Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				824188DE13E4A0C70010EBC5 /* Debug */,
+				824188DF13E4A0C70010EBC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		824188E613E4A19A0010EBC5 /* Build configuration list for PBXAggregateTarget "Build & Install SuperNES System Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				824188E713E4A19A0010EBC5 /* Debug */,
+				824188E813E4A19A0010EBC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		82444BA50F51256D007C171B /* Build configuration list for PBXNativeTarget "OpenEmuBase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -3396,6 +3839,39 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		82B8D98C13E4A53E00C8FB16 /* Build configuration list for PBXAggregateTarget "Build & Install SegaMasterSystem System Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82B8D98D13E4A53E00C8FB16 /* Debug */,
+				82B8D98E13E4A53E00C8FB16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82B8D99513E4A67100C8FB16 /* Build configuration list for PBXAggregateTarget "Build & Install GameBoy System Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82B8D99613E4A67100C8FB16 /* Debug */,
+				82B8D99713E4A67100C8FB16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		82B8D99E13E4A6C200C8FB16 /* Build configuration list for PBXAggregateTarget "Build & Install Genesis System Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82B8D99F13E4A6C200C8FB16 /* Debug */,
+				82B8D9A013E4A6C200C8FB16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		82B8D9A513E4A6F700C8FB16 /* Build configuration list for PBXAggregateTarget "Build & Install GameBoy Advance System Plugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82B8D9A613E4A6F700C8FB16 /* Debug */,
+				82B8D9A713E4A6F700C8FB16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		82BCA6180FEF095100DD3FC4 /* Build configuration list for PBXAggregateTarget "OpenEmuQC Distribution" */ = {
 			isa = XCConfigurationList;
