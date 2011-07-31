@@ -23,9 +23,9 @@
 			name = Distribution;
 			productName = Distribution;
 		};
-		C6A3547D0FE83E0E00A9AB1C /* Build & Install */ = {
+		C6A3547D0FE83E0E00A9AB1C /* Build & Install FilterPlugins */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = C6A354910FE83E2100A9AB1C /* Build configuration list for PBXAggregateTarget "Build & Install" */;
+			buildConfigurationList = C6A354910FE83E2100A9AB1C /* Build configuration list for PBXAggregateTarget "Build & Install FilterPlugins" */;
 			buildPhases = (
 				C6A3547C0FE83E0E00A9AB1C /* ShellScript */,
 			);
@@ -36,7 +36,7 @@
 				C6A354870FE83E1E00A9AB1C /* PBXTargetDependency */,
 				C6A354890FE83E1E00A9AB1C /* PBXTargetDependency */,
 			);
-			name = "Build & Install";
+			name = "Build & Install FilterPlugins";
 			productName = "Build & Install";
 		};
 /* End PBXAggregateTarget section */
@@ -292,7 +292,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C6A3547D0FE83E0E00A9AB1C /* Build & Install */,
+				C6A3547D0FE83E0E00A9AB1C /* Build & Install FilterPlugins */,
 				8D5B49AC048680CD000E48DA /* Scale4x */,
 				C6A3540F0FE83B7B00A9AB1C /* Scale4xHQ */,
 				C6A354200FE83C6700A9AB1C /* Scale2XSALSmart */,
@@ -376,7 +376,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "mkdir -p \"/Library/Application Support/OpenEmu/Filters\"\nrm -rf \"/Library/Application Support/OpenEmu/Filters/\"*\".oefilterplugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/\"*\".oefilterplugin\" \"/Library/Application Support/OpenEmu/Filters/\"";
+			shellScript = "mkdir -p \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Filters\"\nrm -rf \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Filters/\"*\".oefilterplugin\"\ncp -rf \"$BUILT_PRODUCTS_DIR/\"*\".oefilterplugin\" \"$USER_LIBRARY_DIR/Application Support/OpenEmu/Filters/\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -778,7 +778,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6A354910FE83E2100A9AB1C /* Build configuration list for PBXAggregateTarget "Build & Install" */ = {
+		C6A354910FE83E2100A9AB1C /* Build configuration list for PBXAggregateTarget "Build & Install FilterPlugins" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6A3547E0FE83E0E00A9AB1C /* Debug */,

@@ -20,16 +20,16 @@
 			name = Distribution;
 			productName = Distribution;
 		};
-		82D8155D0F1D878700EF8CF5 /* Build & Install */ = {
+		82D8155D0F1D878700EF8CF5 /* Build & Install CrabEmu */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 82D815710F1D87B000EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install" */;
+			buildConfigurationList = 82D815710F1D87B000EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install CrabEmu" */;
 			buildPhases = (
 				82D8155C0F1D878700EF8CF5 /* ShellScript */,
 			);
 			dependencies = (
 				82D815610F1D879200EF8CF5 /* PBXTargetDependency */,
 			);
-			name = "Build & Install";
+			name = "Build & Install CrabEmu";
 			productName = "Build & Install";
 		};
 /* End PBXAggregateTarget section */
@@ -481,8 +481,8 @@
 				3746BCD71029454F007C78A6 /* OESaveStateQLPlugin.qlgenerator */,
 				C64CBD241363DA8C00BEE4F3 /* OpenEmuSystem.framework */,
 				C64CBD261363DA8C00BEE4F3 /* SegaMasterSystem.oesystemplugin */,
-				C6480F42136489BD0094FA33 /* NES.oesystemplugin */,
 				C68A395B1364B67E006CEB34 /* SuperNES.oesystemplugin */,
+				C6480F42136489BD0094FA33 /* NES.oesystemplugin */,
 				C6B3E68D1365255700D34947 /* GameBoy.oesystemplugin */,
 				C6B3E68F1365255700D34947 /* Genesis.oesystemplugin */,
 				824188AF13E484FE0010EBC5 /* GameBoy Advance.oesystemplugin */,
@@ -540,7 +540,7 @@
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* CrabEmu */,
-				82D8155D0F1D878700EF8CF5 /* Build & Install */,
+				82D8155D0F1D878700EF8CF5 /* Build & Install CrabEmu */,
 				82CAFB610FEDA62500CCDC7E /* Distribution */,
 			);
 		};
@@ -884,7 +884,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82D815710F1D87B000EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install" */ = {
+		82D815710F1D87B000EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install CrabEmu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82D8155E0F1D878800EF8CF5 /* Debug */,

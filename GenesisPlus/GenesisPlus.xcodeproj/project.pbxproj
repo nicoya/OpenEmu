@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		822C193F101EA4AF0034119F /* Build & Install */ = {
+		822C193F101EA4AF0034119F /* Build & Install GenesisPlus */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 822C1944101EA4D40034119F /* Build configuration list for PBXAggregateTarget "Build & Install" */;
+			buildConfigurationList = 822C1944101EA4D40034119F /* Build configuration list for PBXAggregateTarget "Build & Install GenesisPlus" */;
 			buildPhases = (
 				822C193E101EA4AF0034119F /* ShellScript */,
 			);
 			dependencies = (
 				822C1943101EA4B60034119F /* PBXTargetDependency */,
 			);
-			name = "Build & Install";
+			name = "Build & Install GenesisPlus";
 			productName = "Build & Install";
 		};
 		8230C7D110AFCB0600412F24 /* Distribution */ = {
@@ -193,13 +193,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = C6B947E61365080B00A425F0;
 			remoteInfo = Genesis;
-		};
-		C6F5704613E4778F0078696A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 82287C47101E9F060072172D /* OpenEmu.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C646574813771F12002A4F70;
-			remoteInfo = "GameBoy Advance";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -425,8 +418,8 @@
 				3783946E102922A200168304 /* OESaveStateQLPlugin.qlgenerator */,
 				C619320C1364894900F48758 /* OpenEmuSystem.framework */,
 				C619320E1364894900F48758 /* SegaMasterSystem.oesystemplugin */,
-				C61932101364894900F48758 /* NES.oesystemplugin */,
 				C6B94802136508F400A425F0 /* SuperNES.oesystemplugin */,
+				C61932101364894900F48758 /* NES.oesystemplugin */,
 				C6B94804136508F400A425F0 /* GameBoy.oesystemplugin */,
 				C6B94806136508F400A425F0 /* Genesis.oesystemplugin */,
 				828D796613E2754700870C6E /* GameBoy Advance.oesystemplugin */,
@@ -627,7 +620,7 @@
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* GenesisPlus */,
-				822C193F101EA4AF0034119F /* Build & Install */,
+				822C193F101EA4AF0034119F /* Build & Install GenesisPlus */,
 				8230C7D110AFCB0600412F24 /* Distribution */,
 			);
 		};
@@ -723,13 +716,6 @@
 			fileType = wrapper.cfbundle;
 			path = Genesis.oesystemplugin;
 			remoteRef = C6B94805136508F400A425F0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C6F5704713E4778F0078696A /* GameBoy Advance.oesystemplugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "GameBoy Advance.oesystemplugin";
-			remoteRef = C6F5704613E4778F0078696A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -980,7 +966,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		822C1944101EA4D40034119F /* Build configuration list for PBXAggregateTarget "Build & Install" */ = {
+		822C1944101EA4D40034119F /* Build configuration list for PBXAggregateTarget "Build & Install GenesisPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				822C1940101EA4B00034119F /* Debug */,

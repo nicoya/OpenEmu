@@ -20,16 +20,16 @@
 			name = Distribution;
 			productName = Distribution;
 		};
-		82D814E50F1D81BE00EF8CF5 /* Build & Install */ = {
+		82D814E50F1D81BE00EF8CF5 /* Build & Install Nestopia */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 82D814EC0F1D81F100EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install" */;
+			buildConfigurationList = 82D814EC0F1D81F100EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install Nestopia" */;
 			buildPhases = (
 				82D814E40F1D81BE00EF8CF5 /* ShellScript */,
 			);
 			dependencies = (
 				82D814EB0F1D81D300EF8CF5 /* PBXTargetDependency */,
 			);
-			name = "Build & Install";
+			name = "Build & Install Nestopia";
 			productName = "Build & Install";
 		};
 /* End PBXAggregateTarget section */
@@ -1264,8 +1264,8 @@
 				37372B14102511E2006ADD56 /* OESaveStateQLPlugin.qlgenerator */,
 				C64BB0B21364837C00C1AB23 /* OpenEmuSystem.framework */,
 				C64BB0B41364837C00C1AB23 /* SegaMasterSystem.oesystemplugin */,
-				C64BB0B61364837C00C1AB23 /* NES.oesystemplugin */,
 				C6480FE21364A4BB0094FA33 /* SuperNES.oesystemplugin */,
+				C64BB0B61364837C00C1AB23 /* NES.oesystemplugin */,
 				C6B3E6A3136525EB00D34947 /* GameBoy.oesystemplugin */,
 				C6B3E6A5136525EB00D34947 /* Genesis.oesystemplugin */,
 				828D797913E2755200870C6E /* GameBoy Advance.oesystemplugin */,
@@ -2038,7 +2038,7 @@
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* Nestopia */,
-				82D814E50F1D81BE00EF8CF5 /* Build & Install */,
+				82D814E50F1D81BE00EF8CF5 /* Build & Install Nestopia */,
 				82C9CA620F0846D40071460B /* Distribution */,
 			);
 		};
@@ -2669,7 +2669,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82D814EC0F1D81F100EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install" */ = {
+		82D814EC0F1D81F100EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install Nestopia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82D814E60F1D81BF00EF8CF5 /* Debug */,

@@ -20,16 +20,16 @@
 			name = Distribution;
 			productName = Distribution;
 		};
-		82D815920F1D880300EF8CF5 /* Build & Install */ = {
+		82D815920F1D880300EF8CF5 /* Build & Install Gambatte */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 82D8159F0F1D881300EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install" */;
+			buildConfigurationList = 82D8159F0F1D881300EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install Gambatte" */;
 			buildPhases = (
 				82D815910F1D880300EF8CF5 /* Run Script */,
 			);
 			dependencies = (
 				82D815CB0F1D887800EF8CF5 /* PBXTargetDependency */,
 			);
-			name = "Build & Install";
+			name = "Build & Install Gambatte";
 			productName = "Build & Install";
 		};
 /* End PBXAggregateTarget section */
@@ -494,8 +494,8 @@
 				3754E16F10268EFE00DCBFB7 /* OESaveStateQLPlugin.qlgenerator */,
 				C6B05DB31363B435007EAAFA /* OpenEmuSystem.framework */,
 				C6B05DB51363B435007EAAFA /* SegaMasterSystem.oesystemplugin */,
-				C6B947D41364FC5900A425F0 /* NES.oesystemplugin */,
 				C6B947D61364FC5900A425F0 /* SuperNES.oesystemplugin */,
+				C6B947D41364FC5900A425F0 /* NES.oesystemplugin */,
 				C6B947D81364FC5900A425F0 /* GameBoy.oesystemplugin */,
 				C6B0A9B3138035A10077EA16 /* Genesis.oesystemplugin */,
 				C6B0A9B5138035A10077EA16 /* GameBoy Advance.oesystemplugin */,
@@ -742,7 +742,7 @@
 			projectRoot = "";
 			targets = (
 				828387800E6CDB2200A96E2C /* Gambatte */,
-				82D815920F1D880300EF8CF5 /* Build & Install */,
+				82D815920F1D880300EF8CF5 /* Build & Install Gambatte */,
 				82CAFCD50FEDD3D400CCDC7E /* Distribution */,
 			);
 		};
@@ -1112,7 +1112,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82D8159F0F1D881300EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install" */ = {
+		82D8159F0F1D881300EF8CF5 /* Build configuration list for PBXAggregateTarget "Build & Install Gambatte" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82D815930F1D880400EF8CF5 /* Debug */,
