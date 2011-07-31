@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "822C193F101EA4AF0034119F"
-               BuildableName = "Build &amp; Install"
+               BuildableName = "Build &amp; Install GenesisPlus"
                BlueprintName = "Build &amp; Install GenesisPlus"
                ReferencedContainer = "container:GenesisPlus/GenesisPlus.xcodeproj">
             </BuildableReference>
@@ -28,7 +28,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "82D814E50F1D81BE00EF8CF5"
-               BuildableName = "Build &amp; Install"
+               BuildableName = "Build &amp; Install Nestopia"
                BlueprintName = "Build &amp; Install Nestopia"
                ReferencedContainer = "container:Nestopia/Nestopia.xcodeproj">
             </BuildableReference>
@@ -70,7 +70,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "826C1BAA0F42306E00FB9014"
-               BuildableName = "Build &amp; Install"
+               BuildableName = "Build &amp; Install SNES9x"
                BlueprintName = "Build &amp; Install SNES9x"
                ReferencedContainer = "container:SNES9x/SNES9x.xcodeproj">
             </BuildableReference>
@@ -84,7 +84,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "82D815AB0F1D882B00EF8CF5"
-               BuildableName = "Build &amp; Install"
+               BuildableName = "Build &amp; Install VisualBoy Advance"
                BlueprintName = "Build &amp; Install VisualBoy Advance"
                ReferencedContainer = "container:VisualBoyAdvance/VisualBoyAdvance.xcodeproj">
             </BuildableReference>
